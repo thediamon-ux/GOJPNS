@@ -55,8 +55,8 @@ export const DIVISIONS = [
     name: "Restaurant Chains",
     tag: "Franchise",
     short: "A turnkey franchise model — own a signature dining concept backed by the enterprise.",
-    image: "https://images.unsplash.com/photo-1766832255363-c9f060ade8b0?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    hero: "https://images.unsplash.com/photo-1776774795092-63a3b45ec1f8?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    image: "https://images.unsplash.com/photo-1740125492753-28394dac8165?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    hero: "https://images.unsplash.com/photo-1677404216898-cc472fe9c31e?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
     intro: "Great food meets proven systems. Our restaurant concepts are engineered to scale — giving entrepreneurs a turnkey franchise with brand power, training, and support at every step. Own a destination, backed by the enterprise.",
     featuresTitle: "Why Franchise With Us",
     features: [
