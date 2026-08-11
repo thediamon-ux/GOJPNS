@@ -9,7 +9,6 @@ import About from "@/pages/About";
 import Divisions from "@/pages/Divisions";
 import DivisionDetail from "@/pages/DivisionDetail";
 import Impact from "@/pages/Impact";
-import Careers from "@/pages/Careers";
 import Contact from "@/pages/Contact";
 import Partner from "@/pages/Partner";
 import "@/App.css";
@@ -45,7 +44,6 @@ function App() {
             <Route path="/divisions" element={<Divisions />} />
             <Route path="/divisions/:slug" element={<DivisionDetail />} />
             <Route path="/impact" element={<Impact />} />
-            <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/partner" element={<Partner />} />
           </Routes>

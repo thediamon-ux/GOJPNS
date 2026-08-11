@@ -9,7 +9,6 @@ const LINKS = [
   { label: "About", to: "/about" },
   { label: "Divisions", to: "/divisions" },
   { label: "Impact", to: "/impact" },
-  { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
 ];
 
