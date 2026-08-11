@@ -51,7 +51,7 @@ export default function DivisionDetail() {
 
       {/* FEATURES */}
       <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10">
-        <Reveal><Overline className="mb-10">What We Offer</Overline></Reveal>
+        <Reveal><Overline className="mb-10">{d.featuresTitle || "What We Offer"}</Overline></Reveal>
         <div className="grid md:grid-cols-2 gap-px bg-gold/15">
           {d.features.map((f, i) => (
             <Reveal key={i} delay={i * 0.08}>
@@ -65,6 +65,41 @@ export default function DivisionDetail() {
           ))}
         </div>
       </section>
+
+      {/* FRANCHISE STATS (optional) */}
+      {d.franchiseStats && (
+        <section className="py-8 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="franchise-stats">
+          <div className="grid sm:grid-cols-3 gap-px bg-gold/15 border border-gold/15">
+            {d.franchiseStats.map((s) => (
+              <Reveal key={s.l}>
+                <div className="bg-[#150621] p-10 text-center h-full">
+                  <div className="font-serif text-5xl md:text-6xl text-gold mb-3">{s.v}</div>
+                  <p className="text-[11px] uppercase tracking-[0.25em] text-lightgray">{s.l}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* FRANCHISE STEPS (optional) */}
+      {d.franchiseSteps && (
+        <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="franchise-steps">
+          <Reveal><Overline className="mb-6">The Path to Ownership</Overline></Reveal>
+          <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-14 leading-[1.05]">How to own a <span className="italic text-gold">franchise</span>.</h2></Reveal>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
+            {d.franchiseSteps.map((step, i) => (
+              <Reveal key={step.t} delay={i * 0.08}>
+                <div className="bg-[#150621] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
+                  <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">0{i + 1}</span>
+                  <h3 className="font-serif text-2xl mt-6 mb-3">{step.t}</h3>
+                  <p className="text-lightgray text-sm leading-relaxed">{step.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* IMAGE BAND */}
       <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10">
@@ -117,11 +152,11 @@ export default function DivisionDetail() {
         <Reveal>
           <div className="border border-gold/25 p-10 h-full flex flex-col justify-between">
             <div>
-              <h3 className="font-serif text-3xl mb-4">Interested in <span className="italic text-gold">{d.name}?</span></h3>
-              <p className="text-lightgray leading-relaxed mb-8">Reach out to learn more, book an experience, or explore a partnership.</p>
+              <h3 className="font-serif text-3xl mb-4">{d.ctaTitle || <>Interested in <span className="italic text-gold">{d.name}?</span></>}</h3>
+              <p className="text-lightgray leading-relaxed mb-8">{d.ctaText || "Reach out to learn more, book an experience, or explore a partnership."}</p>
             </div>
             <Link to="/contact" className="group inline-flex items-center gap-3 text-gold text-xs uppercase tracking-[0.2em] hover:text-white transition-colors">
-              Get In Touch <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              {d.ctaButton || "Get In Touch"} <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
           </div>
         </Reveal>
