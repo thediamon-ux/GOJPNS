@@ -91,7 +91,9 @@ export default function DivisionDetail() {
           </div>
           <div className="grid md:grid-cols-12 gap-6">
             {d.gallery.map((g, i) => {
-              const spans = ["md:col-span-7", "md:col-span-5", "md:col-span-12"];
+              const spans = d.gallery.length === 1
+                ? ["md:col-span-12"]
+                : ["md:col-span-7", "md:col-span-5", "md:col-span-12"];
               return (
                 <Reveal key={i} delay={(i % 2) * 0.1} className={spans[i % spans.length]}>
                   <figure className="group relative overflow-hidden border border-gold/15 hover:border-gold/40 transition-colors duration-500">

@@ -83,8 +83,6 @@ export const DIVISIONS = [
     galleryOverline: "Athi River, Kenya",
     galleryTitle: "Moments from the field.",
     gallery: [
-      { src: "/phil-family.jpg", place: "Athi River, Kenya", caption: "Surrounded by the children we came to serve." },
-      { src: "/phil-kids.jpg", place: "Athi River, Kenya", caption: "A visit to the community school." },
       { src: "/phil-heart.jpg", place: "Athi River, Kenya", caption: "Hands together, hearts as one." },
     ],
   },
