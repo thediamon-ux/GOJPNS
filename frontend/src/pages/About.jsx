@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "../components/PageHeader";
 import { Reveal, Overline } from "../components/Reveal";
 import { EditorialMarquee } from "../components/EditorialMarquee";
@@ -104,37 +102,6 @@ export default function About() {
             </Reveal>
           ))}
         </div>
-      </section>
-
-      {/* LEADERSHIP */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="leadership">
-        <Reveal><Overline className="mb-6">Leadership</Overline></Reveal>
-        <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16">Guided by <span className="italic text-gold">vision</span>.</h2></Reveal>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { person: "Jewel Proby Shine", role: "Founder & CEO", img: "/jewel-proby-shine.jpg", top: true },
-            { person: "Leadership Name", role: "Chief Operating Officer", img: "https://images.unsplash.com/photo-1637589267610-6c66fc2a086b?crop=entropy&cs=srgb&fm=jpg&q=85&w=800" },
-            { person: "Leadership Name", role: "Head of Philanthropy", img: "https://images.unsplash.com/photo-1758599668429-121d54188b9c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800" },
-          ].map((m, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <div className="group">
-                <div className="relative overflow-hidden border border-gold/15 mb-6">
-                  <img src={m.img} alt={`${m.person}, ${m.role}`} className={`w-full h-[420px] object-cover ${m.top ? "object-top" : ""} grayscale group-hover:grayscale-0 transition-all duration-700`} />
-                  <div className="absolute inset-0 bg-vividp/0 group-hover:bg-vividp/10 transition-colors duration-500" />
-                </div>
-                <h3 className="font-serif text-2xl">{m.person}</h3>
-                <p className="text-xs uppercase tracking-[0.2em] text-gold mt-2">{m.role}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal delay={0.2}>
-          <div className="mt-16 flex justify-center">
-            <Link to="/partner" className="group inline-flex items-center gap-3 border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">
-              Join Our Journey <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </Link>
-          </div>
-        </Reveal>
       </section>
     </div>
   );
