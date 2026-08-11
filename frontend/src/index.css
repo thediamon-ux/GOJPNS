@@ -11,7 +11,7 @@
         --card-foreground: 0 0% 100%;
         --popover: 276 70% 8%;
         --popover-foreground: 0 0% 100%;
-        --primary: 45 65% 52%;
+        --primary: 232 15% 81%;
         --primary-foreground: 0 0% 4%;
         --secondary: 276 70% 14%;
         --secondary-foreground: 0 0% 100%;
@@ -21,9 +21,9 @@
         --accent-foreground: 0 0% 100%;
         --destructive: 0 62% 45%;
         --destructive-foreground: 0 0% 100%;
-        --border: 45 65% 52%;
+        --border: 232 15% 81%;
         --input: 0 0% 30%;
-        --ring: 45 65% 52%;
+        --ring: 232 15% 81%;
         --radius: 0px;
     }
 }
@@ -44,7 +44,7 @@ body {
     overflow-x: hidden;
 }
 
-::selection { background: #D4AF37; color: #0B0B0B; }
+::selection { background: #C7C9D6; color: #0B0B0B; }
 
 ::-webkit-scrollbar { width: 9px; }
 ::-webkit-scrollbar-track { background: #0B0B0B; }
@@ -54,7 +54,7 @@ body {
 @layer utilities {
     .font-serif { font-family: 'Playfair Display', serif; }
     .text-stroke-gold {
-        -webkit-text-stroke: 1px rgba(212,175,55,0.55);
+        -webkit-text-stroke: 1px rgba(199,201,214,0.55);
         color: transparent;
     }
     .grain::before {
@@ -81,5 +81,5 @@ body {
     letter-spacing: 0.02em;
 }
 .lux-input::placeholder { color: rgba(191,191,191,0.4); }
-.lux-input:focus { border-bottom-color: #D4AF37; box-shadow: 0 1px 0 0 #D4AF37; }
+.lux-input:focus { border-bottom-color: #C7C9D6; box-shadow: 0 1px 0 0 #C7C9D6; }
 textarea.lux-input { resize: none; }

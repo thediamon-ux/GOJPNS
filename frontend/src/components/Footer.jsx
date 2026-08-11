@@ -4,7 +4,6 @@ import { toast } from "sonner";
 import axios from "axios";
 import { ArrowUpRight } from "lucide-react";
 import { API, DIVISIONS, SOCIALS } from "../data";
-import { Crown } from "./Motifs";
 
 export const Footer = () => {
   const [email, setEmail] = useState("");
@@ -31,8 +30,8 @@ export const Footer = () => {
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 mb-24">
           <div>
-            <Crown size={40} className="mb-8" />
-            <h2 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[0.95] text-white">
+            <img src="/jpns-logo.png" alt="JPNS Enterprise LLC logo" className="w-40 sm:w-48 mb-8" />
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[0.95] text-white">
               JPNS<br /><span className="text-stroke-gold">ENTERPRISE</span>
             </h2>
             <p className="mt-6 text-lightgray max-w-md leading-relaxed">

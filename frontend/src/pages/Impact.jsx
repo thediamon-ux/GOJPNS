@@ -10,7 +10,6 @@ const METRICS = [
   { v: 250000, s: "+", l: "Lives Impacted" },
   { v: 12, s: "M+", p: "$", l: "Donations Raised" },
   { v: 48, s: "", l: "Charity Partners" },
-  { v: 16, s: "", l: "Orphanages Supported" },
   { v: 9, s: "", l: "Countries Reached" },
 ];
 
@@ -33,9 +32,9 @@ export default function Impact() {
 
       {/* BIG COUNTERS */}
       <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="impact-metrics">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gold/15">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-gold/15">
           {METRICS.map((m, i) => (
-            <Reveal key={m.l} delay={i * 0.08}>
+            <Reveal key={m.l} delay={i * 0.08} className="lg:col-span-2">
               <div className="bg-void p-10 md:p-12 h-full group hover:bg-deepp/30 transition-colors duration-500">
                 <Diamond size={18} className="mb-8 opacity-50 group-hover:opacity-100 transition-opacity" />
                 <div className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-4">
@@ -45,10 +44,10 @@ export default function Impact() {
               </div>
             </Reveal>
           ))}
-          <Reveal delay={0.4}>
+          <Reveal delay={0.4} className="sm:col-span-2 lg:col-span-4">
             <div className="bg-gold text-void p-10 md:p-12 h-full flex flex-col justify-center">
-              <Crown size={40} className="mb-6" />
-              <p className="font-serif text-2xl leading-snug">Impact is the truest measure of a legacy.</p>
+              <Crown size={40} color="#0B0B0B" className="mb-6" />
+              <p className="font-serif text-3xl md:text-4xl leading-snug max-w-xl">Impact is the truest measure of a legacy.</p>
             </div>
           </Reveal>
         </div>
