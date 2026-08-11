@@ -80,6 +80,36 @@ export default function DivisionDetail() {
         </Reveal>
       </section>
 
+      {/* GALLERY (optional per division) */}
+      {d.gallery && (
+        <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="division-gallery">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <Reveal><Overline className="mb-6">{d.galleryOverline || "In the Field"}</Overline></Reveal>
+              <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">{d.galleryTitle || "Moments of impact."}</h2></Reveal>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-12 gap-6">
+            {d.gallery.map((g, i) => {
+              const spans = ["md:col-span-7", "md:col-span-5", "md:col-span-12"];
+              return (
+                <Reveal key={i} delay={(i % 2) * 0.1} className={spans[i % spans.length]}>
+                  <figure className="group relative overflow-hidden border border-gold/15 hover:border-gold/40 transition-colors duration-500">
+                    <img src={g.src} alt={g.caption} loading="lazy"
+                      className="w-full h-[320px] md:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-void/80 via-transparent to-transparent" />
+                    <figcaption className="absolute bottom-6 left-6 right-6">
+                      <span className="text-[10px] uppercase tracking-[0.25em] text-gold">{g.place}</span>
+                      <p className="font-serif text-xl md:text-2xl mt-1">{g.caption}</p>
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* CTA + NEXT */}
       <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-6">
         <Reveal>

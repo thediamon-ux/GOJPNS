@@ -71,14 +71,21 @@ export const DIVISIONS = [
     name: "Philanthropy",
     tag: "Impact",
     short: "The heart of the enterprise — lifting communities, women, and children worldwide.",
-    image: "https://images.unsplash.com/photo-1651372381086-9861c9c81db5?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    hero: "https://images.unsplash.com/photo-1758599668547-2b1192c10abb?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    image: "/phil-kids.jpg",
+    hero: "/phil-family.jpg",
     intro: "Legacy is measured in lives changed. Through our philanthropic arm we channel resources into orphanages, women's empowerment, and community programs — turning success into shared prosperity.",
     features: [
       "Orphanage support & sponsorship",
       "Women's empowerment initiatives",
       "Global community outreach",
       "Charity partner network",
+    ],
+    galleryOverline: "Athi River, Kenya",
+    galleryTitle: "Moments from the field.",
+    gallery: [
+      { src: "/phil-family.jpg", place: "Athi River, Kenya", caption: "Surrounded by the children we came to serve." },
+      { src: "/phil-kids.jpg", place: "Athi River, Kenya", caption: "A visit to the community school." },
+      { src: "/phil-heart.jpg", place: "Athi River, Kenya", caption: "Hands together, hearts as one." },
     ],
   },
 ];
