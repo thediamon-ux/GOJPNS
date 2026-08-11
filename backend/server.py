@@ -29,7 +29,7 @@ EMAIL_KEY = os.environ["EMERGENT_EMAIL_KEY"]
 EMAIL_FROM_NAME = os.environ["EMAIL_FROM_NAME"]
 OWNER_EMAIL = os.environ["OWNER_EMAIL"]
 
-GOLD = "#C7C9D6"
+GOLD = "#D4AF37"
 
 
 async def send_email(recipient: str, subject: str, html: str, reply_to: Optional[str] = None):

@@ -11,8 +11,8 @@ module.exports = {
       colors: {
         void: '#0B0B0B',
         deepp: '#2B0B3D',
-        vividp: '#7A24C9',
-        gold: '#C7C9D6',
+        vividp: '#6B1FAF',
+        gold: '#D4AF37',
         silver: '#C7C9D6',
         lightgray: '#BFBFBF',
         background: 'hsl(var(--background))',
