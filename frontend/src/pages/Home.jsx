@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { MaskedLines, Reveal, Overline } from "../components/Reveal";
 import { EditorialMarquee } from "../components/EditorialMarquee";
-import { Counter } from "../components/Counter";
 import { Crown, Diamond } from "../components/Motifs";
 import { DIVISIONS } from "../data";
 
@@ -12,13 +11,6 @@ const PILLARS = [
   { n: "01", t: "Strength", d: "A diversified enterprise built on resilience, discipline, and an unshakeable standard of excellence." },
   { n: "02", t: "Vision", d: "Foresight that turns bold ideas into industries — always three moves ahead of the moment." },
   { n: "03", t: "Legacy", d: "Success measured not in profit alone, but in lives lifted and communities transformed." },
-];
-
-const IMPACT = [
-  { v: 250000, s: "+", l: "Lives Impacted" },
-  { v: 12, s: "M+", p: "$", l: "Donations Raised" },
-  { v: 48, s: "", l: "Charity Partners" },
-  { v: 9, s: "", l: "Countries Reached" },
 ];
 
 const HeroBg = () => {
@@ -99,30 +91,18 @@ export default function Home() {
       {/* ONE ENTERPRISE */}
       <section className="py-28 relative overflow-hidden" data-testid="one-enterprise">
         <div className="absolute top-1/2 -left-40 w-[500px] h-[500px] rounded-full bg-deepp/50 blur-[150px] -translate-y-1/2" />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <Reveal>
             <Crown size={44} className="mb-8" />
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.02] mb-8">
               One Enterprise.<br /><span className="italic text-gold">Unlimited Impact.</span>
             </h2>
-            <p className="text-lightgray leading-relaxed mb-6 max-w-lg">
+            <p className="text-lightgray leading-relaxed mb-6 max-w-2xl">
               JPNS Enterprise LLC is the parent brand uniting five distinct divisions under a single vision — where luxury and purpose move as one. Every venture strengthens the whole, and a portion of everything we create flows back into the communities we serve.
             </p>
             <Link to="/about" data-testid="about-cta" className="group inline-flex items-center gap-3 text-gold text-xs uppercase tracking-[0.2em] hover:text-white transition-colors">
               Our Story <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="grid grid-cols-2 gap-px bg-gold/15">
-              {IMPACT.map((m) => (
-                <div key={m.l} className="bg-void p-8">
-                  <div className="font-serif text-4xl md:text-5xl text-white mb-2">
-                    <Counter value={m.v} prefix={m.p} suffix={m.s} />
-                  </div>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-lightgray">{m.l}</p>
-                </div>
-              ))}
-            </div>
           </Reveal>
         </div>
       </section>
@@ -179,7 +159,7 @@ export default function Home() {
               <Reveal delay={0.2}>
                 <div className="flex flex-wrap gap-4">
                   <Link to="/partner" className="bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">Partner With Us</Link>
-                  <Link to="/careers" className="border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">View Careers</Link>
+                  <Link to="/contact" className="border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">Get In Touch</Link>
                 </div>
               </Reveal>
             </div>
