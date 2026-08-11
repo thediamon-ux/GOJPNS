@@ -22,9 +22,10 @@ const HeroBg = () => {
       <img
         src="https://images.unsplash.com/photo-1760172287483-02d382f63a6f?crop=entropy&cs=srgb&fm=jpg&q=85&w=2000"
         alt="Abstract luxury texture" className="w-full h-[120%] object-cover" />
-      <div className="absolute inset-0 bg-void/75" />
-      <div className="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent" />
-      <div className="absolute -bottom-20 right-0 w-[700px] h-[500px] rounded-full bg-vividp/25 blur-[180px]" />
+      <div className="absolute inset-0 bg-void/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-void via-deepp/45 to-transparent" />
+      <div className="absolute -bottom-24 right-0 w-[780px] h-[560px] rounded-full bg-vividp/45 blur-[170px]" />
+      <div className="absolute top-1/4 -left-32 w-[520px] h-[520px] rounded-full bg-deepp/60 blur-[150px]" />
     </motion.div>
   );
 };
@@ -75,7 +76,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-px bg-gold/15">
           {PILLARS.map((p, i) => (
             <Reveal key={p.n} delay={i * 0.12}>
-              <div className="bg-void p-10 h-full group hover:bg-deepp/30 transition-colors duration-500">
+              <div className="bg-[#150621] p-10 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <div className="flex items-center justify-between mb-10">
                   <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">{p.n}</span>
                   <Diamond size={18} className="opacity-40 group-hover:opacity-100 transition-opacity" />
@@ -130,7 +131,7 @@ export default function Home() {
                   <img src={d.image} alt={d.name} loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" />
                   <div className="absolute inset-0 bg-gradient-to-t from-void via-void/50 to-transparent" />
-                  <div className="absolute inset-0 bg-vividp/0 group-hover:bg-vividp/15 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-vividp/0 group-hover:bg-vividp/28 transition-colors duration-500" />
                   <div className="relative h-full flex flex-col justify-between p-8">
                     <div className="flex items-center justify-between">
                       <span className="font-serif text-2xl text-gold/70">{d.index}</span>
@@ -152,7 +153,7 @@ export default function Home() {
       <section className="py-28" data-testid="home-cta">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="relative border border-gold/25 p-12 md:p-20 overflow-hidden">
-            <div className="absolute -top-20 -right-10 w-[400px] h-[400px] rounded-full bg-vividp/20 blur-[130px]" />
+            <div className="absolute -top-20 -right-10 w-[460px] h-[460px] rounded-full bg-vividp/35 blur-[130px]" />
             <div className="relative">
               <Reveal><h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] max-w-3xl mb-8">Build a legacy <span className="italic text-gold">with us</span>.</h2></Reveal>
               <Reveal delay={0.1}><p className="text-lightgray max-w-xl mb-10 leading-relaxed">Whether you're an investor, partner, or visionary talent — there's a place for you inside the enterprise.</p></Reveal>

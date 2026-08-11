@@ -23,7 +23,7 @@ export default function Divisions() {
               <div className={`md:col-span-5 relative overflow-hidden h-[300px] ${i % 2 ? "md:order-2" : ""}`}>
                 <img src={d.image} alt={d.name} loading="lazy"
                   className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
-                <div className="absolute inset-0 bg-vividp/0 group-hover:bg-vividp/15 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-vividp/0 group-hover:bg-vividp/28 transition-colors duration-500" />
               </div>
               <div className="md:col-span-7 p-8 md:p-12">
                 <div className="flex items-center gap-6 mb-6">

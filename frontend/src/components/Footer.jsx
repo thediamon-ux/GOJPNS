@@ -26,7 +26,7 @@ export const Footer = () => {
 
   return (
     <footer data-testid="footer" className="relative pt-32 pb-10 overflow-hidden border-t border-gold/15">
-      <div className="absolute -top-40 left-1/3 w-[600px] h-[600px] rounded-full bg-vividp/20 blur-[160px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/3 w-[680px] h-[680px] rounded-full bg-vividp/30 blur-[150px] pointer-events-none" />
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 mb-24">
           <div>

@@ -32,7 +32,7 @@ function SmoothScroll() {
 
 function App() {
   return (
-    <div className="App grain min-h-screen bg-void text-white">
+    <div className="App grain min-h-screen bg-transparent text-white">
       <BrowserRouter>
         <SmoothScroll />
         <ScrollToTop />

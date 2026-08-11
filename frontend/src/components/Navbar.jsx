@@ -28,7 +28,7 @@ export const Navbar = () => {
     <header
       data-testid="navbar"
       className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${
-        scrolled ? "backdrop-blur-xl bg-void/70 border-b border-gold/20" : "bg-transparent"
+        scrolled ? "backdrop-blur-xl bg-[#160a24]/80 border-b border-gold/20" : "bg-transparent"
       }`}
     >
       <nav className="max-w-[1400px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">

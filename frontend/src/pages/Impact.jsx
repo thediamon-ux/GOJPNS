@@ -35,7 +35,7 @@ export default function Impact() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-gold/15">
           {METRICS.map((m, i) => (
             <Reveal key={m.l} delay={i * 0.08} className="lg:col-span-2">
-              <div className="bg-void p-10 md:p-12 h-full group hover:bg-deepp/30 transition-colors duration-500">
+              <div className="bg-[#150621] p-10 md:p-12 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <Diamond size={18} className="mb-8 opacity-50 group-hover:opacity-100 transition-opacity" />
                 <div className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-4">
                   <Counter value={m.v} prefix={m.p} suffix={m.s} />
@@ -76,7 +76,7 @@ export default function Impact() {
       <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="relative border border-gold/25 p-12 md:p-16 overflow-hidden text-center">
-            <div className="absolute inset-0 bg-vividp/10 blur-[100px]" />
+            <div className="absolute inset-0 bg-vividp/20 blur-[100px]" />
             <div className="relative">
               <h2 className="font-serif text-3xl md:text-5xl mb-8 max-w-3xl mx-auto">Join us in writing the next chapter of <span className="italic text-gold">impact</span>.</h2>
               <Link to="/partner" className="group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">

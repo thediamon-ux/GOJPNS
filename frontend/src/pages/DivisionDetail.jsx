@@ -55,7 +55,7 @@ export default function DivisionDetail() {
         <div className="grid md:grid-cols-2 gap-px bg-gold/15">
           {d.features.map((f, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <div className="bg-void p-8 flex items-start gap-5 h-full group hover:bg-deepp/30 transition-colors duration-500">
+              <div className="bg-[#150621] p-8 flex items-start gap-5 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <span className="mt-1 shrink-0 w-9 h-9 border border-gold/40 flex items-center justify-center group-hover:bg-gold group-hover:text-void transition-colors">
                   <Check size={16} strokeWidth={1.5} />
                 </span>
