@@ -40,9 +40,9 @@ export default function Contact() {
         <Reveal className="lg:col-span-5">
           <div className="space-y-10">
             {[
-              { icon: Mail, label: "Email", value: "info@jpnsenterprise.com", href: "mailto:info@jpnsenterprise.com" },
-              { icon: Phone, label: "Phone", value: "+1 (000) 000-0000", href: "tel:+10000000000" },
-              { icon: MapPin, label: "Headquarters", value: "United States", href: null },
+              { icon: Mail, label: "Email", value: "info@jpnsenterprise.net", href: "mailto:info@jpnsenterprise.net" },
+              { icon: Phone, label: "Phone", value: "678.572.2368", href: "tel:+16785722368" },
+              { icon: MapPin, label: "Headquarters", value: "Stockbridge, GA", href: null },
             ].map((c) => (
               <div key={c.label} className="flex items-start gap-5">
                 <span className="w-11 h-11 shrink-0 border border-gold/40 flex items-center justify-center">
