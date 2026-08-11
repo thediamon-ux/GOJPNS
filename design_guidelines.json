@@ -1,0 +1,137 @@
+{
+  "typography": {
+    "headings": {
+      "family": "Playfair Display, serif",
+      "weights": ["400", "700", "900"],
+      "styles": ["normal", "italic"],
+      "scale": {
+        "h1": "text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] leading-[0.9] tracking-tighter",
+        "h2": "text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight",
+        "h3": "text-2xl sm:text-3xl md:text-4xl leading-snug tracking-tight"
+      },
+      "rules": "Use Playfair Display for all headings. The word 'Legacy' in the hero should be italicized for an editorial twist. Avoid center alignment; favor strict left-aligned typographic grids."
+    },
+    "body": {
+      "family": "Montserrat, sans-serif",
+      "weights": ["300", "400", "500"],
+      "scale": {
+        "base": "text-base sm:text-lg leading-relaxed tracking-wide",
+        "small": "text-sm tracking-[0.2em] uppercase",
+        "caption": "text-xs tracking-wider opacity-60"
+      },
+      "rules": "Montserrat provides clean, structured, and legible contrast to the decorative serif headings. Ensure all small labels/overline text uses intense uppercase tracking (e.g., tracking-[0.2em])."
+    }
+  },
+  "colors": {
+    "base": {
+      "void_black": "#0B0B0B",
+      "deep_purple": "#2B0B3D"
+    },
+    "accents": {
+      "gold": "#D4AF37",
+      "vivid_purple": "#6B1FAF"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#BFBFBF"
+    },
+    "surface": {
+      "card_bg": "rgba(43, 11, 61, 0.2)",
+      "glass_bg": "rgba(11, 11, 11, 0.6)",
+      "glass_border": "rgba(212, 175, 55, 0.2)"
+    },
+    "rules": "No flat, generic gradients. Use radial gradients or noise overlays for depth. Do not use pure `#000000` — base is `#0B0B0B`. Gold (`#D4AF37`) is strictly for interaction states, key thin borders, and the signature marquee. Vivid purple (`#6B1FAF`) is for subtle hover glows on cards."
+  },
+  "visual_enhancers": {
+    "glassmorphism": "Used strictly for the sticky navbar and floating elements. Requires `backdrop-blur-xl bg-black/60 border-b border-[#D4AF37]/20`. No fully transparent headers over hero images.",
+    "textures": "Incorporate a subtle noise/grain overlay globally (`mix-blend-overlay` on a pseudo-element) to kill digital flatness and enhance the luxury feel.",
+    "borders": "1px solid `#D4AF37` at 20% opacity for container dividers. High-contrast solid gold lines for active tab states or animated underlines.",
+    "shadows": "Minimal use of standard drop-shadows. Instead, rely on glowing radial drop-shadows `drop-shadow-[0_0_15px_rgba(107,31,175,0.4)]` for hover states on key components."
+  },
+  "components": {
+    "navbar": "Sticky, glassmorphism (`backdrop-blur-xl bg-[#0B0B0B]/70`), 1px bottom gold border. Links must be visible on desktop (no hamburger).",
+    "hero": "Kinetic Hero. Left-aligned heavy typography: 'Strength. Vision. Legacy.' (with 'Legacy' in italic serif and gold). Masked reveal animation (line by line). Abstract dark gold texture as background, deeply darkened (`bg-black/60` overlay) so text pops.",
+    "marquee": "Slow, elegant editorial marquee drifting across the screen behind or between sections. Text should be large (`text-8xl`), serif italic, and transparent with a 1px gold outline (`text-stroke`).",
+    "dba_cards_grid": "Bento-style or numbered Manifesto grid. Avoid basic equal squares. Use tall vertical cards (`col-span-1 row-span-2`) mixed with wide horizontal strips. Hover state: subtle scale, image desaturates slightly, vivid purple ambient glow behind.",
+    "impact_counters": "Large, fluid typography for numbers (e.g., Montserrat Light). Use framer-motion `useSpring` and `useTransform` to animate counters from 0 when scrolled into view. Do not use generic icons; use bespoke gold line-art or diamond/crown SVGs.",
+    "forms": "Use Shadcn customized primitives. Inputs: transparent background, 1px bottom border (`#BFBFBF`), focus state turns bottom border gold (`#D4AF37`). No chunky default borders.",
+    "footer": "Massive top padding (`py-32`). Left side: giant 'JPNS ENTERPRISE' text. Right side: Newsletter form (minimalist line input) and social links. Deep purple ambient glow in the background."
+  },
+  "grids_and_layouts": {
+    "spacing_system": "Generous spacing. Use `py-24` to `py-32` between sections. `gap-8` to `gap-16` for grids. This breathing room creates a sense of luxury.",
+    "dba_grid": "Asymmetrical layout. `grid-cols-1 md:grid-cols-12 gap-8`. E.g., Card 1: `col-span-7`, Card 2: `col-span-5`."
+  },
+  "motion": {
+    "libraries": "framer-motion, @studio-freight/react-lenis (for smooth scrolling momentum).",
+    "scroll_reveal": "Masked upward reveals for headings (`overflow-hidden` wrapper, text translates Y from 100% to 0% with `ease: [0.76, 0, 0.24, 1]`, duration: 1s).",
+    "parallax": "Use Framer Motion's `useScroll` and `useTransform` for subtle Y-axis shifting on DBA card images as the user scrolls, creating a 'window' effect.",
+    "interactions": "Hover on cards translates Y by `-8px`, extends transition duration to `0.4s ease-out`.",
+    "marquee_speed": "Extremely slow. Use `react-fast-marquee` or framer-motion with a 30s-60s linear loop."
+  },
+  "accessibility": {
+    "contrast": "Ensure white/gold text meets minimum 4.5:1 ratio against the #0B0B0B/#2B0B3D backgrounds.",
+    "focus": "Custom focus rings: `focus-visible:ring-1 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0B]`.",
+    "motion_preference": "Respect `prefers-reduced-motion` for kinetic text and parallax elements.",
+    "data_testids": "All interactive elements, forms, cards, and primary text must have `data-testid` attributes (e.g., `data-testid='hero-heading'`, `data-testid='dba-card-luxury-cars'`)."
+  },
+  "media": {
+    "treatment": "Real photography treated deliberately: darkened, slightly desaturated, with a subtle noise overlay to match the brand. Use clipping masks or strict geometric crops (no soft rounded corners — sharp 0px or max 2px radii for luxury edge).",
+    "icons": "Use `lucide-react`. Render them with `color='#D4AF37'` and `strokeWidth={1}` for a refined, delicate gold line-art aesthetic."
+  },
+  "3d_libraries": {
+    "recommendation": "For the hero, stick to framer-motion 2D parallax and masking. The prompt asks for 'subtle parallax/3D hero moment'. We will implement a deep, multi-layered parallax using Framer Motion `useScroll` instead of heavy WebGL (R3F) to keep the site extremely snappy while achieving the Site-of-the-Day feel."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1760172287483-02d382f63a6f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBnb2xkJTIwbHV4dXJ5JTIwdGV4dHVyZXxlbnwwfHx8fDE3ODY0MTQ4Njl8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract dark gold texture for hero section background layer."
+    },
+    "dba_luxury_cars": {
+      "url": "https://images.pexels.com/photos/94272/sports-car-pkw-auto-vehicle-94272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Front view of a luxurious sports car in a dark setting."
+    },
+    "dba_events": {
+      "url": "https://images.unsplash.com/photo-1700514077430-3659e38eb5e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxleGNsdXNpdmUlMjBnYWxhJTIwZXZlbnQlMjBlbnRlcnRhaW5tZW50fGVufDB8fHx8MTc4NjQxNDg2OXww&ixlib=rb-4.1.0&q=85",
+      "description": "Exclusive gala event, dark mood lighting."
+    },
+    "dba_self_care": {
+      "url": "https://images.unsplash.com/photo-1761470575018-135c213340eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBzcGElMjB3ZWxsbmVzcyUyMGRhcmt8ZW58MHx8fHwxNzg2NDE0ODY5fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Luxury spa wellness dark ambient lighting."
+    },
+    "dba_restaurant": {
+      "url": "https://images.unsplash.com/photo-1766832255363-c9f060ade8b0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxmaW5lJTIwZGluaW5nJTIwcmVzdGF1cmFudCUyMGRhcmslMjBlbGVnYW50fGVufDB8fHx8MTc4NjQxNDg2OXww&ixlib=rb-4.1.0&q=85",
+      "description": "Fine dining restaurant dark elegant setup."
+    },
+    "dba_philanthropy": {
+      "url": "https://images.unsplash.com/photo-1651372381086-9861c9c81db5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHw0fHxwaGlsYW50aHJvcHklMjBjb21tdW5pdHklMjBoYW5kc3xlbnwwfHx8fDE3ODY0MTQ4NzB8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Philanthropy community hands holding."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Install required dependencies: `framer-motion`, `lucide-react`, `@studio-freight/react-lenis`, `react-fast-marquee`, and setup Shadcn components using `div/span` wrappers where custom HTML is better for artistic control.",
+    "Set the Tailwind config to use Playfair Display and Montserrat. Extend colors with void_black (#0B0B0B), deep_purple (#2B0B3D), vivid_purple (#6B1FAF), and lux_gold (#D4AF37).",
+    "Implement Lenis smooth scrolling globally in the App component.",
+    "Build the Kinetic Hero: Create a Framer Motion component that masks text line-by-line. Wrap lines in `overflow-hidden` and translate Y from 100% to 0%.",
+    "Develop the DBA Division section as an asymmetrical bento grid. Apply subtle `useScroll` parallax to the images inside `overflow-hidden` containers so they move at a different rate than the scroll.",
+    "Create animated counters for the Impact section using Framer Motion `useSpring` with `useInView` triggers.",
+    "Design minimalist custom forms with single-line bottom borders (border-b-1) that transition to gold on focus.",
+    "Add `data-testid` to all interactive, dynamic, and major content elements.",
+    "Ensure the .js files are used, no .tsx/TypeScript code.",
+    "Do not use generic Shadcn Cards for the main DBA layout; construct raw HTML + Tailwind divs for precise, edge-to-edge luxury styling."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: `transition: all`. Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles (e.g., sharp 0px radius for this luxury brand) with interaction animations & relevant colors.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Prioritize using pre-existing components from src/components/ui when applicable.",
+    "Use `sonner` for toasts."
+  ]
+}
