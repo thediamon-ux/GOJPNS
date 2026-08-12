@@ -12,7 +12,7 @@ export default function Divisions() {
         overline="Our DBAs"
         title="Five divisions."
         titleAccent="One legacy."
-        subtitle="Each brand under JPNS Enterprise operates as its own world of excellence — bound together by a shared standard and a shared purpose."
+        subtitle="Each brand under JPNS Enterprises operates as its own world of excellence — bound together by a shared standard and a shared purpose."
       />
 
       <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10 space-y-6" data-testid="divisions-list">

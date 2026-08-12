@@ -40,7 +40,7 @@ export default function Home() {
         <HeroBg />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-            <Overline className="mb-8">JPNS Enterprise LLC</Overline>
+            <Overline className="mb-8">JPNS Enterprises LLC</Overline>
           </motion.div>
           <h1 className="font-serif text-white text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] leading-[0.88] tracking-tighter" data-testid="hero-heading">
             <MaskedLines delay={0.35} lines={["Strength.", "Vision.", <em key="l" className="italic text-gold">Legacy.</em>]} />
@@ -99,7 +99,7 @@ export default function Home() {
               One Enterprise.<br /><span className="italic text-gold">Unlimited Impact.</span>
             </h2>
             <p className="text-lightgray leading-relaxed mb-6 max-w-2xl">
-              JPNS Enterprise LLC is the parent brand uniting five distinct divisions under a single vision — where luxury and purpose move as one. Every venture strengthens the whole, and a portion of everything we create flows back into the communities we serve.
+              JPNS Enterprises LLC is the parent brand uniting five distinct divisions under a single vision — where luxury and purpose move as one. Every venture strengthens the whole, and a portion of everything we create flows back into the communities we serve.
             </p>
             <Link to="/about" data-testid="about-cta" className="group inline-flex items-center gap-3 text-gold text-xs uppercase tracking-[0.2em] hover:text-white transition-colors">
               Our Story <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />

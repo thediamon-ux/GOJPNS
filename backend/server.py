@@ -60,7 +60,7 @@ def wrap_email(title: str, body_rows: str) -> str:
     <div style="background:#0B0B0B;padding:40px 0;font-family:Arial,Helvetica,sans-serif;">
       <table align="center" width="600" cellpadding="0" cellspacing="0" style="background:#160821;border:1px solid rgba(212,175,55,0.25);">
         <tr><td style="padding:32px 40px;border-bottom:1px solid rgba(212,175,55,0.25);">
-          <span style="color:{GOLD};letter-spacing:4px;font-size:12px;">JPNS ENTERPRISE LLC</span>
+          <span style="color:{GOLD};letter-spacing:4px;font-size:12px;">JPNS ENTERPRISES LLC</span>
           <h1 style="color:#ffffff;font-size:24px;margin:12px 0 0;">{title}</h1>
         </td></tr>
         <tr><td style="padding:32px 40px;color:#BFBFBF;font-size:15px;line-height:1.7;">
@@ -157,7 +157,7 @@ async def newsletter(payload: NewsletterCreate):
     doc = base_doc({"email": payload.email}, "newsletter")
     await db.subscribers.insert_one(dict(doc))
     welcome = wrap_email("Welcome to the JPNS Circle", row("Email", payload.email) + f'<tr><td colspan="2" style="padding:16px 0;color:#ffffff;">Thank you for subscribing. You will now receive exclusive updates across our divisions, events, and impact initiatives.</td></tr>')
-    await send_email(payload.email, "Welcome to JPNS Enterprise", welcome)
+    await send_email(payload.email, "Welcome to JPNS Enterprises", welcome)
     return {"status": "success", "id": doc["id"]}
 
 

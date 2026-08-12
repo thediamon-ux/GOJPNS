@@ -30,9 +30,9 @@ export const Footer = () => {
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 mb-24">
           <div>
-            <img src="/jpns-logo.png" alt="JPNS Enterprise LLC logo" className="w-40 sm:w-48 mb-8" />
+            <img src="/jpns-logo.png" alt="JPNS Enterprises LLC logo" className="w-40 sm:w-48 mb-8" />
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[0.95] text-white">
-              JPNS<br /><span className="text-stroke-gold">ENTERPRISE</span>
+              JPNS<br /><span className="text-stroke-gold">ENTERPRISES</span>
             </h2>
             <p className="mt-6 text-lightgray max-w-md leading-relaxed">
               One enterprise, unlimited impact. Building a legacy across industries while lifting communities worldwide.
@@ -73,7 +73,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8 border-t border-white/10 text-xs text-lightgray/60">
-          <span>© {new Date().getFullYear()} JPNS Enterprise LLC. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} JPNS Enterprises LLC. All rights reserved.</span>
           <span className="tracking-[0.2em] uppercase">Strength · Vision · Legacy</span>
           <a href="mailto:info@jpnsenterprise.net" className="hover:text-gold transition-colors">info@jpnsenterprise.net</a>
         </div>

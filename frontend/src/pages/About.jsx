@@ -18,14 +18,14 @@ export default function About() {
         overline="About Us"
         title="One enterprise."
         titleAccent="Unlimited impact."
-        subtitle="JPNS Enterprise LLC is a diversified holding company uniting luxury, experience, wellness, hospitality, and philanthropy under a single, purpose-driven vision."
+        subtitle="JPNS Enterprises LLC is a diversified holding company uniting luxury, experience, wellness, hospitality, and philanthropy under a single, purpose-driven vision."
       />
 
       <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
         <Reveal>
           <div className="relative overflow-hidden border border-gold/20">
             <img src="https://images.unsplash.com/photo-1688614598602-0a71fbfed6c5?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200"
-              alt="JPNS Enterprise" className="w-full h-[520px] object-cover grayscale-[0.2]" />
+              alt="JPNS Enterprises" className="w-full h-[520px] object-cover grayscale-[0.2]" />
             <div className="absolute inset-0 bg-gradient-to-t from-void/60 to-transparent" />
           </div>
         </Reveal>
@@ -34,7 +34,7 @@ export default function About() {
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.05] mb-8">Founded on the belief that <span className="italic text-gold">success should serve.</span></h2>
           <div className="space-y-5 text-lightgray leading-relaxed">
             <p>What began as a single vision has grown into a constellation of brands — each distinct in its industry, yet united by an unwavering commitment to quality and community.</p>
-            <p>JPNS Enterprise was built to prove that luxury and philanthropy are not opposites but partners. From exotic automobiles to unforgettable galas, from restorative wellness to fine dining — every venture is engineered to create beauty, and to give back.</p>
+            <p>JPNS Enterprises was built to prove that luxury and philanthropy are not opposites but partners. From exotic automobiles to unforgettable galas, from restorative wellness to fine dining — every venture is engineered to create beauty, and to give back.</p>
             <p>At the heart of it all is a mission to empower women, uplift children, and strengthen the communities that make our success possible.</p>
           </div>
         </Reveal>
@@ -48,7 +48,7 @@ export default function About() {
           <div className="relative">
             <div className="absolute -inset-3 border border-gold/30 pointer-events-none" />
             <div className="relative overflow-hidden">
-              <img src="/jewel-proby-shine.jpg" alt="Jewel Proby Shine, Founder & CEO of JPNS Enterprise LLC"
+              <img src="/jewel-proby-shine.jpg" alt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
                 className="w-full h-[560px] object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-void/50 via-transparent to-transparent" />
             </div>
@@ -57,12 +57,12 @@ export default function About() {
         <Reveal delay={0.15} className="lg:col-span-7">
           <Overline className="mb-6">The Founder</Overline>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] mb-6">
-            Jewel <span className="italic text-gold">Proby Shine</span>
+            Jewell <span className="italic text-gold">Proby Shine</span>
           </h2>
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-8">Founder &amp; Chief Executive Officer</p>
           <div className="space-y-5 text-lightgray leading-relaxed max-w-xl">
-            <p>Jewel Proby Shine founded JPNS Enterprise LLC on a singular conviction: that ambition and compassion belong together. Under her leadership, the enterprise has grown into a family of distinct luxury brands — each held to an uncompromising standard, each built to give back.</p>
-            <p>A believer in the power of women to lead and to lift others, Jewel champions mentorship, opportunity, and community at every level of the organization. Her vision turns every venture into a vehicle for impact — proving that a legacy is measured not by what you build, but by whom you raise along the way.</p>
+            <p>Jewell Proby Shine founded JPNS Enterprisess LLC on a singular conviction: that ambition and compassion belong together. Under her leadership, the enterprise has grown into a family of distinct luxury brands — each held to an uncompromising standard, each built to give back.</p>
+            <p>A believer in the power of women to lead and to lift others, Jewell champions mentorship, opportunity, and community at every level of the organization. Her vision turns every venture into a vehicle for impact — proving that a legacy is measured not by what you build, but by whom you raise along the way.</p>
           </div>
           <div className="mt-10 flex items-center gap-4">
             <Crown size={30} />

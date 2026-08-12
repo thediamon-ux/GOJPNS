@@ -33,8 +33,8 @@ export const Navbar = () => {
     >
       <nav className="max-w-[1400px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link to="/" data-testid="logo-link" className="flex items-center gap-3 group">
-          <img src="/jpns-logo.png" alt="JPNS Enterprise LLC" className="h-11 w-auto transition-transform duration-500 group-hover:scale-105" />
-          <span className="font-serif text-xl tracking-wide text-white hidden sm:inline">JPNS <span className="text-gold">Enterprise</span></span>
+          <img src="/jpns-logo.png" alt="JPNS Enterprises LLC" className="h-11 w-auto transition-transform duration-500 group-hover:scale-105" />
+          <span className="font-serif text-xl tracking-wide text-white hidden sm:inline">JPNS <span className="text-gold">Enterprises</span></span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-9">
@@ -72,8 +72,8 @@ export const Navbar = () => {
           >
             <div className="flex justify-between items-center h-20 px-6 border-b border-gold/20">
               <span className="flex items-center gap-3">
-                <img src="/jpns-logo.png" alt="JPNS Enterprise LLC" className="h-10 w-auto" />
-                <span className="font-serif text-xl text-white">JPNS <span className="text-gold">Enterprise</span></span>
+                <img src="/jpns-logo.png" alt="JPNS Enterprises LLC" className="h-10 w-auto" />
+                <span className="font-serif text-xl text-white">JPNS <span className="text-gold">Enterprises</span></span>
               </span>
               <button onClick={() => setOpen(false)} className="text-gold" aria-label="Close menu"><X size={26} strokeWidth={1.3} /></button>
             </div>

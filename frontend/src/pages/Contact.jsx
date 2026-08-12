@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { PageHeader } from "../components/PageHeader";
 import { Reveal, Overline } from "../components/Reveal";
 import { SOCIALS, API } from "../data";
@@ -43,6 +43,7 @@ export default function Contact() {
               { icon: Mail, label: "Email", value: "info@jpnsenterprise.net", href: "mailto:info@jpnsenterprise.net" },
               { icon: Phone, label: "Phone", value: "678.572.2368", href: "tel:+16785722368" },
               { icon: MapPin, label: "Headquarters", value: "Stockbridge, GA", href: null },
+              { icon: Clock, label: "Hours", value: "Open 24/7", href: null },
             ].map((c) => (
               <div key={c.label} className="flex items-start gap-5">
                 <span className="w-11 h-11 shrink-0 border border-gold/40 flex items-center justify-center">
