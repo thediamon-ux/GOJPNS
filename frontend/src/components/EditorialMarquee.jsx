@@ -7,7 +7,7 @@ export const EditorialMarquee = () => (
     <Marquee speed={35} gradient={false}>
       {WORDS.concat(WORDS).map((w, i) => (
         <span key={i} className="font-serif italic text-6xl sm:text-8xl text-stroke-gold mx-10">
-          {w} <span className="text-gold/40 not-italic">✦</span>
+          {w} <span className="gold-shimmer not-italic">✦</span>
         </span>
       ))}
     </Marquee>

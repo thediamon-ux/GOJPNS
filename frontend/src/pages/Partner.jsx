@@ -73,7 +73,7 @@ export default function Partner() {
               </div>
               <input data-testid="partner-interest" placeholder="Area of interest (e.g. Events, Philanthropy)" className="lux-input" value={form.interest} onChange={set("interest")} />
               <textarea data-testid="partner-message" required rows={4} placeholder="Tell us about your vision" className="lux-input" value={form.message} onChange={set("message")} />
-              <button data-testid="partner-submit" disabled={loading} className="group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors disabled:opacity-50">
+              <button data-testid="partner-submit" disabled={loading} className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors disabled:opacity-50">
                 {loading ? "Sending…" : "Submit Inquiry"} <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </button>
             </form>

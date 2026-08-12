@@ -4,6 +4,7 @@ import Lenis from "lenis";
 import { Toaster } from "sonner";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Sparkles } from "@/components/Sparkles";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Divisions from "@/pages/Divisions";
@@ -34,6 +35,7 @@ function SmoothScroll() {
 function App() {
   return (
     <div className="App grain min-h-screen bg-transparent text-white">
+      <Sparkles />
       <BrowserRouter>
         <SmoothScroll />
         <ScrollToTop />

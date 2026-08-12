@@ -43,7 +43,7 @@ export default function Home() {
             <Overline className="mb-8">JPNS Enterprises LLC</Overline>
           </motion.div>
           <h1 className="font-serif text-white text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] leading-[0.88] tracking-tighter" data-testid="hero-heading">
-            <MaskedLines delay={0.35} lines={["Strength.", "Vision.", <em key="l" className="italic text-gold">Legacy.</em>]} />
+            <MaskedLines delay={0.35} lines={["Strength.", "Vision.", <em key="l" className="italic gold-shimmer">Legacy.</em>]} />
           </h1>
           <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }}
@@ -52,7 +52,7 @@ export default function Home() {
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.15, duration: 0.8 }}
               className="flex flex-wrap gap-4">
-              <Link to="/divisions" data-testid="hero-explore-btn" className="group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors duration-300">
+              <Link to="/divisions" data-testid="hero-explore-btn" className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors duration-300">
                 Explore Divisions <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
               <Link to="/partner" data-testid="hero-partner-btn" className="inline-flex items-center gap-3 border border-gold/40 text-white px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors duration-300">
@@ -96,7 +96,7 @@ export default function Home() {
           <Reveal>
             <Crown size={44} className="mb-8" />
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.02] mb-8">
-              One Enterprise.<br /><span className="italic text-gold">Unlimited Impact.</span>
+              One Enterprise.<br /><span className="italic gold-shimmer">Unlimited Impact.</span>
             </h2>
             <p className="text-lightgray leading-relaxed mb-6 max-w-2xl">
               JPNS Enterprises LLC is the parent brand uniting five distinct divisions under a single vision — where luxury and purpose move as one. Every venture strengthens the whole, and a portion of everything we create flows back into the communities we serve.
@@ -159,7 +159,7 @@ export default function Home() {
               <Reveal delay={0.1}><p className="text-lightgray max-w-xl mb-10 leading-relaxed">Whether you're an investor, partner, or visionary talent — there's a place for you inside the enterprise.</p></Reveal>
               <Reveal delay={0.2}>
                 <div className="flex flex-wrap gap-4">
-                  <Link to="/partner" className="bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">Partner With Us</Link>
+                  <Link to="/partner" className="btn-shine bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">Partner With Us</Link>
                   <Link to="/contact" className="border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">Get In Touch</Link>
                 </div>
               </Reveal>

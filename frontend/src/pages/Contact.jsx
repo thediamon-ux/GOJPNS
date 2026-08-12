@@ -82,7 +82,7 @@ export default function Contact() {
               <input data-testid="contact-subject" placeholder="Subject" className="lux-input" value={form.subject} onChange={set("subject")} />
             </div>
             <textarea data-testid="contact-message" required rows={5} placeholder="Your message" className="lux-input" value={form.message} onChange={set("message")} />
-            <button data-testid="contact-submit" disabled={loading} className="group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors disabled:opacity-50">
+            <button data-testid="contact-submit" disabled={loading} className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors disabled:opacity-50">
               {loading ? "Sending…" : "Send Message"} <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
           </form>
