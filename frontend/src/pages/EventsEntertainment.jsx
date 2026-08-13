@@ -196,8 +196,8 @@ export default function EventsEntertainment() {
               <div className="absolute inset-0 bg-gradient-to-t from-void/70 to-transparent" />
               <span className="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.25em] text-gold">Industry Girl · Red Carpet</span>
             </div>
-            <div className="relative overflow-hidden border border-gold/15 col-span-2 group">
-              <img src="/event-appearance.jpg" alt="Jewell appearance" className="w-full h-[340px] object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative overflow-hidden border border-gold/15 col-span-2 group bg-black">
+              <img src="/event-appearance.jpg" alt="Jewell appearance" className="w-full h-[620px] object-contain group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </Reveal>
