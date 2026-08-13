@@ -36,28 +36,44 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-end overflow-hidden pb-20 pt-32" data-testid="hero">
+      <section className="relative min-h-screen flex items-center overflow-hidden pb-16 pt-32" data-testid="hero">
         <HeroBg />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-            <Overline className="mb-8">JPNS Enterprises LLC</Overline>
-          </motion.div>
-          <h1 className="font-serif text-white text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] leading-[0.88] tracking-tighter" data-testid="hero-heading">
-            <MaskedLines delay={0.35} lines={["Strength.", "Vision.", <em key="l" className="italic gold-shimmer">Legacy.</em>]} />
-          </h1>
-          <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }}
-              className="max-w-md text-lightgray text-lg leading-relaxed">
-              A diversified enterprise of luxury brands, unforgettable experiences, and world-changing philanthropy. One enterprise. Unlimited impact.
-            </motion.p>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.15, duration: 0.8 }}
-              className="flex flex-wrap gap-4">
-              <Link to="/divisions" data-testid="hero-explore-btn" className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors duration-300">
-                Explore Divisions <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </Link>
-              <Link to="/partner" data-testid="hero-partner-btn" className="inline-flex items-center gap-3 border border-gold/40 text-white px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors duration-300">
-                Partner With Us
-              </Link>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+                <Overline className="mb-8">JPNS Enterprises LLC</Overline>
+              </motion.div>
+              <h1 className="font-serif text-white text-6xl sm:text-7xl md:text-8xl lg:text-8xl leading-[0.88] tracking-tighter" data-testid="hero-heading">
+                <MaskedLines delay={0.35} lines={["Strength.", "Vision.", <em key="l" className="italic gold-shimmer inline-block pr-2">Legacy.</em>]} />
+              </h1>
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }}
+                className="mt-10 max-w-md text-lightgray text-lg leading-relaxed">
+                A diversified enterprise of luxury brands, unforgettable experiences, and world-changing philanthropy. One enterprise. Unlimited impact.
+              </motion.p>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.15, duration: 0.8 }}
+                className="mt-8 flex flex-wrap gap-4">
+                <Link to="/divisions" data-testid="hero-explore-btn" className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors duration-300">
+                  Explore Divisions <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </Link>
+                <Link to="/partner" data-testid="hero-partner-btn" className="inline-flex items-center gap-3 border border-gold/40 text-white px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors duration-300">
+                  Partner With Us
+                </Link>
+              </motion.div>
+            </div>
+
+            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative hidden lg:block">
+              <div className="absolute -inset-3 border border-gold/40 pointer-events-none" />
+              <div className="relative overflow-hidden">
+                <img src="/jewell-sitting.jpg" alt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
+                  className="w-full h-[600px] object-cover object-top" />
+                <div className="absolute inset-0 bg-gradient-to-t from-void/50 via-transparent to-transparent" />
+              </div>
+              <div className="absolute -bottom-4 left-6 right-6 flex items-center justify-between">
+                <span className="font-serif text-xl italic gold-shimmer bg-void/70 backdrop-blur px-4 py-2">Jewell Proby Shine</span>
+                <span className="text-[10px] uppercase tracking-[0.25em] text-gold bg-void/70 backdrop-blur px-4 py-2">Founder &amp; CEO</span>
+              </div>
             </motion.div>
           </div>
         </div>
