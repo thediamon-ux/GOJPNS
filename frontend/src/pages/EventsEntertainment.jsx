@@ -56,8 +56,8 @@ export default function EventsEntertainment() {
               </Link>
             </Reveal>
             <Reveal delay={0.05}><Overline className="mb-6">Events & Entertainment</Overline></Reveal>
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[0.92] tracking-tight mb-6" data-testid="events-heading">
-              <MaskedLines delay={0.15} lines={[<span key="1">The stage</span>, <span key="2">belongs to</span>, <span key="3" className="italic gold-shimmer">Jewell.</span>]} />
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[0.95] tracking-tight mb-6" data-testid="events-heading">
+              <MaskedLines delay={0.15} lines={[<span key="1">The stage</span>, <span key="2">belongs to</span>, <span key="3" className="italic gold-shimmer inline-block pl-2 pr-3">Jewell.</span>]} />
             </h1>
             <Reveal delay={0.4}>
               <p className="text-lightgray text-lg leading-relaxed max-w-md mb-8">
