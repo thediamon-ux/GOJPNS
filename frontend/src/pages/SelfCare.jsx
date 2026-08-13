@@ -66,7 +66,7 @@ export default function SelfCare() {
             </Reveal>
             <Reveal delay={0.05}><Overline className="mb-6">Self-Care · Wellness</Overline></Reveal>
             <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[0.92] tracking-tight mb-6" data-testid="wellness-heading">
-              <MaskedLines delay={0.15} lines={[<span key="1">Jewells</span>, <span key="2" className="italic text-gold">Herbal Magic</span>, <span key="3">Blend</span>]} />
+              <MaskedLines delay={0.15} lines={[<span key="1">Jewells</span>, <span key="2" className="italic gold-shimmer">Herbal Magic</span>, <span key="3">Blend</span>]} />
             </h1>
             <Reveal delay={0.4}>
               <p className="text-lightgray text-lg leading-relaxed max-w-md mb-8">
@@ -124,7 +124,7 @@ export default function SelfCare() {
         <Reveal className="lg:col-span-4"><Overline>The Ritual</Overline></Reveal>
         <Reveal delay={0.1} className="lg:col-span-8">
           <p className="font-serif text-2xl md:text-4xl leading-[1.25]">
-            Every cup is a small act of devotion — a pause to <span className="italic text-gold">nourish, heal &amp; restore</span>. You deserve to feel magic.
+            Every cup is a small act of devotion — a pause to <span className="italic gold-shimmer">nourish, heal &amp; restore</span>. You deserve to feel magic.
           </p>
         </Reveal>
       </section>
@@ -151,7 +151,7 @@ export default function SelfCare() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <Reveal><Overline className="mb-6">The Blend · 16 Botanicals</Overline></Reveal>
-            <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">Every ingredient, <span className="italic text-gold">intentional</span>.</h2></Reveal>
+            <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">Every ingredient, <span className="italic gold-shimmer">intentional</span>.</h2></Reveal>
           </div>
           <Reveal delay={0.2}>
             <span className="inline-flex items-center gap-3 text-emerald-300/80 text-xs uppercase tracking-[0.2em]">
@@ -196,7 +196,7 @@ export default function SelfCare() {
             <div className="absolute -top-16 right-10 w-[360px] h-[360px] rounded-full bg-vividp/25 blur-[130px]" />
             <div className="relative">
               <Heart size={30} color="#D4AF37" strokeWidth={1.2} className="mx-auto mb-6" />
-              <h2 className="font-serif text-3xl md:text-5xl mb-6 max-w-2xl mx-auto">You deserve to <span className="italic text-gold">feel magic</span>.</h2>
+              <h2 className="font-serif text-3xl md:text-5xl mb-6 max-w-2xl mx-auto">You deserve to <span className="italic gold-shimmer">feel magic</span>.</h2>
               <p className="text-lightgray max-w-lg mx-auto mb-10 leading-relaxed">Handcrafted in small batches and ethically sourced. Reach out to order the Herbal Magic Blend or explore a wellness partnership.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact" className="bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">Enquire to Order</Link>

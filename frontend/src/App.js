@@ -10,6 +10,7 @@ import About from "@/pages/About";
 import Divisions from "@/pages/Divisions";
 import DivisionDetail from "@/pages/DivisionDetail";
 import SelfCare from "@/pages/SelfCare";
+import EventsEntertainment from "@/pages/EventsEntertainment";
 import Impact from "@/pages/Impact";
 import Contact from "@/pages/Contact";
 import Partner from "@/pages/Partner";
@@ -46,6 +47,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/divisions" element={<Divisions />} />
             <Route path="/divisions/self-care" element={<SelfCare />} />
+            <Route path="/divisions/events-entertainment" element={<EventsEntertainment />} />
             <Route path="/divisions/:slug" element={<DivisionDetail />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/contact" element={<Contact />} />

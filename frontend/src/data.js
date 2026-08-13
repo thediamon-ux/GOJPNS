@@ -22,8 +22,8 @@ export const DIVISIONS = [
     index: "02",
     name: "Events & Entertainment",
     tag: "Experiences",
-    short: "Unforgettable galas, productions, and experiences engineered to the last detail.",
-    image: "https://images.unsplash.com/photo-1700514077430-3659e38eb5e7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    short: "Motivational speaking, red-carpet appearances, and hit-show productions with Jewell.",
+    image: "/event-ig-redcarpet.jpg",
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
     intro: "From intimate soirées to headline productions, we design and stage experiences that linger long after the lights dim — every detail choreographed, every moment intentional.",
     features: [

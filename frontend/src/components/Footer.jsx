@@ -32,7 +32,7 @@ export const Footer = () => {
           <div>
             <img src="/jpns-logo.png" alt="JPNS Enterprises LLC logo" className="w-40 sm:w-48 mb-8" />
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[0.95] text-white">
-              JPNS<br /><span className="text-stroke-gold">ENTERPRISES</span>
+              JPNS<br /><span className="gold-shimmer">ENTERPRISES</span>
             </h2>
             <p className="mt-6 text-lightgray max-w-md leading-relaxed">
               One enterprise, unlimited impact. Building a legacy across industries while lifting communities worldwide.

@@ -58,7 +58,7 @@ export default function Impact() {
       {/* INITIATIVES */}
       <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10">
         <Reveal><Overline className="mb-6">Where It Goes</Overline></Reveal>
-        <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16">Our <span className="italic text-gold">initiatives</span>.</h2></Reveal>
+        <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16">Our <span className="italic gold-shimmer">initiatives</span>.</h2></Reveal>
         <div className="grid md:grid-cols-3 gap-8">
           {INITIATIVES.map((it, i) => (
             <Reveal key={it.t} delay={i * 0.1}>
@@ -78,7 +78,7 @@ export default function Impact() {
           <div className="relative border border-gold/25 p-12 md:p-16 overflow-hidden text-center">
             <div className="absolute inset-0 bg-vividp/20 blur-[100px]" />
             <div className="relative">
-              <h2 className="font-serif text-3xl md:text-5xl mb-8 max-w-3xl mx-auto">Join us in writing the next chapter of <span className="italic text-gold">impact</span>.</h2>
+              <h2 className="font-serif text-3xl md:text-5xl mb-8 max-w-3xl mx-auto">Join us in writing the next chapter of <span className="italic gold-shimmer">impact</span>.</h2>
               <Link to="/partner" className="group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">
                 Become a Partner <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>

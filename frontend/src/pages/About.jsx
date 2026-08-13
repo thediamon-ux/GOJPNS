@@ -19,7 +19,7 @@ export default function About() {
         title="One enterprise."
         titleAccent="Unlimited impact."
         subtitle="JPNS Enterprises LLC is a diversified holding company uniting luxury, experience, wellness, hospitality, and philanthropy under a single, purpose-driven vision."
-        image="/jewel-proby-shine.jpg"
+        image="/jewell-sitting.jpg"
         imageAlt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
       />
 
@@ -33,7 +33,7 @@ export default function About() {
         </Reveal>
         <Reveal delay={0.15}>
           <Overline className="mb-6">Our Story</Overline>
-          <h2 className="font-serif text-4xl md:text-5xl leading-[1.05] mb-8">Founded on the belief that <span className="italic text-gold">success should serve.</span></h2>
+          <h2 className="font-serif text-4xl md:text-5xl leading-[1.05] mb-8">Founded on the belief that <span className="italic gold-shimmer">success should serve.</span></h2>
           <div className="space-y-5 text-lightgray leading-relaxed">
             <p>What began as a single vision has grown into a constellation of brands — each distinct in its industry, yet united by an unwavering commitment to quality and community.</p>
             <p>JPNS Enterprises was built to prove that luxury and philanthropy are not opposites but partners. From exotic automobiles to unforgettable galas, from restorative wellness to fine dining — every venture is engineered to create beauty, and to give back.</p>
@@ -59,7 +59,7 @@ export default function About() {
         <Reveal delay={0.15} className="lg:col-span-7">
           <Overline className="mb-6">The Founder</Overline>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] mb-6">
-            Jewell <span className="italic text-gold">Proby Shine</span>
+            Jewell <span className="italic gold-shimmer">Proby Shine</span>
           </h2>
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-8">Founder &amp; Chief Executive Officer</p>
           <div className="space-y-5 text-lightgray leading-relaxed max-w-xl">
@@ -92,7 +92,7 @@ export default function About() {
       {/* VALUES */}
       <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10">
         <Reveal><Overline className="mb-6">What We Stand For</Overline></Reveal>
-        <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16">Our core <span className="italic text-gold">values</span>.</h2></Reveal>
+        <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16">Our core <span className="italic gold-shimmer">values</span>.</h2></Reveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
           {VALUES.map((v, i) => (
             <Reveal key={v.t} delay={i * 0.08}>

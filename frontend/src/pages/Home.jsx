@@ -70,7 +70,7 @@ export default function Home() {
         <Reveal><Overline className="mb-6">The Manifesto</Overline></Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] max-w-3xl mb-20">
-            Three principles that <span className="italic text-gold">define</span> everything we build.
+            Three principles that <span className="italic gold-shimmer">define</span> everything we build.
           </h2>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-px bg-gold/15">
@@ -113,7 +113,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <Reveal><Overline className="mb-6">Our Divisions</Overline></Reveal>
-            <Reveal delay={0.1}><h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05]">Five worlds.<br />One <span className="italic text-gold">standard</span>.</h2></Reveal>
+            <Reveal delay={0.1}><h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05]">Five worlds.<br />One <span className="italic gold-shimmer">standard</span>.</h2></Reveal>
           </div>
           <Reveal delay={0.2}>
             <Link to="/divisions" className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-gold hover:text-white transition-colors">
@@ -155,7 +155,7 @@ export default function Home() {
           <div className="relative border border-gold/25 p-12 md:p-20 overflow-hidden">
             <div className="absolute -top-20 -right-10 w-[460px] h-[460px] rounded-full bg-vividp/35 blur-[130px]" />
             <div className="relative">
-              <Reveal><h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] max-w-3xl mb-8">Build a legacy <span className="italic text-gold">with us</span>.</h2></Reveal>
+              <Reveal><h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] max-w-3xl mb-8">Build a legacy <span className="italic gold-shimmer">with us</span>.</h2></Reveal>
               <Reveal delay={0.1}><p className="text-lightgray max-w-xl mb-10 leading-relaxed">Whether you're an investor, partner, or visionary talent — there's a place for you inside the enterprise.</p></Reveal>
               <Reveal delay={0.2}>
                 <div className="flex flex-wrap gap-4">

@@ -86,7 +86,7 @@ export default function DivisionDetail() {
       {d.franchiseSteps && (
         <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="franchise-steps">
           <Reveal><Overline className="mb-6">The Path to Ownership</Overline></Reveal>
-          <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-14 leading-[1.05]">How to own a <span className="italic text-gold">franchise</span>.</h2></Reveal>
+          <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-14 leading-[1.05]">How to own a <span className="italic gold-shimmer">franchise</span>.</h2></Reveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
             {d.franchiseSteps.map((step, i) => (
               <Reveal key={step.t} delay={i * 0.08}>
@@ -109,7 +109,7 @@ export default function DivisionDetail() {
             <div className="absolute inset-0 bg-gradient-to-t from-void/70 to-transparent" />
             <div className="absolute bottom-8 left-8 flex items-center gap-4">
               <Diamond size={24} />
-              <span className="font-serif text-2xl italic text-gold">{d.name}</span>
+              <span className="font-serif text-2xl italic gold-shimmer">{d.name}</span>
             </div>
           </div>
         </Reveal>
@@ -152,7 +152,7 @@ export default function DivisionDetail() {
         <Reveal>
           <div className="border border-gold/25 p-10 h-full flex flex-col justify-between">
             <div>
-              <h3 className="font-serif text-3xl mb-4">{d.ctaTitle || <>Interested in <span className="italic text-gold">{d.name}?</span></>}</h3>
+              <h3 className="font-serif text-3xl mb-4">{d.ctaTitle || <>Interested in <span className="italic gold-shimmer">{d.name}?</span></>}</h3>
               <p className="text-lightgray leading-relaxed mb-8">{d.ctaText || "Reach out to learn more, book an experience, or explore a partnership."}</p>
             </div>
             <Link to="/contact" className="group inline-flex items-center gap-3 text-gold text-xs uppercase tracking-[0.2em] hover:text-white transition-colors">
