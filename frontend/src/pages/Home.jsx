@@ -63,11 +63,11 @@ export default function Home() {
             </div>
 
             <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative hidden lg:block">
+              className="relative">
               <div className="absolute -inset-3 border border-gold/40 pointer-events-none" />
               <div className="relative overflow-hidden">
                 <img src="/jewell-sitting.jpg" alt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
-                  className="w-full h-[600px] object-cover object-top" />
+                  className="w-full h-[420px] sm:h-[520px] lg:h-[600px] object-cover object-top" />
                 <div className="absolute inset-0 bg-gradient-to-t from-void/50 via-transparent to-transparent" />
               </div>
               <div className="absolute -bottom-4 left-6 right-6 flex items-center justify-between">
