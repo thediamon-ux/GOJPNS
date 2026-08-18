@@ -19,8 +19,6 @@ export default function About() {
         title="One enterprise."
         titleAccent="Unlimited impact."
         subtitle="JPNS Enterprises LLC is a diversified holding company uniting luxury, experience, wellness, hospitality, and philanthropy under a single, purpose-driven vision."
-        image="/jewell-sitting.jpg"
-        imageAlt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
       />
 
       <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
