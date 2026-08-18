@@ -23,7 +23,7 @@ export const DIVISIONS = [
     name: "Events & Entertainment",
     tag: "Experiences",
     short: "Motivational speaking, red-carpet appearances, and hit-show productions with Jewell.",
-    image: "https://images.unsplash.com/photo-1599739291060-4578e77dac5d?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    image: "/event-jpns-flyer.jpg",
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
     intro: "From intimate soirées to headline productions, we design and stage experiences that linger long after the lights dim — every detail choreographed, every moment intentional.",
     features: [

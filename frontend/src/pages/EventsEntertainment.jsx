@@ -42,8 +42,8 @@ export default function EventsEntertainment() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute -top-24 right-0 w-[620px] h-[620px] rounded-full bg-vividp/45 blur-[170px] pointer-events-none" />
         <div className="absolute top-1/3 -left-32 w-[480px] h-[480px] rounded-full bg-deepp/60 blur-[150px] pointer-events-none" />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="max-w-3xl">
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
+          <div>
             <Reveal>
               <Link to="/divisions" className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-lightgray hover:text-gold transition-colors mb-8">
                 <ArrowLeft size={16} /> All Divisions
@@ -69,6 +69,14 @@ export default function EventsEntertainment() {
               </div>
             </Reveal>
           </div>
+
+          <Reveal delay={0.2}>
+            <div className="relative">
+              <div className="absolute -inset-3 border border-gold/40 pointer-events-none" />
+              <img src="/event-jpns-flyer.jpg" alt="Jewell Proby Shine — JPNS Enterprises"
+                className="relative w-full aspect-square object-cover shadow-2xl shadow-black/60" />
+            </div>
+          </Reveal>
         </div>
       </section>
 
