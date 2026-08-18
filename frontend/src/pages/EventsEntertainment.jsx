@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import {
   ArrowLeft, ArrowUpRight, Mic, Tv, Star, Users,
   Calendar, MapPin, Clock, Sparkles,
@@ -38,18 +36,14 @@ const TOPICS = [
 ];
 
 export default function EventsEntertainment() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
-
   return (
     <div data-testid="events-page">
       {/* HERO */}
-      <section ref={ref} className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute -top-24 right-0 w-[620px] h-[620px] rounded-full bg-vividp/45 blur-[170px] pointer-events-none" />
         <div className="absolute top-1/3 -left-32 w-[480px] h-[480px] rounded-full bg-deepp/60 blur-[150px] pointer-events-none" />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
-          <div>
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl">
             <Reveal>
               <Link to="/divisions" className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-lightgray hover:text-gold transition-colors mb-8">
                 <ArrowLeft size={16} /> All Divisions
@@ -75,15 +69,6 @@ export default function EventsEntertainment() {
               </div>
             </Reveal>
           </div>
-
-          <Reveal delay={0.2}>
-            <motion.div style={{ y }} className="relative">
-              <div className="absolute -inset-3 border border-gold/30 pointer-events-none" />
-              <img src="/event-ig-redcarpet.jpg" alt="Jewell on the Industry Girl red carpet"
-                className="relative w-full h-[560px] object-cover object-top shadow-2xl shadow-black/60" />
-              <div className="absolute inset-0 bg-gradient-to-t from-void/45 via-transparent to-transparent" />
-            </motion.div>
-          </Reveal>
         </div>
       </section>
 
