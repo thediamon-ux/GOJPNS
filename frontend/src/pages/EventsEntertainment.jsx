@@ -133,7 +133,7 @@ export default function EventsEntertainment() {
           <div className="absolute -top-20 -right-16 w-[420px] h-[420px] rounded-full bg-vividp/30 blur-[130px] pointer-events-none" />
           <Reveal>
             <div className="relative p-4">
-              <img src="/event-gala-flyer.jpg" alt="Legacy in Motion Gala flyer presented by JPNS" className="w-full object-cover border border-gold/20" />
+              <img src="/event-featured-new.jpg" alt="Jewell Proby Shine" className="w-full h-[420px] lg:h-full object-cover object-top border border-gold/20" />
             </div>
           </Reveal>
           <Reveal delay={0.12}>
