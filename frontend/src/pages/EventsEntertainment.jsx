@@ -79,7 +79,7 @@ export default function EventsEntertainment() {
           <Reveal delay={0.2}>
             <motion.div style={{ y }} className="relative">
               <div className="absolute -inset-3 border border-gold/30 pointer-events-none" />
-              <img src="/jewell-sitting.jpg" alt="Jewell Proby Shine at an appearance"
+              <img src="/event-ig-redcarpet.jpg" alt="Jewell on the Industry Girl red carpet"
                 className="relative w-full h-[560px] object-cover object-top shadow-2xl shadow-black/60" />
               <div className="absolute inset-0 bg-gradient-to-t from-void/45 via-transparent to-transparent" />
             </motion.div>
