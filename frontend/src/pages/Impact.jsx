@@ -7,10 +7,10 @@ import { EditorialMarquee } from "../components/EditorialMarquee";
 import { Crown, Diamond } from "../components/Motifs";
 
 const METRICS = [
-  { v: 250000, s: "+", l: "Lives Impacted" },
-  { v: 12, s: "M+", p: "$", l: "Donations Raised" },
-  { v: 48, s: "", l: "Charity Partners" },
-  { v: 9, s: "", l: "Countries Reached" },
+  { v: 300, s: "+", l: "Kids' Lives Impacted" },
+  { v: 107, s: "K+", p: "$", l: "Donations Raised" },
+  { v: 4, s: "", l: "Charity Partners" },
+  { v: 2, s: "", l: "Countries Reached" },
 ];
 
 const INITIATIVES = [
