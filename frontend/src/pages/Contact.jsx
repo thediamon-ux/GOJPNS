@@ -40,7 +40,7 @@ export default function Contact() {
         <Reveal className="lg:col-span-5">
           <div className="space-y-10">
             {[
-              { icon: Mail, label: "Email", value: "info@jpnsenterprise.net", href: "mailto:info@jpnsenterprise.net" },
+              { icon: Mail, label: "Email", value: "info@gojpns.net", href: "mailto:info@gojpns.net" },
               { icon: Phone, label: "Phone", value: "678.572.2368", href: "tel:+16785722368" },
               { icon: MapPin, label: "Headquarters", value: "Stockbridge, GA", href: null },
               { icon: Clock, label: "Hours", value: "Open 24/7", href: null },

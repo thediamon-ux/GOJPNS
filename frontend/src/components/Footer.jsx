@@ -75,7 +75,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-8 border-t border-white/10 text-xs text-lightgray/60">
           <span>© {new Date().getFullYear()} JPNS Enterprises LLC. All rights reserved.</span>
           <span className="tracking-[0.2em] uppercase">Strength · Vision · Legacy</span>
-          <a href="mailto:info@jpnsenterprise.net" className="hover:text-gold transition-colors">info@jpnsenterprise.net</a>
+          <a href="mailto:info@gojpns.net" className="hover:text-gold transition-colors">info@gojpns.net</a>
         </div>
       </div>
     </footer>
