@@ -10,6 +10,8 @@ export const DIVISIONS = [
     image: "https://images.pexels.com/photos/94272/sports-car-pkw-auto-vehicle-94272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     hero: "https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
     intro: "Arrival is a statement. Our curated collection of exotic and premium automobiles delivers unrivaled performance and presence for weddings, corporate travel, and unforgettable escapes.",
+    externalUrl: "https://iceexotics.com/",
+    externalLabel: "Visit ICE Exotics",
     features: [
       "Hand-selected exotic & luxury fleet",
       "White-glove delivery & concierge",

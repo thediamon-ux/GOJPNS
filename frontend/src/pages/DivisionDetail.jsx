@@ -155,9 +155,17 @@ export default function DivisionDetail() {
               <h3 className="font-serif text-3xl mb-4">{d.ctaTitle || <>Interested in <span className="italic gold-shimmer">{d.name}?</span></>}</h3>
               <p className="text-lightgray leading-relaxed mb-8">{d.ctaText || "Reach out to learn more, book an experience, or explore a partnership."}</p>
             </div>
-            <Link to="/contact" className="group inline-flex items-center gap-3 text-gold text-xs uppercase tracking-[0.2em] hover:text-white transition-colors">
-              {d.ctaButton || "Get In Touch"} <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-4">
+              {d.externalUrl && (
+                <a href={d.externalUrl} target="_blank" rel="noopener noreferrer" data-testid="division-external-link"
+                  className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-7 py-3.5 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">
+                  {d.externalLabel || "Visit Website"} <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </a>
+              )}
+              <Link to="/contact" className="group inline-flex items-center gap-3 text-gold text-xs uppercase tracking-[0.2em] hover:text-white transition-colors">
+                {d.ctaButton || "Get In Touch"} <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
+            </div>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
