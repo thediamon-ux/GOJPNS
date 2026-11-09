@@ -25,6 +25,7 @@ Pages: Home, About, Divisions overview, 5 Division detail pages, Impact, Careers
 - Newsletter subscription (footer, DB + welcome email)
 - Sticky glass navbar, mobile menu, luxury footer, SEO/OG meta
 - All backend endpoints verified via curl; frontend verified via screenshots
+- Shop the Tea (2026): "Shop" nav tab + /shop page selling Jewells Herbal Magic Blend via Stripe Checkout (Flow A claimable sandbox, test mode) — Apple Pay / card / Cash App Pay, shipping address collection, quantity selector. Backend payments_router: /api/shop/product, /api/payments/checkout, /api/payments/status/{id}, /api/stripe/webhook; orders stored in Mongo payment_transactions. Price is a placeholder $25.00 (lookup_key herbal_blend_tin) pending real price. /payment/success polls status; /payment/cancel. Verified by testing_agent (backend+frontend 100%).
 
 ## Design Tokens
 void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair Display (serif headings) + Montserrat (body). Sharp 0px radius edges, gold line borders, grain overlay.
