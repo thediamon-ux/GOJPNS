@@ -30,7 +30,13 @@ Pages: Home, About, Divisions overview, 5 Division detail pages, Impact, Careers
 ## Design Tokens
 void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair Display (serif headings) + Montserrat (body). Sharp 0px radius edges, gold line borders, grain overlay.
 
+## Implemented (2026-07)
+- Division order changed site-wide (single source: `DIVISIONS` in `frontend/src/data.js`): 01 Events & Entertainment, 02 Self-Care, 03 Restaurant Chains, 04 Luxury Car Rentals, 05 Philanthropy. Applies to Home "Five worlds. One standard." cards, Divisions page rows, footer links, and DivisionDetail next/prev nav.
+- Divisions page Philanthropy card image: `object-[50%_30%]` anchor so faces in phil-kids.jpg are not cropped (per-page override in `Divisions.jsx`).
+
 ## Backlog / Remaining
+- P1: Final tea price from user to replace $25 placeholder (`backend/setup_stripe.py`, `Shop.jsx`)
+- P1: Swap Restaurant Chains food photo when user provides new image
 - P1: Real content swap (leadership bios, photos, exact stats, logo)
 - P2: Booking/reservation flows for Car Rentals/Events/Restaurants
 - P2: Resume upload on Careers (object storage)

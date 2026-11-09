@@ -2,26 +2,8 @@ export const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export const DIVISIONS = [
   {
-    slug: "luxury-car-rentals",
-    index: "01",
-    name: "Luxury Car Rentals",
-    tag: "Automotive",
-    short: "An elite fleet of exotic and luxury vehicles for those who move differently.",
-    image: "https://images.pexels.com/photos/94272/sports-car-pkw-auto-vehicle-94272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    hero: "https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-    intro: "Arrival is a statement. Our curated collection of exotic and premium automobiles delivers unrivaled performance and presence for weddings, corporate travel, and unforgettable escapes.",
-    externalUrl: "https://iceexotics.com/",
-    externalLabel: "Visit ICE Exotics",
-    features: [
-      "Hand-selected exotic & luxury fleet",
-      "White-glove delivery & concierge",
-      "Chauffeur and self-drive options",
-      "Corporate & event partnerships",
-    ],
-  },
-  {
     slug: "events-entertainment",
-    index: "02",
+    index: "01",
     name: "Events & Entertainment",
     tag: "Experiences",
     short: "Motivational speaking, red-carpet appearances, and hit-show productions with Jewell.",
@@ -37,7 +19,7 @@ export const DIVISIONS = [
   },
   {
     slug: "self-care",
-    index: "03",
+    index: "02",
     name: "Self-Care",
     tag: "Wellness",
     short: "Jewells Herbal Magic Blend — a handcrafted herbal tea to nourish, heal & restore.",
@@ -53,7 +35,7 @@ export const DIVISIONS = [
   },
   {
     slug: "restaurant-chains",
-    index: "04",
+    index: "03",
     name: "Restaurant Chains",
     tag: "Franchise",
     short: "A turnkey franchise model — own a signature dining concept backed by the enterprise.",
@@ -81,6 +63,24 @@ export const DIVISIONS = [
     ctaTitle: "Own a franchise",
     ctaText: "Request our franchise information kit and discover the territories available in your region.",
     ctaButton: "Request Franchise Info",
+  },
+  {
+    slug: "luxury-car-rentals",
+    index: "04",
+    name: "Luxury Car Rentals",
+    tag: "Automotive",
+    short: "An elite fleet of exotic and luxury vehicles for those who move differently.",
+    image: "https://images.pexels.com/photos/94272/sports-car-pkw-auto-vehicle-94272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    hero: "https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    intro: "Arrival is a statement. Our curated collection of exotic and premium automobiles delivers unrivaled performance and presence for weddings, corporate travel, and unforgettable escapes.",
+    externalUrl: "https://iceexotics.com/",
+    externalLabel: "Visit ICE Exotics",
+    features: [
+      "Hand-selected exotic & luxury fleet",
+      "White-glove delivery & concierge",
+      "Chauffeur and self-drive options",
+      "Corporate & event partnerships",
+    ],
   },
   {
     slug: "philanthropy",
