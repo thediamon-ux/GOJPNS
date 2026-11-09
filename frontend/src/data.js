@@ -8,6 +8,7 @@ export const DIVISIONS = [
     tag: "Experiences",
     short: "Motivational speaking, red-carpet appearances, and hit-show productions with Jewell.",
     image: "/event-jpns-flyer.jpg",
+    focus: "object-[20%_15%]",
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
     intro: "From intimate soirées to headline productions, we design and stage experiences that linger long after the lights dim — every detail choreographed, every moment intentional.",
     features: [
@@ -89,6 +90,7 @@ export const DIVISIONS = [
     tag: "Impact",
     short: "The heart of the enterprise — lifting communities, women, and children worldwide.",
     image: "/phil-kids.jpg",
+    focus: "object-[50%_30%]",
     hero: "/phil-family.jpg",
     intro: "Legacy is measured in lives changed. Through our philanthropic arm we channel resources into orphanages, women's empowerment, and community programs — turning success into shared prosperity.",
     features: [

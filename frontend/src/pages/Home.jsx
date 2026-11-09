@@ -145,7 +145,7 @@ export default function Home() {
                 <Link to={`/divisions/${d.slug}`} data-testid={`dba-card-${d.slug}`}
                   className="group relative block overflow-hidden h-[340px] md:h-[420px] border border-white/10 hover:border-gold/40 transition-colors duration-500">
                   <img src={d.image} alt={d.name} loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out" />
+                    className={`absolute inset-0 w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out ${d.focus || "object-center"}`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-void via-void/50 to-transparent" />
                   <div className="absolute inset-0 bg-vividp/0 group-hover:bg-vividp/28 transition-colors duration-500" />
                   <div className="relative h-full flex flex-col justify-between p-8">

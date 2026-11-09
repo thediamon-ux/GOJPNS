@@ -118,9 +118,11 @@ export default function Shop() {
             </div>
             <div className="flex flex-wrap gap-6 text-xs text-lightgray">
               <span className="inline-flex items-center gap-2"><Truck size={14} color="#D4AF37" strokeWidth={1.5} /> Ships within the US</span>
-              <span className="inline-flex items-center gap-2"><ShieldCheck size={14} color="#D4AF37" strokeWidth={1.5} /> Secure checkout by Stripe</span>
               <span className="inline-flex items-center gap-2"><Leaf size={14} color="#D4AF37" strokeWidth={1.5} /> Caffeine free</span>
             </div>
+            <p className="mt-4 inline-flex items-center gap-2 text-xs text-lightgray/70">
+              <ShieldCheck size={14} color="#D4AF37" strokeWidth={1.5} /> Secure checkout by Stripe
+            </p>
           </Reveal>
         </div>
       </section>

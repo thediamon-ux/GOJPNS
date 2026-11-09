@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import axios from "axios";
+import { toast } from "sonner";
 import {
   ArrowLeft, ArrowUpRight, HeartPulse, Leaf, Wind, Brain,
-  Salad, Gem, Scale, Zap, Sparkles, Heart,
+  Salad, Gem, Scale, Zap, Sparkles, Heart, Quote, Star,
 } from "lucide-react";
 import { Reveal, Overline, MaskedLines } from "../components/Reveal";
 import { Diamond } from "../components/Motifs";
+import { API } from "../data";
 
 const PRODUCT_IMG = "/jewells-herbal-blend.jpg";
 
@@ -46,10 +49,30 @@ const CREED = [
   "Small batch. Ethically sourced. Sustainably packaged.",
 ];
 
+const TESTIMONIALS = [
+  { quote: "I replaced my afternoon coffee with the Herbal Magic Blend. Two weeks in, my energy is steadier and my mind is clearer — no crash, just calm focus.", name: "Denise W.", tag: "Daily sipper" },
+  { quote: "The blend settled my digestion within days. You can taste the care in every cup — it's become my evening ritual.", name: "Marcus T.", tag: "Wellness convert" },
+  { quote: "As a nurse on long shifts, this tea is my reset. It soothes, restores, and reminds me to pour back into myself.", name: "Angela R.", tag: "Night-shift nurse" },
+];
+
 export default function SelfCare() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const [buying, setBuying] = useState(false);
+
+  const buyNow = async () => {
+    setBuying(true);
+    try {
+      const { data } = await axios.post(`${API}/payments/checkout`, {
+        lookup_key: "herbal_blend_tin", quantity: 1, origin_url: window.location.origin,
+      });
+      window.location.href = data.checkout_url;
+    } catch {
+      toast.error("Could not start checkout. Please try again.");
+      setBuying(false);
+    }
+  };
 
   return (
     <div data-testid="self-care-page">
@@ -82,13 +105,17 @@ export default function SelfCare() {
             </Reveal>
             <Reveal delay={0.6}>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" data-testid="wellness-order-btn" className="group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">
-                  Enquire to Order <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </Link>
+                <button onClick={buyNow} disabled={buying} data-testid="wellness-order-btn" className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors disabled:opacity-50">
+                  {buying ? "Redirecting…" : "Buy Now"} <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </button>
                 <a href="#ingredients" className="inline-flex items-center gap-3 border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">
                   View Ingredients
                 </a>
               </div>
+              <p className="mt-5 text-sm text-lightgray">
+                Looking for larger or wholesale orders?{" "}
+                <Link to="/contact" data-testid="wellness-bulk-link" className="text-gold underline underline-offset-4 hover:text-white transition-colors">Click here to enquire to order</Link>
+              </p>
             </Reveal>
           </div>
 
@@ -174,6 +201,35 @@ export default function SelfCare() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="wellness-testimonials">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <Reveal><Overline className="mb-6">Reviews</Overline></Reveal>
+            <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">Loved by every <span className="italic gold-shimmer">sip</span>.</h2></Reveal>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-3 gap-px bg-gold/15 border border-gold/15">
+          {TESTIMONIALS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 0.08}>
+              <figure className="bg-[#0d1410] p-8 h-full flex flex-col group hover:bg-emerald-950/60 transition-colors duration-500">
+                <Quote size={24} color="#D4AF37" strokeWidth={1.2} className="mb-6" />
+                <blockquote className="font-serif text-lg leading-relaxed text-white/95 flex-1">“{t.quote}”</blockquote>
+                <figcaption className="mt-8 pt-6 border-t border-gold/15">
+                  <div className="flex gap-1 mb-3">
+                    {Array.from({ length: 5 }).map((_, s) => (
+                      <Star key={s} size={14} color="#D4AF37" fill="#D4AF37" strokeWidth={1} />
+                    ))}
+                  </div>
+                  <p className="text-sm text-white">{t.name}</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-emerald-300/70 mt-1">{t.tag}</p>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* CREED BAND */}
       <section className="py-8 max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid md:grid-cols-3 gap-px bg-gold/15 border-y border-gold/15">
@@ -197,11 +253,17 @@ export default function SelfCare() {
             <div className="relative">
               <Heart size={30} color="#D4AF37" strokeWidth={1.2} className="mx-auto mb-6" />
               <h2 className="font-serif text-3xl md:text-5xl mb-6 max-w-2xl mx-auto">You deserve to <span className="italic gold-shimmer">feel magic</span>.</h2>
-              <p className="text-lightgray max-w-lg mx-auto mb-10 leading-relaxed">Handcrafted in small batches and ethically sourced. Reach out to order the Herbal Magic Blend or explore a wellness partnership.</p>
+              <p className="text-lightgray max-w-lg mx-auto mb-10 leading-relaxed">Handcrafted in small batches and ethically sourced. Order your tin today — or reach out for larger orders and wellness partnerships.</p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link to="/contact" className="bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">Enquire to Order</Link>
+                <button onClick={buyNow} disabled={buying} data-testid="wellness-cta-buy-btn" className="btn-shine bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors disabled:opacity-50">
+                  {buying ? "Redirecting…" : "Buy Now"}
+                </button>
                 <Link to="/partner" className="border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">Partner With Us</Link>
               </div>
+              <p className="mt-6 text-sm text-lightgray/80">
+                Looking for larger or wholesale orders?{" "}
+                <Link to="/contact" className="text-gold underline underline-offset-4 hover:text-white transition-colors">Click here to enquire to order</Link>
+              </p>
             </div>
           </div>
         </Reveal>

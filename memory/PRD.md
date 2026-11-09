@@ -32,7 +32,14 @@ void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair 
 
 ## Implemented (2026-07)
 - Division order changed site-wide (single source: `DIVISIONS` in `frontend/src/data.js`): 01 Events & Entertainment, 02 Self-Care, 03 Restaurant Chains, 04 Luxury Car Rentals, 05 Philanthropy. Applies to Home "Five worlds. One standard." cards, Divisions page rows, footer links, and DivisionDetail next/prev nav.
-- Divisions page Philanthropy card image: `object-[50%_30%]` anchor so faces in phil-kids.jpg are not cropped (per-page override in `Divisions.jsx`).
+
+## Implemented (2026-07-09, batch 2)
+- Self-Care page: "Enquire to Order" replaced with **Buy Now** button (hero + bottom CTA) that creates a Stripe Checkout session directly (`POST /api/payments/checkout`, qty 1, `herbal_blend_tin`) and redirects. Added "Looking for larger or wholesale orders? Click here to enquire to order" link → /contact under both buttons.
+- Self-Care page: new Reviews/Testimonials section ("Loved by every sip.") with 3 sample 5-star testimonial cards (placeholder content — swap with real reviews when provided).
+- Shop page: "Secure checkout by Stripe" moved to its own line beneath "Ships within the US · Caffeine free".
+- Contact page: removed Headquarters and Hours rows (online-only business); Email + Phone remain.
+- Face cropping: added per-division `focus` (object-position) field in `data.js`; Home cards and Divisions rows consume it. Events flyer = `object-[20%_15%]` (full face visible), Philanthropy = `object-[50%_30%]`.
+- Verified: screenshots of Self-Care hero/testimonials, Home events card, Shop badges, Contact; Stripe session curl returns live checkout_url.
 
 ## Backlog / Remaining
 - P1: Final tea price from user to replace $25 placeholder (`backend/setup_stripe.py`, `Shop.jsx`)
