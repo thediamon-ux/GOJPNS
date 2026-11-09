@@ -11,6 +11,9 @@ import Divisions from "@/pages/Divisions";
 import DivisionDetail from "@/pages/DivisionDetail";
 import SelfCare from "@/pages/SelfCare";
 import EventsEntertainment from "@/pages/EventsEntertainment";
+import Shop from "@/pages/Shop";
+import PaymentSuccess from "@/pages/PaymentSuccess";
+import PaymentCancel from "@/pages/PaymentCancel";
 import Impact from "@/pages/Impact";
 import Contact from "@/pages/Contact";
 import Partner from "@/pages/Partner";
@@ -50,6 +53,9 @@ function App() {
             <Route path="/divisions/events-entertainment" element={<EventsEntertainment />} />
             <Route path="/divisions/:slug" element={<DivisionDetail />} />
             <Route path="/impact" element={<Impact />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/payment/success" element={<PaymentSuccess />} />
+            <Route path="/payment/cancel" element={<PaymentCancel />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/partner" element={<Partner />} />
           </Routes>
