@@ -40,7 +40,7 @@ void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair 
 - Contact page: removed Headquarters and Hours rows (online-only business); Email + Phone remain.
 - Face cropping: added per-division `focus` (object-position) field in `data.js`; Home cards and Divisions rows consume it. Events flyer = `object-[20%_15%]` (full face visible), Philanthropy = `object-[50%_30%]`.
 ## Implemented (2026-07-10, batch 8 — Final homepage polish)
-- Car card brightened (brightness-[1.3] override per card via `bright` field in HOME_CARDS). NOTE: no user-approved vehicle photo exists in assets; if user uploads an actual ICE Exotics vehicle photo, swap `luxury-car-rentals` image in data.js.
+- Car card brightened (brightness override added then removed when real photo arrived). User-supplied Mercedes G63 AMG photo saved as `/car-g63.jpg` — now the Luxury Car Rentals card image AND division detail hero (data.js); card focus `object-[50%_65%]`.
 - Wellness card focus `object-[32%_50%]` — jar label + steaming cup both clearly visible.
 - Consistent scrim on all cards: from-[#140321]/90 via-[#140321]/15 to-[#140321]/95 behind headings/captions.
 - Founder signature: soft black blur glow behind script + stronger drop shadows; photo untouched.
