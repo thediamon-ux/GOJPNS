@@ -48,7 +48,7 @@ export default function PaymentSuccess() {
             <Crown size={48} className="mx-auto mb-6" />
             <CheckCircle2 size={40} color="#D4AF37" className="mx-auto mb-6" />
             <h1 className="font-serif text-3xl md:text-4xl mb-4">Thank you — <span className="italic gold-shimmer">order confirmed!</span></h1>
-            <p className="text-lightgray mb-10">Your Jewells Herbal Magic Blend is on its way. A receipt has been sent to your email, and we'll ship to the address you provided.</p>
+            <p className="text-lightgray mb-10">Your Jewell's Herbal Magic Blend is on its way. A receipt has been sent to your email, and we'll ship to the address you provided.</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/" className="bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">Back Home</Link>
               <Link to="/shop" className="border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">Order More</Link>

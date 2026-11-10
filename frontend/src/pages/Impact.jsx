@@ -5,6 +5,7 @@ import { Reveal, Overline } from "../components/Reveal";
 import { Counter } from "../components/Counter";
 import { EditorialMarquee } from "../components/EditorialMarquee";
 import { Crown, Diamond } from "../components/Motifs";
+import { Seo } from "../components/Seo";
 
 const METRICS = [
   { v: 300, s: "+", l: "Kids' Lives Impacted" },
@@ -22,6 +23,7 @@ const INITIATIVES = [
 export default function Impact() {
   return (
     <div>
+      <Seo title="Our Impact — JPNS Enterprises LLC" description="Impact is the truest measure of a legacy: orphanage support, women's empowerment, and community outreach from Athi River, Kenya to home." />
       <PageHeader
         testid="impact-header"
         overline="Our Impact"

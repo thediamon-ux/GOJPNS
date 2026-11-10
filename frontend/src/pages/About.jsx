@@ -2,6 +2,7 @@ import { PageHeader } from "../components/PageHeader";
 import { Reveal, Overline } from "../components/Reveal";
 import { EditorialMarquee } from "../components/EditorialMarquee";
 import { Crown } from "../components/Motifs";
+import { Seo } from "../components/Seo";
 
 const VALUES = [
   { t: "Excellence", d: "We refuse the ordinary. Every division operates at the highest standard of craft and care." },
@@ -13,6 +14,7 @@ const VALUES = [
 export default function About() {
   return (
     <div>
+      <Seo title="About Us — JPNS Enterprises LLC" description="The story of JPNS Enterprises LLC and founder Jewell Proby Shine — a diversified luxury enterprise built on strength, vision, and legacy, giving back to communities worldwide." />
       <PageHeader
         testid="about-header"
         overline="About Us"
@@ -61,14 +63,35 @@ export default function About() {
           </h2>
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-8">Founder &amp; Chief Executive Officer</p>
           <div className="space-y-5 text-lightgray leading-relaxed max-w-xl">
-            <p>Jewell Proby Shine founded JPNS Enterprisess LLC on a singular conviction: that ambition and compassion belong together. Under her leadership, the enterprise has grown into a family of distinct luxury brands — each held to an uncompromising standard, each built to give back.</p>
-            <p>A believer in the power of women to lead and to lift others, Jewell champions mentorship, opportunity, and community at every level of the organization. Her vision turns every venture into a vehicle for impact — proving that a legacy is measured not by what you build, but by whom you raise along the way.</p>
+            <p>Jewell Proby Shine founded JPNS Enterprises LLC on a singular conviction: that ambition and compassion belong together. Under her leadership, the enterprise has grown into a family of distinct luxury brands — each held to an uncompromising standard, each built to give back.</p>
+            <p>A believer in the power of women to lead and to lift others, Jewell champions mentorship, opportunity, and community at every level of the organization. From orphanage support in Athi River, Kenya to women's empowerment initiatives at home, her leadership turns every venture into a vehicle for impact — proving that a legacy is measured not by what you build, but by whom you raise along the way.</p>
           </div>
           <div className="mt-10 flex items-center gap-4">
             <Crown size={30} />
             <span className="font-serif italic text-xl text-white/80">Strength. Vision. Legacy.</span>
           </div>
         </Reveal>
+      </section>
+
+      {/* STRENGTH · VISION · LEGACY */}
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="about-creed">
+        <Reveal><Overline className="mb-6">The Creed</Overline></Reveal>
+        <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16 leading-[1.05]">What <span className="italic gold-shimmer">Strength. Vision. Legacy.</span> means to us.</h2></Reveal>
+        <div className="grid md:grid-cols-3 gap-px bg-gold/15">
+          {[
+            { t: "Strength", d: "Leadership, resilience, and the confidence to build — an enterprise that stands firm through every season and sets the standard in every industry it enters." },
+            { t: "Vision", d: "Innovation and entrepreneurship — seeing opportunity where others see limits, and turning bold ideas into exceptional experiences and growing businesses." },
+            { t: "Legacy", d: "Generational impact — empowering women, uplifting children, and giving back to the communities that make our success possible." },
+          ].map((v, i) => (
+            <Reveal key={v.t} delay={i * 0.1}>
+              <div className="bg-[#150621] p-10 h-full group hover:bg-deepp/60 transition-colors duration-500">
+                <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">0{i + 1}</span>
+                <h3 className="font-serif text-3xl mt-6 mb-4">{v.t}</h3>
+                <p className="text-lightgray text-sm leading-relaxed">{v.d}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* MISSION / VISION */}

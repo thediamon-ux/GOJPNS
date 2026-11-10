@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import { Reveal, Overline, MaskedLines } from "../components/Reveal";
 import { Diamond, Crown } from "../components/Motifs";
+import { Seo } from "../components/Seo";
 
 const ROLES = [
   { icon: Mic, t: "Motivational Speaker", d: "Keynotes and talks that move rooms and ignite purpose." },
@@ -38,6 +39,7 @@ const TOPICS = [
 export default function EventsEntertainment() {
   return (
     <div data-testid="events-page">
+      <Seo title="Events & Entertainment — JPNS Enterprises LLC" description="Book Jewell Proby Shine: motivational speaking, event hosting, red-carpet appearances and executive production under JPNS Events & Entertainment." />
       {/* HERO */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute -top-24 right-0 w-[620px] h-[620px] rounded-full bg-vividp/45 blur-[170px] pointer-events-none" />

@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Reveal, Overline, MaskedLines } from "../components/Reveal";
 import { Diamond } from "../components/Motifs";
+import { Seo } from "../components/Seo";
 import { API } from "../data";
 
 const PRODUCT_IMG = "/jewells-herbal-blend.jpg";
@@ -76,6 +77,7 @@ export default function SelfCare() {
 
   return (
     <div data-testid="self-care-page">
+      <Seo title="Jewell's Herbal Magic Blend — JPNS Self-Care" description="Jewell's Herbal Magic Blend: a handcrafted, caffeine-free herbal tea of 16 intentional botanicals, made to nourish, heal and restore. Body, mind and spirit." />
       {/* HERO */}
       <section ref={ref} className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute -top-20 right-0 w-[560px] h-[560px] rounded-full bg-emerald-900/40 blur-[160px] pointer-events-none" />
@@ -89,7 +91,7 @@ export default function SelfCare() {
             </Reveal>
             <Reveal delay={0.05}><Overline className="mb-6">Self-Care · Wellness</Overline></Reveal>
             <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[0.92] tracking-tight mb-6" data-testid="wellness-heading">
-              <MaskedLines delay={0.15} lines={[<span key="1">Jewells</span>, <span key="2" className="italic gold-shimmer">Herbal Magic</span>, <span key="3">Blend</span>]} />
+              <MaskedLines delay={0.15} lines={[<span key="1">Jewell's</span>, <span key="2" className="italic gold-shimmer">Herbal Magic</span>, <span key="3">Blend</span>]} />
             </h1>
             <Reveal delay={0.4}>
               <p className="text-lightgray text-lg leading-relaxed max-w-md mb-8">
@@ -122,7 +124,7 @@ export default function SelfCare() {
           <Reveal delay={0.2}>
             <motion.div style={{ y }} className="relative">
               <div className="absolute -inset-3 border border-gold/30 pointer-events-none" />
-              <img src={PRODUCT_IMG} alt="Jewells Herbal Magic Blend handcrafted herbal tea label"
+              <img src={PRODUCT_IMG} alt="Jewell's Herbal Magic Blend handcrafted herbal tea label"
                 className="relative w-full object-cover shadow-2xl shadow-black/60" />
             </motion.div>
           </Reveal>

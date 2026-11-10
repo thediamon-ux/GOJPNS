@@ -39,7 +39,15 @@ void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair 
 - Shop page: "Secure checkout by Stripe" moved to its own line beneath "Ships within the US · Caffeine free".
 - Contact page: removed Headquarters and Hours rows (online-only business); Email + Phone remain.
 - Face cropping: added per-division `focus` (object-position) field in `data.js`; Home cards and Divisions rows consume it. Events flyer = `object-[20%_15%]` (full face visible), Philanthropy = `object-[50%_30%]`.
-- Verified: screenshots of Self-Care hero/testimonials, Home events card, Shop badges, Contact; Stripe session curl returns live checkout_url.
+## Implemented (2026-07-09, batch 3 — Luxury Redesign & Enhancement)
+- (batch 2 verified: screenshots of Self-Care hero/testimonials, Home events card, Shop badges, Contact; Stripe session curl returns live checkout_url.)
+- Division order changed site-wide per user: 01 Self-Care, 02 Events & Entertainment, 03 Restaurant Chains, 04 Luxury Car Rentals, 05 Philanthropy (`DIVISIONS` in `data.js`; propagates to Home, Divisions, Footer, DivisionDetail nav).
+- Product renamed site-wide to **Jewell's Herbal Magic Blend** (SelfCare, Shop, PaymentSuccess, data.js, setup_stripe.py; Stripe product `prod_Vb7qdmKbYPWjkR` renamed via API).
+- Home hero description updated to brief copy: "An enterprise built on ambition, elevated by exceptional experiences…"
+- About: fixed "Enterprisess" typo; founder bio expanded (Athi River Kenya, women's empowerment); new "The Creed" section explaining Strength / Vision / Legacy.
+- SEO pack (farm-seo-setup): static head completed in `public/index.html` (robots meta, og:site_name/locale/image, Twitter card, Organization JSON-LD with founder Person — all confirmed facts only, no ratings/prices); real `<noscript>` content fallback; `public/robots.txt` (AI crawler group + Disallow /api/), `public/sitemap.xml` (12 routes, gojpns.net), `public/llms.txt`; new `src/components/Seo.jsx` (dependency-free per-route title/description) added to all 10 pages.
+- Verified: per-route titles in DOM, card order, JSON-LD parses, robots/sitemap/llms serve as real files, no preview-host leaks.
+- PENDING: user to upload real tea product photos (glass jar, cream-and-gold label, tea cup, pyramid tea bag) — current label image kept until then. Live site needs redeploy + "Search Engine Crawling" toggle ON for SEO to take effect.
 
 ## Backlog / Remaining
 - P1: Final tea price from user to replace $25 placeholder (`backend/setup_stripe.py`, `Shop.jsx`)

@@ -6,6 +6,7 @@ import { MaskedLines, Reveal, Overline } from "../components/Reveal";
 import { EditorialMarquee } from "../components/EditorialMarquee";
 import { Crown, Diamond } from "../components/Motifs";
 import { DIVISIONS } from "../data";
+import { Seo } from "../components/Seo";
 
 const PILLARS = [
   { n: "01", t: "Strength", d: "A diversified enterprise built on resilience, discipline, and an unshakeable standard of excellence." },
@@ -35,6 +36,7 @@ export default function Home() {
 
   return (
     <div>
+      <Seo title="JPNS Enterprises LLC — Strength. Vision. Legacy." description="A diversified enterprise of luxury car rentals, events and entertainment, self-care wellness, restaurant chains, and philanthropy led by Jewell Proby Shine." />
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden pb-16 pt-32" data-testid="hero">
         <HeroBg />
@@ -49,7 +51,7 @@ export default function Home() {
               </h1>
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }}
                 className="mt-10 max-w-md text-lightgray text-lg leading-relaxed">
-                A diversified enterprise of luxury brands, unforgettable experiences, and world-changing philanthropy. One enterprise. Unlimited impact.
+                An enterprise built on ambition, elevated by exceptional experiences, and driven by a commitment to empower communities and create lasting impact.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.15, duration: 0.8 }}
                 className="mt-8 flex flex-wrap gap-4">

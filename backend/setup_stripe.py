@@ -16,7 +16,7 @@ PLACEHOLDER_AMOUNT = 2500
 CATALOG = [
     {
         "emergent_product_id": "herbal_magic_blend",
-        "name": "Jewells Herbal Magic Blend",
+        "name": "Jewell's Herbal Magic Blend",
         "tax_code": "txcd_99999999",  # physical goods
         "prices": [
             {"lookup_key": "herbal_blend_tin", "amount": PLACEHOLDER_AMOUNT, "currency": "usd"},

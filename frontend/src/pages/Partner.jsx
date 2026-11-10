@@ -6,6 +6,7 @@ import { PageHeader } from "../components/PageHeader";
 import { Reveal, Overline } from "../components/Reveal";
 import { Crown } from "../components/Motifs";
 import { API } from "../data";
+import { Seo } from "../components/Seo";
 
 const BENEFITS = [
   "Access to a diversified portfolio of luxury brands",
@@ -35,6 +36,7 @@ export default function Partner() {
 
   return (
     <div>
+      <Seo title="Partner With Us — JPNS Enterprises LLC" description="Explore partnerships with JPNS Enterprises LLC — a diversified luxury enterprise spanning events, wellness, hospitality, automotive, and philanthropy." />
       <PageHeader
         testid="partner-header"
         overline="Partner With Us"

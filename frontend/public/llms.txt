@@ -1,0 +1,18 @@
+# JPNS Enterprises LLC
+
+A diversified enterprise spanning luxury brands, experiences, entertainment, wellness, hospitality, and philanthropy. Founded and led by Jewell Proby Shine. Motto: Strength. Vision. Legacy.
+
+## Pages
+
+- Home (/) — brand statement and overview of the five divisions
+- About (/about) — company story, founder biography, mission, vision, values
+- Divisions (/divisions) — overview of all five divisions
+- Self-Care (/divisions/self-care) — Jewell's Herbal Magic Blend, a handcrafted caffeine-free herbal tea of 16 botanicals
+- Events & Entertainment (/divisions/events-entertainment) — motivational speaking, event hosting, and production portfolio
+- Restaurant Chains (/divisions/restaurant-chains) — turnkey dining franchise concept
+- Luxury Car Rentals (/divisions/luxury-car-rentals) — exotic and luxury vehicle rentals
+- Philanthropy (/divisions/philanthropy) — orphanage support, women's empowerment, and community outreach including work in Athi River, Kenya
+- Impact (/impact) — community impact metrics and initiatives
+- Shop (/shop) — purchase Jewell's Herbal Magic Blend
+- Contact (/contact) — enquiries: info@gojpns.net, phone 678.572.2368
+- Partner With Us (/partner) — partnership enquiries

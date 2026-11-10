@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { ArrowUpRight, Minus, Plus, CreditCard, Smartphone, DollarSign, Truck, Leaf, ShieldCheck } from "lucide-react";
 import { Reveal, Overline } from "../components/Reveal";
 import { Diamond } from "../components/Motifs";
+import { Seo } from "../components/Seo";
 import { API } from "../data";
 
 const HIGHLIGHTS = [
@@ -47,6 +48,7 @@ export default function Shop() {
 
   return (
     <div data-testid="shop-page">
+      <Seo title="Shop Jewell's Herbal Magic Blend — JPNS Enterprises" description="Order Jewell's Herbal Magic Blend online: a handcrafted, caffeine-free herbal tea. Secure checkout with Apple Pay, card, or Cash App. Ships within the US." />
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute -top-24 right-0 w-[600px] h-[600px] rounded-full bg-vividp/40 blur-[170px] pointer-events-none" />
         <div className="absolute top-1/3 -left-32 w-[460px] h-[460px] rounded-full bg-emerald-900/40 blur-[150px] pointer-events-none" />
@@ -55,7 +57,7 @@ export default function Shop() {
           <Reveal>
             <div className="relative">
               <div className="absolute -inset-3 border border-gold/40 pointer-events-none" />
-              <img src="/jewells-herbal-blend.jpg" alt="Jewells Herbal Magic Blend"
+              <img src="/jewells-herbal-blend.jpg" alt="Jewell's Herbal Magic Blend"
                 className="relative w-full object-cover shadow-2xl shadow-black/60" />
             </div>
           </Reveal>
@@ -64,7 +66,7 @@ export default function Shop() {
           <Reveal delay={0.12}>
             <Overline className="mb-6">Shop the Tea</Overline>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[0.98] mb-4" data-testid="shop-heading">
-              Jewells <span className="italic gold-shimmer">Herbal Magic</span> Blend
+              Jewell's <span className="italic gold-shimmer">Herbal Magic</span> Blend
             </h1>
             <p className="text-lightgray leading-relaxed max-w-md mb-6">
               A powerful handcrafted herbal tea — rooted in nature, made to nourish, heal &amp; restore. Body · Mind · Spirit.

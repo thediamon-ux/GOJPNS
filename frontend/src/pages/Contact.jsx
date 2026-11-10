@@ -5,6 +5,7 @@ import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { PageHeader } from "../components/PageHeader";
 import { Reveal, Overline } from "../components/Reveal";
 import { SOCIALS, API } from "../data";
+import { Seo } from "../components/Seo";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
@@ -27,6 +28,7 @@ export default function Contact() {
 
   return (
     <div>
+      <Seo title="Contact — JPNS Enterprises LLC" description="Start a conversation with JPNS Enterprises LLC — inquiries, bookings and orders. Email info@gojpns.net or call 678.572.2368." />
       <PageHeader
         testid="contact-header"
         overline="Contact"

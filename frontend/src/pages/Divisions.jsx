@@ -3,10 +3,12 @@ import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "../components/PageHeader";
 import { Reveal } from "../components/Reveal";
 import { DIVISIONS } from "../data";
+import { Seo } from "../components/Seo";
 
 export default function Divisions() {
   return (
     <div>
+      <Seo title="Our Divisions — JPNS Enterprises LLC" description="Five divisions, one legacy: Self-Care, Events & Entertainment, Restaurant Chains, Luxury Car Rentals, and Philanthropy — each held to a single standard of excellence." />
       <PageHeader
         testid="divisions-header"
         overline="Our DBAs"

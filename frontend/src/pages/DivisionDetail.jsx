@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { Reveal, Overline } from "../components/Reveal";
 import { Diamond } from "../components/Motifs";
 import { DIVISIONS } from "../data";
+import { Seo } from "../components/Seo";
 
 export default function DivisionDetail() {
   const { slug } = useParams();
@@ -19,6 +20,7 @@ export default function DivisionDetail() {
 
   return (
     <div data-testid="division-detail">
+      <Seo title={`${d.name} — JPNS Enterprises LLC`} description={d.short} />
       {/* HERO */}
       <section ref={ref} className="relative h-[85vh] min-h-[560px] flex items-end overflow-hidden">
         <motion.img style={{ y }} src={d.hero} alt={d.name}
