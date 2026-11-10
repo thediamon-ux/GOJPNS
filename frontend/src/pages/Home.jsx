@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Leaf, Mic, UtensilsCrossed, Car, Heart } from "lucide-react";
+import { ArrowRight, Leaf, Mic, UtensilsCrossed, Car, Heart } from "lucide-react";
 import { MaskedLines, Reveal, Overline } from "../components/Reveal";
 import { EditorialMarquee } from "../components/EditorialMarquee";
 import { Crown, Diamond } from "../components/Motifs";
@@ -14,19 +14,21 @@ const PILLARS = [
   { n: "03", t: "Legacy", d: "Success measured not in profit alone, but in lives lifted and communities transformed." },
 ];
 
-const DIVISION_ICONS = {
-  "self-care": Leaf,
-  "events-entertainment": Mic,
-  "restaurant-chains": UtensilsCrossed,
-  "luxury-car-rentals": Car,
-  "philanthropy": Heart,
-};
+const HOME_CARDS = [
+  { slug: "self-care", title: "Wellness", product: "Jewell's Herbal Magic Blend", caption: "Herbal Teas · Self-Care · Restoration", icon: Leaf },
+  { slug: "luxury-car-rentals", title: "Luxury Car Rentals", caption: "Premium Vehicles · Signature Experiences", icon: Car },
+  { slug: "restaurant-chains", title: "Restaurant Chains", caption: "Dining Experiences · Food · Hospitality", icon: UtensilsCrossed },
+  { slug: "events-entertainment", title: "Events & Entertainment", caption: "Speaking · Productions · Live Events", icon: Mic },
+  { slug: "philanthropy", title: "Philanthropy", caption: "Women · Children · Community Impact", icon: Heart },
+];
 
 const HeroBg = () => (
   <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#2B0B3D] via-[#6B1FAF] to-[#140321]">
     <div className="absolute -top-32 right-0 w-[720px] h-[720px] rounded-full bg-vividp/50 blur-[160px]" />
     <div className="absolute bottom-0 -left-32 w-[520px] h-[520px] rounded-full bg-deepp/70 blur-[150px]" />
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(212,175,55,0.12),transparent_55%)]" />
+    <div className="absolute -left-56 top-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full border-2 border-gold/35 pointer-events-none" />
+    <div className="absolute -left-72 top-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-gold/20 pointer-events-none" />
   </div>
 );
 
@@ -37,44 +39,72 @@ export default function Home() {
     <div>
       <Seo title="JPNS Enterprises LLC — Strength. Vision. Legacy." description="A diversified enterprise of luxury car rentals, events and entertainment, self-care wellness, restaurant chains, and philanthropy led by Jewell Proby Shine." />
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-gold/20" data-testid="hero">
+      <section className="relative overflow-hidden border-b border-gold/20" data-testid="hero">
         <HeroBg />
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-                <Overline className="mb-8">JPNS Enterprises LLC</Overline>
-              </motion.div>
-              <h1 className="font-serif font-bold text-white text-5xl sm:text-6xl lg:text-6xl leading-[1.05] tracking-tight" data-testid="hero-heading">
-                <MaskedLines delay={0.35} lines={["Strength.", "Vision.", <em key="l" className="italic gold-shimmer inline-block pr-2">Legacy.</em>]} />
-              </h1>
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }}
-                className="mt-10 max-w-md text-lightgray text-lg leading-relaxed">
-                A diversified enterprise of luxury brands, wellness solutions, unforgettable experiences, and world-changing philanthropy — built to empower, uplift, and give back.
-              </motion.p>
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.15, duration: 0.8 }}
-                className="mt-8 flex flex-wrap gap-4">
-                <Link to="/divisions" data-testid="hero-explore-btn" className="btn-shine group inline-flex items-center justify-center gap-2 bg-gold text-black font-semibold text-sm tracking-wide px-8 py-3.5 rounded-full hover:bg-[#E5C158] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
-                  Explore Divisions <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </Link>
-                <Link to="/partner" data-testid="hero-partner-btn" className="inline-flex items-center justify-center gap-3 border border-gold text-gold font-semibold text-sm tracking-widest uppercase px-8 py-3.5 rounded-full hover:bg-gold/10 transition-all duration-300">
-                  Partner With Us
-                </Link>
-              </motion.div>
-            </div>
-
-            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative">
-              <div className="relative rounded-2xl overflow-hidden border border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-                <img src="/jewell-sitting.jpg" alt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
-                  className="w-full h-[420px] sm:h-[520px] lg:h-[600px] object-cover object-top" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#140321]/90 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-6 left-6 right-6 z-10 backdrop-blur-md bg-black/40 border border-gold/20 p-4 rounded-xl flex items-center justify-between gap-4">
-                  <span className="font-serif italic text-gold text-xl sm:text-2xl tracking-wide">Jewell Proby Shine</span>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-gray-300 font-medium">Founder &amp; CEO</span>
-                </div>
-              </div>
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full pt-32 pb-14 lg:pt-36 lg:pb-20">
+          <div className="lg:max-w-[46%]">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+              <Overline className="mb-8">JPNS Enterprises LLC</Overline>
             </motion.div>
+            <h1 className="font-serif font-bold text-white text-6xl sm:text-7xl lg:text-8xl leading-[0.95] tracking-tight" data-testid="hero-heading">
+              <MaskedLines delay={0.35} lines={["Strength.", "Vision.", <em key="l" className="italic gold-shimmer inline-block pr-2">Legacy.</em>]} />
+            </h1>
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }}
+              className="mt-10 max-w-md text-gray-200 text-base sm:text-lg leading-relaxed">
+              A diversified enterprise of luxury brands, wellness solutions, unforgettable experiences, and world-changing philanthropy — built to empower, uplift, and give back.
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.15, duration: 0.8 }}
+              className="mt-10 flex flex-wrap gap-4">
+              <Link to="/divisions" data-testid="hero-explore-btn" className="btn-shine group inline-flex items-center justify-center gap-3 bg-gold text-void font-semibold text-xs uppercase tracking-[0.2em] px-8 py-4 rounded-md hover:bg-[#E5C158] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
+                Explore Divisions <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link to="/partner" data-testid="hero-partner-btn" className="inline-flex items-center justify-center gap-3 border border-gold text-gold font-semibold text-xs uppercase tracking-[0.2em] px-8 py-4 rounded-md hover:bg-gold/10 transition-all duration-300">
+                Partner With Us
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+        <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative h-[440px] sm:h-[520px] lg:absolute lg:inset-y-0 lg:right-0 lg:w-[52%] lg:h-auto">
+          <img src="/jewell-sitting.jpg" alt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
+            className="w-full h-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2B0B3D] via-transparent to-transparent hidden lg:block" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#140321]/80 via-transparent to-transparent" />
+          <div className="absolute bottom-8 right-6 lg:right-10 z-10">
+            <div className="bg-[#2B0B3D]/70 backdrop-blur-md border border-gold/20 rounded-xl px-8 py-5 text-center">
+              <Crown size={22} className="mx-auto mb-2" />
+              <p className="text-gold text-3xl sm:text-4xl leading-tight" style={{ fontFamily: "'Great Vibes', cursive" }}>Jewell Proby Shine</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-gray-200 mt-2">Founder &amp; CEO</p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* DIVISION CARDS */}
+      <section ref={dbaRef} className="py-14 lg:py-20 bg-gradient-to-b from-[#140321] via-[#0d0218] to-transparent" data-testid="divisions-preview">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible">
+            {HOME_CARDS.map((c, i) => {
+              const d = DIVISIONS.find((x) => x.slug === c.slug);
+              const Icon = c.icon;
+              return (
+                <Reveal key={c.slug} delay={i * 0.06} className="min-w-[250px] sm:min-w-[280px] lg:min-w-0 snap-center">
+                  <Link to={`/divisions/${c.slug}`} data-testid={`dba-card-${c.slug}`}
+                    className="group flex flex-col overflow-hidden rounded-2xl border-2 border-gold/50 bg-[#1a0528]/90 hover:border-gold hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:-translate-y-2 transition-all duration-500 h-full">
+                    <div className="pt-6 pb-4 px-4 text-center">
+                      <Icon size={26} color="#D4AF37" strokeWidth={1.4} className="mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+                      <h3 className="font-serif text-xl text-white group-hover:text-gold transition-colors duration-300 leading-tight">{c.title}</h3>
+                      {c.product && <p className="font-serif italic text-gold/90 text-sm mt-1">{c.product}</p>}
+                    </div>
+                    <div className="relative h-44 overflow-hidden">
+                      <img src={d.image} alt={c.title} loading="lazy"
+                        className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out ${d.focus || "object-center"}`} />
+                    </div>
+                    <p className="py-3 px-3 text-center text-[10px] uppercase tracking-[0.12em] text-gold/80">{c.caption}</p>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -121,44 +151,6 @@ export default function Home() {
               Our Story <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </Reveal>
-        </div>
-      </section>
-
-      {/* DBA PREVIEW GRID */}
-      <section ref={dbaRef} className="py-28 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="divisions-preview">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <Reveal><Overline className="mb-6">Our Divisions</Overline></Reveal>
-            <Reveal delay={0.1}><h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05]">Five worlds.<br />One <span className="italic gold-shimmer">standard</span>.</h2></Reveal>
-          </div>
-          <Reveal delay={0.2}>
-            <Link to="/divisions" className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-gold hover:text-white transition-colors">
-              View All <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </Link>
-          </Reveal>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
-          {DIVISIONS.map((d, i) => {
-            const Icon = DIVISION_ICONS[d.slug] || Diamond;
-            return (
-              <Reveal key={d.slug} delay={i * 0.06}>
-                <Link to={`/divisions/${d.slug}`} data-testid={`dba-card-${d.slug}`}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-gold/30 bg-[#12041D]/80 hover:border-gold hover:shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:-translate-y-2 transition-all duration-500 min-h-[340px]">
-                  <div className="p-5 pb-0 flex flex-col items-start z-10">
-                    <span className="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-gold/10 border border-gold/20 mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <Icon size={18} color="#D4AF37" strokeWidth={1.5} />
-                    </span>
-                    <h3 className="font-serif text-xl text-white group-hover:text-gold transition-colors duration-300">{d.name}</h3>
-                  </div>
-                  <div className="relative w-full h-44 mt-4 overflow-hidden">
-                    <img src={d.image} alt={d.name} loading="lazy"
-                      className={`w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out ${d.focus || "object-center"}`} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-black/20 to-transparent" />
-                  </div>
-                </Link>
-              </Reveal>
-            );
-          })}
         </div>
       </section>
 
