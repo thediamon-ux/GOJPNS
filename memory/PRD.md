@@ -39,6 +39,13 @@ void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair 
 - Shop page: "Secure checkout by Stripe" moved to its own line beneath "Ships within the US · Caffeine free".
 - Contact page: removed Headquarters and Hours rows (online-only business); Email + Phone remain.
 - Face cropping: added per-division `focus` (object-position) field in `data.js`; Home cards and Divisions rows consume it. Events flyer = `object-[20%_15%]` (full face visible), Philanthropy = `object-[50%_30%]`.
+## Implemented (2026-07-10, batch 7 — Homepage refinements, structure kept)
+- Division cards made image-dominant: full-bleed images (h-[400px], equal heights), brighter (brightness-105, no grayscale), gold icon + serif title + product name overlaid on image with top/bottom purple scrims, caption at bottom, gold 2px borders, same order/links (HOME_CARDS in Home.jsx). Events card gets its own focus anchor (object-[25%_35%]) so Jewell's face clears the title.
+- Header: larger JPNS logo (h-14), gold "JPNS" + white "Enterprises" + gold "LLC" serif branding, taller nav (h-24), Partner button refined (rounded-md, gold glow hover). Shop + all links preserved; mobile menu updated to match.
+- Founder signature: rectangular badge replaced with pure gold Great Vibes script + thin gold rule + FOUNDER & CEO, directly over the untouched original photo (stronger bottom scrim for readability).
+- Restrained arcs (gold/25, gold/15), gradients softened.
+- Verified: desktop 1366 + mobile 375 screenshots; all links/cards functional.
+
 ## Implemented (2026-07-10, batch 6 — Homepage rebuilt to reference mockup v2)
 - Home.jsx hero rebuilt to user's exact reference: giant serif headline (text-6xl→8xl) "Strength. Vision. Legacy." with gold italic Legacy, gold ring arc accents on far left, rectangular gold EXPLORE DIVISIONS / outline PARTNER WITH US buttons, founder photo full-bleed on right 52% (absolute, blends into purple bg via left gradient), script signature block (Great Vibes font) "Jewell Proby Shine / Founder & CEO" with crown, bottom-right over photo on purple glass patch.
 - Division cards directly below hero in reference order: Wellness (shows "Jewell's Herbal Magic Blend"), Luxury Car Rentals, Restaurant Chains, Events & Entertainment, Philanthropy — rounded-2xl, thick gold borders, centered gold icon + serif title, image, caption line (e.g. "Herbal Teas · Self-Care · Restoration"). Mobile: snap-scroll swipeable row; desktop lg:grid-cols-5. Cards link to existing division pages. Old "Five worlds" header block removed; marquee now follows cards.

@@ -32,10 +32,10 @@ export const Navbar = () => {
         scrolled ? "backdrop-blur-xl bg-[#160a24]/80 border-b border-gold/20" : "bg-transparent"
       }`}
     >
-      <nav className="max-w-[1400px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-        <Link to="/" data-testid="logo-link" className="flex items-center gap-3 group">
-          <img src="/jpns-logo.png" alt="JPNS Enterprises LLC" className="h-11 w-auto transition-transform duration-500 group-hover:scale-105" />
-          <span className="font-serif text-xl tracking-wide text-white hidden sm:inline">JPNS <span className="text-gold">Enterprises</span></span>
+      <nav className="max-w-[1400px] mx-auto px-6 lg:px-10 h-24 flex items-center justify-between">
+        <Link to="/" data-testid="logo-link" className="flex items-center gap-4 group">
+          <img src="/jpns-logo.png" alt="JPNS Enterprises LLC" className="h-14 w-auto transition-transform duration-500 group-hover:scale-105" />
+          <span className="font-serif text-2xl tracking-wide hidden sm:inline"><span className="text-gold">JPNS</span> <span className="text-white">Enterprises</span> <span className="text-gold/70 text-lg">LLC</span></span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-9">
@@ -53,7 +53,7 @@ export const Navbar = () => {
           <Link
             to="/partner"
             data-testid="nav-partner"
-            className="text-[12px] uppercase tracking-[0.18em] text-void bg-gold px-6 py-3 hover:bg-white transition-colors duration-300"
+            className="text-[12px] uppercase tracking-[0.18em] text-void bg-gold px-7 py-3.5 rounded-md font-semibold hover:bg-[#E5C158] hover:shadow-[0_0_18px_rgba(212,175,55,0.35)] transition-all duration-300"
           >
             Partner With Us
           </Link>
@@ -71,10 +71,10 @@ export const Navbar = () => {
             className="fixed inset-0 z-50 bg-void lg:hidden"
             data-testid="mobile-menu"
           >
-            <div className="flex justify-between items-center h-20 px-6 border-b border-gold/20">
+            <div className="flex justify-between items-center h-24 px-6 border-b border-gold/20">
               <span className="flex items-center gap-3">
-                <img src="/jpns-logo.png" alt="JPNS Enterprises LLC" className="h-10 w-auto" />
-                <span className="font-serif text-xl text-white">JPNS <span className="text-gold">Enterprises</span></span>
+                <img src="/jpns-logo.png" alt="JPNS Enterprises LLC" className="h-12 w-auto" />
+                <span className="font-serif text-xl"><span className="text-gold">JPNS</span> <span className="text-white">Enterprises</span></span>
               </span>
               <button onClick={() => setOpen(false)} className="text-gold" aria-label="Close menu"><X size={26} strokeWidth={1.3} /></button>
             </div>

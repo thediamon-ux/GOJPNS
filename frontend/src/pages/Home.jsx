@@ -18,7 +18,7 @@ const HOME_CARDS = [
   { slug: "self-care", title: "Wellness", product: "Jewell's Herbal Magic Blend", caption: "Herbal Teas · Self-Care · Restoration", icon: Leaf },
   { slug: "luxury-car-rentals", title: "Luxury Car Rentals", caption: "Premium Vehicles · Signature Experiences", icon: Car },
   { slug: "restaurant-chains", title: "Restaurant Chains", caption: "Dining Experiences · Food · Hospitality", icon: UtensilsCrossed },
-  { slug: "events-entertainment", title: "Events & Entertainment", caption: "Speaking · Productions · Live Events", icon: Mic },
+  { slug: "events-entertainment", title: "Events & Entertainment", caption: "Speaking · Productions · Live Events", icon: Mic, focus: "object-[25%_35%]" },
   { slug: "philanthropy", title: "Philanthropy", caption: "Women · Children · Community Impact", icon: Heart },
 ];
 
@@ -27,8 +27,8 @@ const HeroBg = () => (
     <div className="absolute -top-32 right-0 w-[720px] h-[720px] rounded-full bg-vividp/50 blur-[160px]" />
     <div className="absolute bottom-0 -left-32 w-[520px] h-[520px] rounded-full bg-deepp/70 blur-[150px]" />
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(212,175,55,0.12),transparent_55%)]" />
-    <div className="absolute -left-56 top-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full border-2 border-gold/35 pointer-events-none" />
-    <div className="absolute -left-72 top-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-gold/20 pointer-events-none" />
+    <div className="absolute -left-56 top-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full border-2 border-gold/25 pointer-events-none" />
+    <div className="absolute -left-72 top-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-gold/15 pointer-events-none" />
   </div>
 );
 
@@ -69,13 +69,12 @@ export default function Home() {
           <img src="/jewell-sitting.jpg" alt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
             className="w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#2B0B3D] via-transparent to-transparent hidden lg:block" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#140321]/80 via-transparent to-transparent" />
-          <div className="absolute bottom-8 right-6 lg:right-10 z-10">
-            <div className="bg-[#2B0B3D]/70 backdrop-blur-md border border-gold/20 rounded-xl px-8 py-5 text-center">
-              <Crown size={22} className="mx-auto mb-2" />
-              <p className="text-gold text-3xl sm:text-4xl leading-tight" style={{ fontFamily: "'Great Vibes', cursive" }}>Jewell Proby Shine</p>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-gray-200 mt-2">Founder &amp; CEO</p>
-            </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#140321]/85 via-transparent to-transparent" />
+          <div className="absolute bottom-10 right-6 lg:right-12 z-10 text-center">
+            <Crown size={20} className="mx-auto mb-1" />
+            <p className="text-gold text-4xl sm:text-5xl leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]" style={{ fontFamily: "'Great Vibes', cursive" }}>Jewell Proby Shine</p>
+            <div className="w-16 h-px bg-gold/70 mx-auto my-2" />
+            <p className="text-[11px] uppercase tracking-[0.35em] text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Founder &amp; CEO</p>
           </div>
         </motion.div>
       </section>
@@ -90,17 +89,18 @@ export default function Home() {
               return (
                 <Reveal key={c.slug} delay={i * 0.06} className="min-w-[250px] sm:min-w-[280px] lg:min-w-0 snap-center">
                   <Link to={`/divisions/${c.slug}`} data-testid={`dba-card-${c.slug}`}
-                    className="group flex flex-col overflow-hidden rounded-2xl border-2 border-gold/50 bg-[#1a0528]/90 hover:border-gold hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:-translate-y-2 transition-all duration-500 h-full">
-                    <div className="pt-6 pb-4 px-4 text-center">
-                      <Icon size={26} color="#D4AF37" strokeWidth={1.4} className="mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-                      <h3 className="font-serif text-xl text-white group-hover:text-gold transition-colors duration-300 leading-tight">{c.title}</h3>
-                      {c.product && <p className="font-serif italic text-gold/90 text-sm mt-1">{c.product}</p>}
+                    className="group relative block overflow-hidden rounded-2xl border-2 border-gold/50 h-[400px] hover:border-gold hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:-translate-y-2 transition-all duration-500">
+                    <img src={d.image} alt={c.title} loading="lazy"
+                      className={`absolute inset-0 w-full h-full object-cover brightness-105 group-hover:scale-105 group-hover:brightness-110 transition-all duration-700 ease-out ${c.focus || d.focus || "object-center"}`} />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#140321]/85 via-transparent to-[#140321]/90 pointer-events-none" />
+                    <div className="relative h-full flex flex-col justify-between">
+                      <div className="pt-6 px-4 text-center">
+                        <Icon size={26} color="#D4AF37" strokeWidth={1.4} className="mx-auto mb-2 drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-300" />
+                        <h3 className="font-serif text-xl text-white leading-tight drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)] group-hover:text-gold transition-colors duration-300">{c.title}</h3>
+                        {c.product && <p className="font-serif italic text-gold text-sm mt-1 drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)]">{c.product}</p>}
+                      </div>
+                      <p className="pb-4 px-3 text-center text-[10px] uppercase tracking-[0.12em] text-gold/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">{c.caption}</p>
                     </div>
-                    <div className="relative h-44 overflow-hidden">
-                      <img src={d.image} alt={c.title} loading="lazy"
-                        className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out ${d.focus || "object-center"}`} />
-                    </div>
-                    <p className="py-3 px-3 text-center text-[10px] uppercase tracking-[0.12em] text-gold/80">{c.caption}</p>
                   </Link>
                 </Reveal>
               );
