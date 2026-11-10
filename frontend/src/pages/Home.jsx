@@ -15,8 +15,8 @@ const PILLARS = [
 ];
 
 const HOME_CARDS = [
-  { slug: "self-care", title: "Wellness", product: "Jewell's Herbal Magic Blend", caption: "Herbal Teas · Self-Care · Restoration", icon: Leaf },
-  { slug: "luxury-car-rentals", title: "Luxury Car Rentals", caption: "Premium Vehicles · Signature Experiences", icon: Car },
+  { slug: "self-care", title: "Wellness", product: "Jewell's Herbal Magic Blend", caption: "Herbal Teas · Self-Care · Restoration", icon: Leaf, focus: "object-[32%_50%]" },
+  { slug: "luxury-car-rentals", title: "Luxury Car Rentals", caption: "Premium Vehicles · Signature Experiences", icon: Car, bright: "brightness-[1.3]" },
   { slug: "restaurant-chains", title: "Restaurant Chains", caption: "Dining Experiences · Food · Hospitality", icon: UtensilsCrossed },
   { slug: "events-entertainment", title: "Events & Entertainment", caption: "Speaking · Productions · Live Events", icon: Mic, focus: "object-[25%_35%]" },
   { slug: "philanthropy", title: "Philanthropy", caption: "Women · Children · Community Impact", icon: Heart },
@@ -71,10 +71,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#2B0B3D] via-transparent to-transparent hidden lg:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#140321]/85 via-transparent to-transparent" />
           <div className="absolute bottom-10 right-6 lg:right-12 z-10 text-center">
-            <Crown size={20} className="mx-auto mb-1" />
-            <p className="text-gold text-4xl sm:text-5xl leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]" style={{ fontFamily: "'Great Vibes', cursive" }}>Jewell Proby Shine</p>
-            <div className="w-16 h-px bg-gold/70 mx-auto my-2" />
-            <p className="text-[11px] uppercase tracking-[0.35em] text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">Founder &amp; CEO</p>
+            <div className="absolute -inset-6 bg-black/50 blur-2xl rounded-full pointer-events-none" />
+            <Crown size={20} className="relative mx-auto mb-1" />
+            <p className="relative text-gold text-4xl sm:text-5xl leading-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.95)]" style={{ fontFamily: "'Great Vibes', cursive" }}>Jewell Proby Shine</p>
+            <div className="relative w-16 h-px bg-gold mx-auto my-2" />
+            <p className="relative text-[11px] uppercase tracking-[0.35em] text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">Founder &amp; CEO</p>
           </div>
         </motion.div>
       </section>
@@ -91,8 +92,8 @@ export default function Home() {
                   <Link to={`/divisions/${c.slug}`} data-testid={`dba-card-${c.slug}`}
                     className="group relative block overflow-hidden rounded-2xl border-2 border-gold/50 h-[400px] hover:border-gold hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:-translate-y-2 transition-all duration-500">
                     <img src={d.image} alt={c.title} loading="lazy"
-                      className={`absolute inset-0 w-full h-full object-cover brightness-105 group-hover:scale-105 group-hover:brightness-110 transition-all duration-700 ease-out ${c.focus || d.focus || "object-center"}`} />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#140321]/85 via-transparent to-[#140321]/90 pointer-events-none" />
+                      className={`absolute inset-0 w-full h-full object-cover ${c.bright || "brightness-105"} group-hover:scale-105 group-hover:brightness-110 transition-all duration-700 ease-out ${c.focus || d.focus || "object-center"}`} />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#140321]/90 via-[#140321]/15 to-[#140321]/95 pointer-events-none" />
                     <div className="relative h-full flex flex-col justify-between">
                       <div className="pt-6 px-4 text-center">
                         <Icon size={26} color="#D4AF37" strokeWidth={1.4} className="mx-auto mb-2 drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-300" />

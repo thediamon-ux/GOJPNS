@@ -39,6 +39,13 @@ void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair 
 - Shop page: "Secure checkout by Stripe" moved to its own line beneath "Ships within the US · Caffeine free".
 - Contact page: removed Headquarters and Hours rows (online-only business); Email + Phone remain.
 - Face cropping: added per-division `focus` (object-position) field in `data.js`; Home cards and Divisions rows consume it. Events flyer = `object-[20%_15%]` (full face visible), Philanthropy = `object-[50%_30%]`.
+## Implemented (2026-07-10, batch 8 — Final homepage polish)
+- Car card brightened (brightness-[1.3] override per card via `bright` field in HOME_CARDS). NOTE: no user-approved vehicle photo exists in assets; if user uploads an actual ICE Exotics vehicle photo, swap `luxury-car-rentals` image in data.js.
+- Wellness card focus `object-[32%_50%]` — jar label + steaming cup both clearly visible.
+- Consistent scrim on all cards: from-[#140321]/90 via-[#140321]/15 to-[#140321]/95 behind headings/captions.
+- Founder signature: soft black blur glow behind script + stronger drop shadows; photo untouched.
+- Verified desktop 1366 / tablet 768 / mobile 375; all nav links, cards, CTAs present and functional. Awaiting user approval to publish.
+
 ## Implemented (2026-07-10, batch 7 — Homepage refinements, structure kept)
 - Division cards made image-dominant: full-bleed images (h-[400px], equal heights), brighter (brightness-105, no grayscale), gold icon + serif title + product name overlaid on image with top/bottom purple scrims, caption at bottom, gold 2px borders, same order/links (HOME_CARDS in Home.jsx). Events card gets its own focus anchor (object-[25%_35%]) so Jewell's face clears the title.
 - Header: larger JPNS logo (h-14), gold "JPNS" + white "Enterprises" + gold "LLC" serif branding, taller nav (h-24), Partner button refined (rounded-md, gold glow hover). Shop + all links preserved; mobile menu updated to match.
