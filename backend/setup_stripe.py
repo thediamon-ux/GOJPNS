@@ -19,6 +19,8 @@ CATALOG = [
             {"lookup_key": "herbal_blend_trial", "amount": 1500, "currency": "usd"},
             {"lookup_key": "herbal_blend_weekly", "amount": 3000, "currency": "usd"},
             {"lookup_key": "herbal_blend_monthly", "amount": 10000, "currency": "usd"},
+            {"lookup_key": "herbal_blend_weekly_sub", "amount": 3000, "currency": "usd", "recurring": "week"},
+            {"lookup_key": "herbal_blend_monthly_sub", "amount": 10000, "currency": "usd", "recurring": "month"},
         ],
     },
 ]
@@ -36,13 +38,18 @@ def get_or_create_product(entry):
 
 def ensure_price(product, p):
     existing = stripe.Price.list(lookup_keys=[p["lookup_key"]], active=True, limit=1).data
-    if existing and (existing[0].unit_amount != p["amount"] or existing[0].currency != p["currency"]):
+    interval = p.get("recurring")
+    if existing and (existing[0].unit_amount != p["amount"] or existing[0].currency != p["currency"]
+                     or (existing[0].recurring or {}).get("interval") != interval):
         stripe.Price.modify(existing[0].id, active=False)
         existing = []
     if not existing:
+        kwargs = {}
+        if interval:
+            kwargs["recurring"] = {"interval": interval}
         stripe.Price.create(
             product=product.id, unit_amount=p["amount"], currency=p["currency"],
-            lookup_key=p["lookup_key"], transfer_lookup_key=True,
+            lookup_key=p["lookup_key"], transfer_lookup_key=True, **kwargs,
         )
         print(f"created price {p['lookup_key']} = {p['amount']} {p['currency']}")
     else:

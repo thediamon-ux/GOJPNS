@@ -24,6 +24,7 @@ const PAY_METHODS = [
 export default function Shop() {
   const [product, setProduct] = useState(null);
   const [selected, setSelected] = useState("herbal_blend_weekly");
+  const [mode, setMode] = useState("once");
   const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(false);
 
@@ -32,14 +33,23 @@ export default function Shop() {
   }, []);
 
   const option = product?.options?.find((o) => o.lookup_key === selected) || null;
-  const price = option ? option.amount / 100 : null;
+  const useSub = mode === "sub" && !!option?.sub;
+  const activeKey = useSub ? option.sub.lookup_key : selected;
+  const active = useSub ? option.sub : option;
+  const price = active ? active.amount / 100 : null;
   const currency = product?.currency?.toUpperCase() || "USD";
+
+  const pickSize = (key) => {
+    setSelected(key);
+    const opt = product?.options?.find((o) => o.lookup_key === key);
+    if (opt && !opt.sub) setMode("once");
+  };
 
   const checkout = async () => {
     setLoading(true);
     try {
       const { data } = await axios.post(`${API}/payments/checkout`, {
-        lookup_key: selected, quantity: qty, origin_url: window.location.origin,
+        lookup_key: activeKey, quantity: qty, origin_url: window.location.origin,
       });
       window.location.href = data.checkout_url;
     } catch {
@@ -80,16 +90,16 @@ export default function Shop() {
               ) : (
                 <span className="font-serif text-4xl text-lightgray">—</span>
               )}
-              <span className="text-xs uppercase tracking-[0.2em] text-lightgray mb-2">{currency}{option ? ` · ${option.size}` : ""}</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-lightgray mb-2">{currency}{option ? ` · ${option.size}` : ""}{useSub ? ` · every ${option.sub.interval}` : ""}</span>
             </div>
 
             {/* SIZE SELECTOR */}
-            <div className="mb-8">
+            <div className="mb-6">
               <span className="text-xs uppercase tracking-[0.2em] text-gold block mb-4">Choose Your Size</span>
               <div className="grid grid-cols-3 gap-px bg-gold/15 border border-gold/15" data-testid="size-selector">
                 {(product?.options || []).map((o) => (
                   <button key={o.lookup_key} type="button" data-testid={`size-${o.lookup_key}`}
-                    onClick={() => setSelected(o.lookup_key)}
+                    onClick={() => pickSize(o.lookup_key)}
                     className={`p-4 text-left transition-colors duration-300 ${selected === o.lookup_key ? "bg-gold text-void" : "bg-[#0d1410] hover:bg-emerald-950/60"}`}>
                     <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${selected === o.lookup_key ? "text-void/70" : "text-emerald-300/80"}`}>{o.label}</p>
                     <p className="font-serif text-lg leading-tight">{o.size}</p>
@@ -98,6 +108,28 @@ export default function Shop() {
                 ))}
               </div>
             </div>
+
+            {/* PURCHASE TYPE */}
+            {option?.sub && (
+              <div className="mb-8" data-testid="purchase-type">
+                <span className="text-xs uppercase tracking-[0.2em] text-gold block mb-4">Purchase Type</span>
+                <div className="grid grid-cols-2 gap-px bg-gold/15 border border-gold/15">
+                  <button type="button" data-testid="mode-once" onClick={() => setMode("once")}
+                    className={`p-4 text-left transition-colors duration-300 ${!useSub ? "bg-gold text-void" : "bg-[#0d1410] hover:bg-emerald-950/60"}`}>
+                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${!useSub ? "text-void/70" : "text-emerald-300/80"}`}>One-Time</p>
+                    <p className="font-serif text-lg">${(option.amount / 100).toFixed(2)}</p>
+                  </button>
+                  <button type="button" data-testid="mode-sub" onClick={() => setMode("sub")}
+                    className={`p-4 text-left transition-colors duration-300 ${useSub ? "bg-gold text-void" : "bg-[#0d1410] hover:bg-emerald-950/60"}`}>
+                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${useSub ? "text-void/70" : "text-emerald-300/80"}`}>Subscribe</p>
+                    <p className="font-serif text-lg">${(option.sub.amount / 100).toFixed(2)}<span className="text-sm font-sans"> / {option.sub.interval}</span></p>
+                  </button>
+                </div>
+                {useSub && (
+                  <p className="mt-3 text-xs text-lightgray/80">Recurring delivery — billed automatically every {option.sub.interval}.</p>
+                )}
+              </div>
+            )}
 
             <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-8">
               {HIGHLIGHTS.map((h) => (

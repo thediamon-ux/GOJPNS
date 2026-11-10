@@ -39,6 +39,13 @@ void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair 
 - Shop page: "Secure checkout by Stripe" moved to its own line beneath "Ships within the US · Caffeine free".
 - Contact page: removed Headquarters and Hours rows (online-only business); Email + Phone remain.
 - Face cropping: added per-division `focus` (object-position) field in `data.js`; Home cards and Divisions rows consume it. Events flyer = `object-[20%_15%]` (full face visible), Philanthropy = `object-[50%_30%]`.
+## Implemented (2026-07-10, batch 5 — Correct tea photo + subscriptions)
+- Replaced `/tea-jar.jpg` with user's corrected photo (label reads "Jewell's Herbal Magic Blend", not "Tea"). Used on Shop, SelfCare hero, division cards.
+- Added optional subscriptions: Stripe recurring prices `herbal_blend_weekly_sub` ($30/week) and `herbal_blend_monthly_sub` ($100/month) created via setup_stripe.py (idempotent, handles recurring interval).
+- Backend: `/api/shop/product` options now include `sub` object (lookup_key, interval, amount) for weekly/monthly; checkout auto-selects `mode="subscription"` when the price is recurring (trial stays one-time).
+- Shop page: "Purchase Type" toggle (One-Time vs Subscribe) appears for Weekly/Monthly sizes, hidden for Trial; price line shows "every week/month"; recurring note shown when subscribed.
+- Verified: API returns sub objects; subscription checkout session curl OK; UI toggles prices correctly; toggle hidden on trial.
+
 ## Implemented (2026-07-10, batch 4 — Tea pricing + Homepage restyle)
 - Tea pricing live (one-time purchases): Trial 1.25 oz $15 (`herbal_blend_trial`), Weekly Supply 2.5 oz $30 (`herbal_blend_weekly`), Monthly Supply 10 oz $100 (`herbal_blend_monthly`). Created in Stripe sandbox via `setup_stripe.py`; old $25 placeholder price (`herbal_blend_tin`) deactivated.
 - Backend `/api/shop/product` now returns `{name, currency, options[]}`; checkout accepts any of the 3 lookup_keys (server.py).

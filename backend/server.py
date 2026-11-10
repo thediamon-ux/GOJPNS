@@ -193,9 +193,9 @@ class CheckoutRequest(BaseModel):
 
 
 SIZE_OPTIONS = [
-    {"lookup_key": "herbal_blend_trial", "label": "Trial", "size": "1.25 oz"},
-    {"lookup_key": "herbal_blend_weekly", "label": "Weekly Supply", "size": "2.5 oz"},
-    {"lookup_key": "herbal_blend_monthly", "label": "Monthly Supply", "size": "10 oz"},
+    {"lookup_key": "herbal_blend_trial", "label": "Trial", "size": "1.25 oz", "sub_key": None, "sub_interval": None},
+    {"lookup_key": "herbal_blend_weekly", "label": "Weekly Supply", "size": "2.5 oz", "sub_key": "herbal_blend_weekly_sub", "sub_interval": "week"},
+    {"lookup_key": "herbal_blend_monthly", "label": "Monthly Supply", "size": "10 oz", "sub_key": "herbal_blend_monthly_sub", "sub_interval": "month"},
 ]
 
 
@@ -211,7 +211,12 @@ async def shop_product():
         price = prices[0]
         name = price.product.name
         currency = price.currency
-        options.append({**s, "amount": price.unit_amount})
+        opt = {"lookup_key": s["lookup_key"], "label": s["label"], "size": s["size"], "amount": price.unit_amount}
+        if s["sub_key"]:
+            subs = stripe.Price.list(lookup_keys=[s["sub_key"]], active=True, limit=1).data
+            if subs:
+                opt["sub"] = {"lookup_key": s["sub_key"], "interval": s["sub_interval"], "amount": subs[0].unit_amount}
+        options.append(opt)
     if not options:
         raise HTTPException(404, "Product not found")
     return {"name": name, "currency": currency, "options": options}
@@ -223,9 +228,10 @@ async def create_checkout(req: CheckoutRequest):
     if not prices:
         raise HTTPException(500, f"Price not found: {req.lookup_key}")
     price = prices[0]
+    mode = "subscription" if price.recurring else "payment"
     kwargs = dict(
         line_items=[{"price": price.id, "quantity": req.quantity}],
-        mode="payment",
+        mode=mode,
         success_url=f"{req.origin_url}/payment/success?session_id={{CHECKOUT_SESSION_ID}}",
         cancel_url=f"{req.origin_url}/payment/cancel",
         shipping_address_collection={"allowed_countries": SHIP_COUNTRIES},
