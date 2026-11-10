@@ -71,8 +71,8 @@ export const DIVISIONS = [
     name: "Luxury Car Rentals",
     tag: "Automotive",
     short: "An elite fleet of exotic and luxury vehicles for those who move differently.",
-    image: "/car-g63.jpg",
-    hero: "/car-g63.jpg",
+    image: "/car-urus.jpg",
+    hero: "/car-brabus.jpg",
     intro: "Arrival is a statement. Our curated collection of exotic and premium automobiles delivers unrivaled performance and presence for weddings, corporate travel, and unforgettable escapes.",
     externalUrl: "https://iceexotics.com/",
     externalLabel: "Visit ICE Exotics",
@@ -81,6 +81,11 @@ export const DIVISIONS = [
       "White-glove delivery & concierge",
       "Chauffeur and self-drive options",
       "Corporate & event partnerships",
+    ],
+    galleryOverline: "The Fleet",
+    galleryTitle: "Original photographs from the collection.",
+    gallery: [
+      { src: "/car-g63.jpg", place: "Mercedes-Benz G63 AMG", caption: "Brabus-styled G-Wagon, finished in black." },
     ],
   },
   {

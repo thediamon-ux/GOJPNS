@@ -16,7 +16,7 @@ const PILLARS = [
 
 const HOME_CARDS = [
   { slug: "self-care", title: "Wellness", product: "Jewell's Herbal Magic Blend", caption: "Herbal Teas · Self-Care · Restoration", icon: Leaf, focus: "object-[32%_50%]" },
-  { slug: "luxury-car-rentals", title: "Luxury Car Rentals", caption: "Premium Vehicles · Signature Experiences", icon: Car, focus: "object-[50%_65%]" },
+  { slug: "luxury-car-rentals", title: "Luxury Car Rentals", caption: "Premium Vehicles · Signature Experiences", icon: Car, focus: "object-[28%_60%]" },
   { slug: "restaurant-chains", title: "Restaurant Chains", caption: "Dining Experiences · Food · Hospitality", icon: UtensilsCrossed },
   { slug: "events-entertainment", title: "Events & Entertainment", caption: "Speaking · Productions · Live Events", icon: Mic, focus: "object-[25%_35%]" },
   { slug: "philanthropy", title: "Philanthropy", caption: "Women · Children · Community Impact", icon: Heart },

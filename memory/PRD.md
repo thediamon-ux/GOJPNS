@@ -39,6 +39,10 @@ void #0B0B0B, deep purple #2B0B3D, vivid purple #6B1FAF, gold #D4AF37. Playfair 
 - Shop page: "Secure checkout by Stripe" moved to its own line beneath "Ships within the US · Caffeine free".
 - Contact page: removed Headquarters and Hours rows (online-only business); Email + Phone remain.
 - Face cropping: added per-division `focus` (object-position) field in `data.js`; Home cards and Divisions rows consume it. Events flyer = `object-[20%_15%]` (full face visible), Philanthropy = `object-[50%_30%]`.
+## Implemented (2026-07-10, batch 9 — Real fleet photos)
+- User-supplied photos: Lamborghini Urus (`/car-urus.jpg`) → homepage card + division image, focus `object-[28%_60%]` (front + side visible); Brabus G-Wagon front (`/car-brabus.jpg`) → division page main hero; earlier G63 (`/car-g63.jpg`) → "The Fleet" gallery section on the division page (galleryOverline/galleryTitle/gallery fields in data.js, rendered by DivisionDetail). No availability claims added; photos unaltered.
+- Verified: homepage card row, division hero, and gallery screenshots.
+
 ## Implemented (2026-07-10, batch 8 — Final homepage polish)
 - Car card brightened (brightness override added then removed when real photo arrived). User-supplied Mercedes G63 AMG photo saved as `/car-g63.jpg` — now the Luxury Car Rentals card image AND division detail hero (data.js); card focus `object-[50%_65%]`.
 - Wellness card focus `object-[32%_50%]` — jar label + steaming cup both clearly visible.
