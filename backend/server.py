@@ -187,24 +187,34 @@ payments_router = APIRouter(prefix="/api")
 
 
 class CheckoutRequest(BaseModel):
-    lookup_key: str = "herbal_blend_tin"
+    lookup_key: str = "herbal_blend_trial"
     quantity: int = Field(1, ge=1, le=50)
     origin_url: str
 
 
+SIZE_OPTIONS = [
+    {"lookup_key": "herbal_blend_trial", "label": "Trial", "size": "1.25 oz"},
+    {"lookup_key": "herbal_blend_weekly", "label": "Weekly Supply", "size": "2.5 oz"},
+    {"lookup_key": "herbal_blend_monthly", "label": "Monthly Supply", "size": "10 oz"},
+]
+
+
 @payments_router.get("/shop/product")
 async def shop_product():
-    prices = stripe.Price.list(lookup_keys=["herbal_blend_tin"], active=True, limit=1, expand=["data.product"]).data
-    if not prices:
+    options = []
+    name = "Jewell's Herbal Magic Blend"
+    currency = "usd"
+    for s in SIZE_OPTIONS:
+        prices = stripe.Price.list(lookup_keys=[s["lookup_key"]], active=True, limit=1, expand=["data.product"]).data
+        if not prices:
+            continue
+        price = prices[0]
+        name = price.product.name
+        currency = price.currency
+        options.append({**s, "amount": price.unit_amount})
+    if not options:
         raise HTTPException(404, "Product not found")
-    price = prices[0]
-    return {
-        "name": price.product.name,
-        "description": price.product.description,
-        "lookup_key": "herbal_blend_tin",
-        "amount": price.unit_amount,
-        "currency": price.currency,
-    }
+    return {"name": name, "currency": currency, "options": options}
 
 
 @payments_router.post("/payments/checkout")

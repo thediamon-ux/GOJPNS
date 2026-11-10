@@ -1,137 +1,159 @@
 {
+  "project_name": "JPNS Enterprises LLC Luxury Marketing Website Restyle Blueprint",
+  "app_type": "marketing_site",
+  "tech_stack": {
+    "framework": "React.js",
+    "styling": "Tailwind CSS",
+    "file_extension": "js / jsx",
+    "icons": "Lucide React / Phosphor Icons"
+  },
+  "design_archetype": {
+    "type": "LUXURY & HIGH-CONTRAST ROYAL ELEGANCE",
+    "vibe": "Cinematic, dark luxury, royal purple warmth, metallic gold prestige, authoritative editorial",
+    "description": "Restyling the JPNS Enterprises homepage to perfectly mirror the reference mockup: vivid royal purple gradient hero background, giant Playfair Display serif headline with metallic gold italic accent, dual gold buttons, founder Jewell Proby Shine signature framed hero visual, and 5 distinct rounded gold-bordered division cards in a single row."
+  },
   "typography": {
-    "headings": {
-      "family": "Playfair Display, serif",
-      "weights": ["400", "700", "900"],
-      "styles": ["normal", "italic"],
-      "scale": {
-        "h1": "text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] leading-[0.9] tracking-tighter",
-        "h2": "text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight",
-        "h3": "text-2xl sm:text-3xl md:text-4xl leading-snug tracking-tight"
-      },
-      "rules": "Use Playfair Display for all headings. The word 'Legacy' in the hero should be italicized for an editorial twist. Avoid center alignment; favor strict left-aligned typographic grids."
-    },
-    "body": {
-      "family": "Montserrat, sans-serif",
-      "weights": ["300", "400", "500"],
-      "scale": {
-        "base": "text-base sm:text-lg leading-relaxed tracking-wide",
-        "small": "text-sm tracking-[0.2em] uppercase",
-        "caption": "text-xs tracking-wider opacity-60"
-      },
-      "rules": "Montserrat provides clean, structured, and legible contrast to the decorative serif headings. Ensure all small labels/overline text uses intense uppercase tracking (e.g., tracking-[0.2em])."
+    "heading_font": "Playfair Display, serif",
+    "body_font": "Montserrat, sans-serif",
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white leading-[1.15]",
+      "h1_accent_word": "font-serif italic text-gold gold-shimmer block sm:inline font-normal",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight",
+      "h3_card_title": "text-lg sm:text-xl font-serif font-semibold text-white group-hover:text-gold transition-colors duration-300",
+      "body_hero_desc": "text-sm sm:text-base text-gray-200 font-sans font-normal leading-relaxed max-w-xl",
+      "caption_labels": "text-xs uppercase font-sans tracking-[0.25em] text-gold/90 font-medium"
     }
   },
   "colors": {
-    "base": {
-      "void_black": "#0B0B0B",
-      "deep_purple": "#2B0B3D"
-    },
-    "accents": {
-      "gold": "#D4AF37",
-      "vivid_purple": "#6B1FAF"
-    },
-    "text": {
-      "primary": "#FFFFFF",
-      "secondary": "#BFBFBF"
-    },
-    "surface": {
-      "card_bg": "rgba(43, 11, 61, 0.2)",
-      "glass_bg": "rgba(11, 11, 11, 0.6)",
-      "glass_border": "rgba(212, 175, 55, 0.2)"
-    },
-    "rules": "No flat, generic gradients. Use radial gradients or noise overlays for depth. Do not use pure `#000000` — base is `#0B0B0B`. Gold (`#D4AF37`) is strictly for interaction states, key thin borders, and the signature marquee. Vivid purple (`#6B1FAF`) is for subtle hover glows on cards."
+    "vivid_purple_hero_from": "#2B0B3D",
+    "vivid_purple_hero_via": "#6B1FAF",
+    "vivid_purple_hero_to": "#170326",
+    "void_black_base": "#0B0B0B",
+    "deep_purple_accent": "#2B0B3D",
+    "vivid_purple_accent": "#6B1FAF",
+    "metallic_gold_primary": "#D4AF37",
+    "metallic_gold_light": "#FFE9A8",
+    "silver_neutral": "#C7C9D6",
+    "light_gray_text": "#BFBFBF",
+    "gold_border_subtle": "rgba(212, 175, 55, 0.3)",
+    "gold_border_solid": "#D4AF37",
+    "gold_glow_shadow": "0 0 25px rgba(212, 175, 55, 0.25)"
   },
-  "visual_enhancers": {
-    "glassmorphism": "Used strictly for the sticky navbar and floating elements. Requires `backdrop-blur-xl bg-black/60 border-b border-[#D4AF37]/20`. No fully transparent headers over hero images.",
-    "textures": "Incorporate a subtle noise/grain overlay globally (`mix-blend-overlay` on a pseudo-element) to kill digital flatness and enhance the luxury feel.",
-    "borders": "1px solid `#D4AF37` at 20% opacity for container dividers. High-contrast solid gold lines for active tab states or animated underlines.",
-    "shadows": "Minimal use of standard drop-shadows. Instead, rely on glowing radial drop-shadows `drop-shadow-[0_0_15px_rgba(107,31,175,0.4)]` for hover states on key components."
-  },
-  "components": {
-    "navbar": "Sticky, glassmorphism (`backdrop-blur-xl bg-[#0B0B0B]/70`), 1px bottom gold border. Links must be visible on desktop (no hamburger).",
-    "hero": "Kinetic Hero. Left-aligned heavy typography: 'Strength. Vision. Legacy.' (with 'Legacy' in italic serif and gold). Masked reveal animation (line by line). Abstract dark gold texture as background, deeply darkened (`bg-black/60` overlay) so text pops.",
-    "marquee": "Slow, elegant editorial marquee drifting across the screen behind or between sections. Text should be large (`text-8xl`), serif italic, and transparent with a 1px gold outline (`text-stroke`).",
-    "dba_cards_grid": "Bento-style or numbered Manifesto grid. Avoid basic equal squares. Use tall vertical cards (`col-span-1 row-span-2`) mixed with wide horizontal strips. Hover state: subtle scale, image desaturates slightly, vivid purple ambient glow behind.",
-    "impact_counters": "Large, fluid typography for numbers (e.g., Montserrat Light). Use framer-motion `useSpring` and `useTransform` to animate counters from 0 when scrolled into view. Do not use generic icons; use bespoke gold line-art or diamond/crown SVGs.",
-    "forms": "Use Shadcn customized primitives. Inputs: transparent background, 1px bottom border (`#BFBFBF`), focus state turns bottom border gold (`#D4AF37`). No chunky default borders.",
-    "footer": "Massive top padding (`py-32`). Left side: giant 'JPNS ENTERPRISE' text. Right side: Newsletter form (minimalist line input) and social links. Deep purple ambient glow in the background."
-  },
-  "grids_and_layouts": {
-    "spacing_system": "Generous spacing. Use `py-24` to `py-32` between sections. `gap-8` to `gap-16` for grids. This breathing room creates a sense of luxury.",
-    "dba_grid": "Asymmetrical layout. `grid-cols-1 md:grid-cols-12 gap-8`. E.g., Card 1: `col-span-7`, Card 2: `col-span-5`."
-  },
-  "motion": {
-    "libraries": "framer-motion, @studio-freight/react-lenis (for smooth scrolling momentum).",
-    "scroll_reveal": "Masked upward reveals for headings (`overflow-hidden` wrapper, text translates Y from 100% to 0% with `ease: [0.76, 0, 0.24, 1]`, duration: 1s).",
-    "parallax": "Use Framer Motion's `useScroll` and `useTransform` for subtle Y-axis shifting on DBA card images as the user scrolls, creating a 'window' effect.",
-    "interactions": "Hover on cards translates Y by `-8px`, extends transition duration to `0.4s ease-out`.",
-    "marquee_speed": "Extremely slow. Use `react-fast-marquee` or framer-motion with a 30s-60s linear loop."
-  },
-  "accessibility": {
-    "contrast": "Ensure white/gold text meets minimum 4.5:1 ratio against the #0B0B0B/#2B0B3D backgrounds.",
-    "focus": "Custom focus rings: `focus-visible:ring-1 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0B]`.",
-    "motion_preference": "Respect `prefers-reduced-motion` for kinetic text and parallax elements.",
-    "data_testids": "All interactive elements, forms, cards, and primary text must have `data-testid` attributes (e.g., `data-testid='hero-heading'`, `data-testid='dba-card-luxury-cars'`)."
-  },
-  "media": {
-    "treatment": "Real photography treated deliberately: darkened, slightly desaturated, with a subtle noise overlay to match the brand. Use clipping masks or strict geometric crops (no soft rounded corners — sharp 0px or max 2px radii for luxury edge).",
-    "icons": "Use `lucide-react`. Render them with `color='#D4AF37'` and `strokeWidth={1}` for a refined, delicate gold line-art aesthetic."
-  },
-  "3d_libraries": {
-    "recommendation": "For the hero, stick to framer-motion 2D parallax and masking. The prompt asks for 'subtle parallax/3D hero moment'. We will implement a deep, multi-layered parallax using Framer Motion `useScroll` instead of heavy WebGL (R3F) to keep the site extremely snappy while achieving the Site-of-the-Day feel."
-  },
-  "image_urls": {
-    "hero_background": {
-      "url": "https://images.unsplash.com/photo-1760172287483-02d382f63a6f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBnb2xkJTIwbHV4dXJ5JTIwdGV4dHVyZXxlbnwwfHx8fDE3ODY0MTQ4Njl8MA&ixlib=rb-4.1.0&q=85",
-      "description": "Abstract dark gold texture for hero section background layer."
-    },
-    "dba_luxury_cars": {
-      "url": "https://images.pexels.com/photos/94272/sports-car-pkw-auto-vehicle-94272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "description": "Front view of a luxurious sports car in a dark setting."
-    },
-    "dba_events": {
-      "url": "https://images.unsplash.com/photo-1700514077430-3659e38eb5e7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxleGNsdXNpdmUlMjBnYWxhJTIwZXZlbnQlMjBlbnRlcnRhaW5tZW50fGVufDB8fHx8MTc4NjQxNDg2OXww&ixlib=rb-4.1.0&q=85",
-      "description": "Exclusive gala event, dark mood lighting."
-    },
-    "dba_self_care": {
-      "url": "https://images.unsplash.com/photo-1761470575018-135c213340eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBzcGElMjB3ZWxsbmVzcyUyMGRhcmt8ZW58MHx8fHwxNzg2NDE0ODY5fDA&ixlib=rb-4.1.0&q=85",
-      "description": "Luxury spa wellness dark ambient lighting."
-    },
-    "dba_restaurant": {
-      "url": "https://images.unsplash.com/photo-1766832255363-c9f060ade8b0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwyfHxmaW5lJTIwZGluaW5nJTIwcmVzdGF1cmFudCUyMGRhcmslMjBlbGVnYW50fGVufDB8fHx8MTc4NjQxNDg2OXww&ixlib=rb-4.1.0&q=85",
-      "description": "Fine dining restaurant dark elegant setup."
-    },
-    "dba_philanthropy": {
-      "url": "https://images.unsplash.com/photo-1651372381086-9861c9c81db5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHw0fHxwaGlsYW50aHJvcHklMjBjb21tdW5pdHklMjBoYW5kc3xlbnwwfHx8fDE3ODY0MTQ4NzB8MA&ixlib=rb-4.1.0&q=85",
-      "description": "Philanthropy community hands holding."
+  "hero_section_spec": {
+    "background_treatment": "relative overflow-hidden bg-gradient-to-br from-[#2B0B3D] via-[#6B1FAF] to-[#140321] pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-gold/20",
+    "background_decorations": "Radial spotlight glow at upper right (radial-gradient(circle, rgba(107,31,175,0.5) 0%, transparent 70%)), fine subtle grain overlay (.grain class), and ambient gold sparkle accents",
+    "headline_text": "Strength. Vision. Legacy.",
+    "headline_accent": "Legacy.",
+    "headline_styling": "<h1 className='text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-[1.15] mb-6' data-testid='hero-headline'>Strength. Vision. <span className='font-serif italic gold-shimmer font-normal text-gold'>Legacy.</span></h1>",
+    "subheading_text": "A diversified private holdings ecosystem driving excellence across luxury self-care, entertainment, culinary arts, exotic rentals, and strategic philanthropy.",
+    "cta_buttons": [
+      {
+        "text": "Explore Divisions →",
+        "style": "bg-gold text-black font-sans font-semibold text-sm tracking-wide px-8 py-3.5 rounded-full hover:bg-[#E5C158] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 btn-shine cursor-pointer flex items-center justify-center gap-2",
+        "testid": "hero-primary-cta",
+        "action": "Scrolls to 5 Division Row or navigates to /divisions"
+      },
+      {
+        "text": "PARTNER WITH US",
+        "style": "border border-gold text-gold font-sans font-semibold text-sm tracking-widest uppercase px-8 py-3.5 rounded-full hover:bg-gold/10 hover:border-gold transition-all duration-300 cursor-pointer flex items-center justify-center",
+        "testid": "hero-secondary-cta",
+        "action": "Navigates to /partner or opens partnership modal"
+      }
+    ],
+    "founder_visual_framing": {
+      "image_path": "/jewell-sitting.jpg",
+      "image_alt": "Jewell Proby Shine - Founder & CEO",
+      "container_style": "relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.6)] group",
+      "overlay_gradient": "bg-gradient-to-t from-[#140321]/90 via-transparent to-transparent absolute inset-0 pointer-events-none",
+      "signature_overlay": {
+        "text_primary": "Jewell Proby Shine",
+        "text_secondary": "Founder & CEO",
+        "font_style": "font-serif italic text-gold text-xl sm:text-2xl tracking-wide",
+        "sub_style": "font-sans text-xs uppercase tracking-[0.2em] text-gray-300 font-medium",
+        "position_class": "absolute bottom-6 left-6 right-6 z-10 backdrop-blur-md bg-black/40 border border-gold/20 p-4 rounded-xl"
+      }
     }
   },
-  "instructions_to_main_agent": [
-    "Install required dependencies: `framer-motion`, `lucide-react`, `@studio-freight/react-lenis`, `react-fast-marquee`, and setup Shadcn components using `div/span` wrappers where custom HTML is better for artistic control.",
-    "Set the Tailwind config to use Playfair Display and Montserrat. Extend colors with void_black (#0B0B0B), deep_purple (#2B0B3D), vivid_purple (#6B1FAF), and lux_gold (#D4AF37).",
-    "Implement Lenis smooth scrolling globally in the App component.",
-    "Build the Kinetic Hero: Create a Framer Motion component that masks text line-by-line. Wrap lines in `overflow-hidden` and translate Y from 100% to 0%.",
-    "Develop the DBA Division section as an asymmetrical bento grid. Apply subtle `useScroll` parallax to the images inside `overflow-hidden` containers so they move at a different rate than the scroll.",
-    "Create animated counters for the Impact section using Framer Motion `useSpring` with `useInView` triggers.",
-    "Design minimalist custom forms with single-line bottom borders (border-b-1) that transition to gold on focus.",
-    "Add `data-testid` to all interactive, dynamic, and major content elements.",
-    "Ensure the .js files are used, no .tsx/TypeScript code.",
-    "Do not use generic Shadcn Cards for the main DBA layout; construct raw HTML + Tailwind divs for precise, edge-to-edge luxury styling."
-  ],
-  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
-    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
-    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
-    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
-    "Create depth through layered design elements with z-index hierarchy.",
-    "Use glass-morphism effects with backdrop filters (12-24px blur).",
-    "You MUST NOT apply universal transition. Eg: `transition: all`. Always add transitions for specific interactive elements.",
-    "You MUST NOT center align the app container.",
-    "Always use modern button styles (e.g., sharp 0px radius for this luxury brand) with interaction animations & relevant colors.",
-    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
-    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
-    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
-    "Prioritize using pre-existing components from src/components/ui when applicable.",
-    "Use `sonner` for toasts."
+  "division_cards_spec": {
+    "row_container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24",
+    "row_header": "text-center mb-12",
+    "row_title": "OUR DIVISIONS",
+    "grid_layout": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6",
+    "card_base_style": "group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-gold/30 bg-[#12041D]/80 backdrop-blur-md hover:border-gold hover:shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:-translate-y-2 transition-all duration-500 cursor-pointer min-h-[360px]",
+    "card_inner_padding": "p-5 pb-0 flex flex-col items-start z-10",
+    "icon_style": "w-8 h-8 text-gold mb-3 p-1.5 rounded-lg bg-gold/10 border border-gold/20 group-hover:scale-110 transition-transform duration-300",
+    "image_container": "relative w-full h-44 mt-4 overflow-hidden rounded-b-[14px]",
+    "image_style": "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out",
+    "image_scrim": "absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-black/20 to-transparent",
+    "divisions": [
+      {
+        "number": "01",
+        "name": "Self-Care",
+        "slug": "self-care",
+        "icon": "Sparkles or TeaIcon",
+        "image": "/tea-jar.jpg",
+        "image_alt": "Jewell's Herbal Tea Jar",
+        "testid": "division-card-01-self-care"
+      },
+      {
+        "number": "02",
+        "name": "Events & Entertainment",
+        "slug": "events-entertainment",
+        "icon": "Ticket or Calendar",
+        "image": "/event-gala-flyer.jpg",
+        "image_alt": "Events & Entertainment",
+        "testid": "division-card-02-events"
+      },
+      {
+        "number": "03",
+        "name": "Restaurant Chains",
+        "slug": "restaurant-chains",
+        "icon": "Utensils or ChefHat",
+        "image": "/show-industry-girl.jpg",
+        "image_alt": "Culinary & Dining",
+        "testid": "division-card-03-restaurants"
+      },
+      {
+        "number": "04",
+        "name": "Luxury Car Rentals",
+        "slug": "luxury-car-rentals",
+        "icon": "Car or Key",
+        "image": "/event-jewell-guys.jpg",
+        "image_alt": "Exotic & Luxury Car Rentals",
+        "testid": "division-card-04-car-rentals"
+      },
+      {
+        "number": "05",
+        "name": "Philanthropy",
+        "slug": "philanthropy",
+        "icon": "Heart or Gift",
+        "image": "/phil-heart.jpg",
+        "image_alt": "Community & Global Philanthropy",
+        "testid": "division-card-05-philanthropy"
+      }
+    ]
+  },
+  "transition_to_lower_sections": {
+    "section_wrapper": "relative bg-[#0B0B0B] text-white",
+    "top_gradient_scrim": "bg-gradient-to-b from-[#140321] via-[#0B0B0B] to-[#0B0B0B] pt-12",
+    "cohesion_rule": "Maintain thin gold borders (border-gold/20), Playfair Display headings, Montserrat body, and subtle radial purple glow under key section cards so lower content flows seamlessly from the royal purple hero."
+  },
+  "component_guidelines": {
+    "header_nav": "Fixed top z-50 backdrop-blur-xl bg-[#140321]/80 border-b border-gold/20 px-6 py-4 flex items-center justify-between",
+    "interactive_inputs": "Use .lux-input utility with underline gold highlight on focus; mandatory label and data-testid attributes",
+    "toasts": "Sonner toasts with gold border and dark purple background for actions like contact form submit and cart add"
+  },
+  "testing_attributes": {
+    "mandatory_rule": "Every interactive button, link, division card, input, and hero callout MUST include explicit role-based data-testid attributes (e.g. data-testid='hero-headline', data-testid='explore-divisions-btn', data-testid='division-card-01-self-care')."
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Do NOT alter or rebuild existing pages (/about, /divisions, /shop, /impact, /contact, /partner) or Stripe checkout logic - this is a homepage restyle & enhancement.",
+    "Do NOT use pure transparent backgrounds on sticky nav or dropdown menus; always use glassmorphism with backdrop blur and explicit subtle background color (e.g. bg-[#140321]/80 backdrop-blur-xl).",
+    "Do NOT exceed text-6xl for hero headings; keep typography hierarchy crisp and proportional.",
+    "Do NOT use generic sans fonts for main headlines; keep Playfair Display for headings and Montserrat for body text.",
+    "Ensure founder visual uses /jewell-sitting.jpg and script/serif gold signature overlay 'Jewell Proby Shine / Founder & CEO'.",
+    "Maintain exact division order: 01 Self-Care, 02 Events & Entertainment, 03 Restaurant Chains, 04 Luxury Car Rentals, 05 Philanthropy.",
+    "All codebase files are standard React JavaScript (.js/.jsx) files - do NOT produce TypeScript (.tsx) references.",
+    "Ensure data-testid attributes are present on every interactive and key text element."
   ]
 }

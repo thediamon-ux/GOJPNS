@@ -23,6 +23,7 @@ const PAY_METHODS = [
 
 export default function Shop() {
   const [product, setProduct] = useState(null);
+  const [selected, setSelected] = useState("herbal_blend_weekly");
   const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(false);
 
@@ -30,14 +31,15 @@ export default function Shop() {
     axios.get(`${API}/shop/product`).then(({ data }) => setProduct(data)).catch(() => {});
   }, []);
 
-  const price = product ? product.amount / 100 : null;
+  const option = product?.options?.find((o) => o.lookup_key === selected) || null;
+  const price = option ? option.amount / 100 : null;
   const currency = product?.currency?.toUpperCase() || "USD";
 
   const checkout = async () => {
     setLoading(true);
     try {
       const { data } = await axios.post(`${API}/payments/checkout`, {
-        lookup_key: "herbal_blend_tin", quantity: qty, origin_url: window.location.origin,
+        lookup_key: selected, quantity: qty, origin_url: window.location.origin,
       });
       window.location.href = data.checkout_url;
     } catch {
@@ -57,7 +59,7 @@ export default function Shop() {
           <Reveal>
             <div className="relative">
               <div className="absolute -inset-3 border border-gold/40 pointer-events-none" />
-              <img src="/jewells-herbal-blend.jpg" alt="Jewell's Herbal Magic Blend"
+              <img src="/tea-jar.jpg" alt="Jewell's Herbal Magic Blend glass jar and freshly brewed cup"
                 className="relative w-full object-cover shadow-2xl shadow-black/60" />
             </div>
           </Reveal>
@@ -78,7 +80,23 @@ export default function Shop() {
               ) : (
                 <span className="font-serif text-4xl text-lightgray">—</span>
               )}
-              <span className="text-xs uppercase tracking-[0.2em] text-lightgray mb-2">{currency} · 2 oz tin</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-lightgray mb-2">{currency}{option ? ` · ${option.size}` : ""}</span>
+            </div>
+
+            {/* SIZE SELECTOR */}
+            <div className="mb-8">
+              <span className="text-xs uppercase tracking-[0.2em] text-gold block mb-4">Choose Your Size</span>
+              <div className="grid grid-cols-3 gap-px bg-gold/15 border border-gold/15" data-testid="size-selector">
+                {(product?.options || []).map((o) => (
+                  <button key={o.lookup_key} type="button" data-testid={`size-${o.lookup_key}`}
+                    onClick={() => setSelected(o.lookup_key)}
+                    className={`p-4 text-left transition-colors duration-300 ${selected === o.lookup_key ? "bg-gold text-void" : "bg-[#0d1410] hover:bg-emerald-950/60"}`}>
+                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${selected === o.lookup_key ? "text-void/70" : "text-emerald-300/80"}`}>{o.label}</p>
+                    <p className="font-serif text-lg leading-tight">{o.size}</p>
+                    <p className={`text-sm mt-1 ${selected === o.lookup_key ? "text-void" : "text-gold"}`}>${(o.amount / 100).toFixed(2)}</p>
+                  </button>
+                ))}
+              </div>
             </div>
 
             <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-8">

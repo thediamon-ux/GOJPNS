@@ -7,7 +7,7 @@ export const DIVISIONS = [
     name: "Self-Care",
     tag: "Wellness",
     short: "Jewell's Herbal Magic Blend — a handcrafted herbal tea to nourish, heal & restore.",
-    image: "/jewells-herbal-blend.jpg",
+    image: "/tea-jar.jpg",
     hero: "/jewells-herbal-blend.jpg",
     intro: "Wellbeing is the ultimate luxury. Our self-care line — led by Jewell's Herbal Magic Blend — pairs ancient botanicals with modern intention to restore body, mind, and spirit.",
     features: [

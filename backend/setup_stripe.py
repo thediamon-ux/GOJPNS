@@ -1,6 +1,6 @@
-"""Idempotent Stripe catalog setup for the Jewells Herbal Magic Blend tea.
+"""Idempotent Stripe catalog setup for Jewell's Herbal Magic Blend tea.
 Run: python setup_stripe.py  (safe to run multiple times)
-Update PLACEHOLDER_AMOUNT (in cents) when the real price is set, then re-run.
+Sizes: 1.25 oz trial ($15), 2.5 oz weekly supply ($30), 10 oz monthly supply ($100) — one-time purchases.
 """
 import os
 import stripe
@@ -10,16 +10,15 @@ from pathlib import Path
 load_dotenv(Path(__file__).parent / ".env")
 stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
 
-# NOTE: placeholder price ($25.00). Change this one value when the real price is set.
-PLACEHOLDER_AMOUNT = 2500
-
 CATALOG = [
     {
         "emergent_product_id": "herbal_magic_blend",
         "name": "Jewell's Herbal Magic Blend",
         "tax_code": "txcd_99999999",  # physical goods
         "prices": [
-            {"lookup_key": "herbal_blend_tin", "amount": PLACEHOLDER_AMOUNT, "currency": "usd"},
+            {"lookup_key": "herbal_blend_trial", "amount": 1500, "currency": "usd"},
+            {"lookup_key": "herbal_blend_weekly", "amount": 3000, "currency": "usd"},
+            {"lookup_key": "herbal_blend_monthly", "amount": 10000, "currency": "usd"},
         ],
     },
 ]

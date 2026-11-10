@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
-import axios from "axios";
-import { toast } from "sonner";
+import { useRef } from "react";
 import {
   ArrowLeft, ArrowUpRight, HeartPulse, Leaf, Wind, Brain,
   Salad, Gem, Scale, Zap, Sparkles, Heart, Quote, Star,
@@ -12,7 +10,7 @@ import { Diamond } from "../components/Motifs";
 import { Seo } from "../components/Seo";
 import { API } from "../data";
 
-const PRODUCT_IMG = "/jewells-herbal-blend.jpg";
+const PRODUCT_IMG = "/tea-jar.jpg";
 
 const INGREDIENTS = [
   { n: "Ashwagandha", d: "Reduces stress, supports energy, balance & better sleep." },
@@ -60,20 +58,6 @@ export default function SelfCare() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const [buying, setBuying] = useState(false);
-
-  const buyNow = async () => {
-    setBuying(true);
-    try {
-      const { data } = await axios.post(`${API}/payments/checkout`, {
-        lookup_key: "herbal_blend_tin", quantity: 1, origin_url: window.location.origin,
-      });
-      window.location.href = data.checkout_url;
-    } catch {
-      toast.error("Could not start checkout. Please try again.");
-      setBuying(false);
-    }
-  };
 
   return (
     <div data-testid="self-care-page">
@@ -107,9 +91,9 @@ export default function SelfCare() {
             </Reveal>
             <Reveal delay={0.6}>
               <div className="flex flex-wrap gap-4">
-                <button onClick={buyNow} disabled={buying} data-testid="wellness-order-btn" className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors disabled:opacity-50">
-                  {buying ? "Redirecting…" : "Buy Now"} <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </button>
+                <Link to="/shop" data-testid="wellness-order-btn" className="btn-shine group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">
+                  Buy Now <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </Link>
                 <a href="#ingredients" className="inline-flex items-center gap-3 border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">
                   View Ingredients
                 </a>
@@ -135,7 +119,7 @@ export default function SelfCare() {
       <section className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15 border border-gold/15">
           {[
-            { k: "Net Weight", v: "2 oz (56.7 g)" },
+            { k: "Sizes", v: "1.25 · 2.5 · 10 oz" },
             { k: "Form", v: "Loose Leaf Tea" },
             { k: "Ritual", v: "Body · Mind · Spirit" },
             { k: "Crafted", v: "With Love & Purpose" },
@@ -257,9 +241,9 @@ export default function SelfCare() {
               <h2 className="font-serif text-3xl md:text-5xl mb-6 max-w-2xl mx-auto">You deserve to <span className="italic gold-shimmer">feel magic</span>.</h2>
               <p className="text-lightgray max-w-lg mx-auto mb-10 leading-relaxed">Handcrafted in small batches and ethically sourced. Order your tin today — or reach out for larger orders and wellness partnerships.</p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <button onClick={buyNow} disabled={buying} data-testid="wellness-cta-buy-btn" className="btn-shine bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors disabled:opacity-50">
-                  {buying ? "Redirecting…" : "Buy Now"}
-                </button>
+                <Link to="/shop" data-testid="wellness-cta-buy-btn" className="btn-shine bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">
+                  Buy Now
+                </Link>
                 <Link to="/partner" className="border border-gold/40 px-8 py-4 text-xs uppercase tracking-[0.2em] hover:border-gold hover:bg-gold/5 transition-colors">Partner With Us</Link>
               </div>
               <p className="mt-6 text-sm text-lightgray/80">
