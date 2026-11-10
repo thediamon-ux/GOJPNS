@@ -38,7 +38,7 @@ export default function PaymentSuccess() {
       <div className="relative max-w-xl w-full text-center border border-gold/25 p-12 md:p-16">
         {status === "checking" && (
           <>
-            <Loader2 size={48} color="#D4AF37" className="mx-auto mb-8 animate-spin" />
+            <Loader2 size={48} color="#D7AF38" className="mx-auto mb-8 animate-spin" />
             <h1 className="font-serif text-3xl md:text-4xl mb-4">Confirming your order…</h1>
             <p className="text-lightgray">One moment while we verify your payment.</p>
           </>
@@ -46,7 +46,7 @@ export default function PaymentSuccess() {
         {status === "paid" && (
           <>
             <Crown size={48} className="mx-auto mb-6" />
-            <CheckCircle2 size={40} color="#D4AF37" className="mx-auto mb-6" />
+            <CheckCircle2 size={40} color="#D7AF38" className="mx-auto mb-6" />
             <h1 className="font-serif text-3xl md:text-4xl mb-4">Thank you — <span className="italic gold-shimmer">order confirmed!</span></h1>
             <p className="text-lightgray mb-10">Your Jewell's Herbal Magic Blend is on its way. A receipt has been sent to your email, and we'll ship to the address you provided.</p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -57,7 +57,7 @@ export default function PaymentSuccess() {
         )}
         {(status === "failed" || status === "timeout") && (
           <>
-            <XCircle size={44} color="#D4AF37" className="mx-auto mb-6" />
+            <XCircle size={44} color="#D7AF38" className="mx-auto mb-6" />
             <h1 className="font-serif text-3xl md:text-4xl mb-4">{status === "timeout" ? "Still processing…" : "Payment not completed"}</h1>
             <p className="text-lightgray mb-10">
               {status === "timeout"

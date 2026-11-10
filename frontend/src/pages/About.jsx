@@ -84,7 +84,7 @@ export default function About() {
             { t: "Legacy", d: "Generational impact — empowering women, uplifting children, and giving back to the communities that make our success possible." },
           ].map((v, i) => (
             <Reveal key={v.t} delay={i * 0.1}>
-              <div className="bg-[#150621] p-10 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="bg-[#1A0E26] p-10 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">0{i + 1}</span>
                 <h3 className="font-serif text-3xl mt-6 mb-4">{v.t}</h3>
                 <p className="text-lightgray text-sm leading-relaxed">{v.d}</p>
@@ -101,7 +101,7 @@ export default function About() {
           { k: "Vision", t: "A world where enterprise and empathy rise together; where every achievement leaves a legacy larger than itself." },
         ].map((b, i) => (
           <Reveal key={b.k} delay={i * 0.12}>
-            <div className="bg-[#150621] p-10 md:p-14 h-full">
+            <div className="bg-[#1A0E26] p-10 md:p-14 h-full">
               <Crown size={36} className="mb-8" />
               <p className="text-xs uppercase tracking-[0.3em] text-gold mb-6">{b.k}</p>
               <p className="font-serif text-2xl md:text-3xl leading-snug">{b.t}</p>
@@ -117,7 +117,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
           {VALUES.map((v, i) => (
             <Reveal key={v.t} delay={i * 0.08}>
-              <div className="bg-[#150621] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="bg-[#1A0E26] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <span className="font-serif text-4xl text-gold/30 group-hover:text-gold/60 transition-colors">0{i + 1}</span>
                 <h3 className="font-serif text-2xl mt-6 mb-3">{v.t}</h3>
                 <p className="text-lightgray text-sm leading-relaxed">{v.d}</p>

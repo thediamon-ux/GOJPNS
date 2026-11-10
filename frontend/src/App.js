@@ -62,7 +62,7 @@ function App() {
         </main>
         <Footer />
       </BrowserRouter>
-      <Toaster theme="dark" position="bottom-right" toastOptions={{ style: { background: "#160821", border: "1px solid rgba(212,175,55,0.3)", color: "#fff" } }} />
+      <Toaster theme="dark" position="bottom-right" toastOptions={{ style: { background: "#1A0E26", border: "1px solid rgba(215,175,56,0.3)", color: "#fff" } }} />
     </div>
   );
 }

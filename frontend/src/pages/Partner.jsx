@@ -53,7 +53,7 @@ export default function Partner() {
             {BENEFITS.map((b, i) => (
               <li key={i} className="flex items-start gap-4">
                 <span className="mt-0.5 w-7 h-7 shrink-0 border border-gold/40 flex items-center justify-center">
-                  <Check size={14} color="#D4AF37" strokeWidth={1.5} />
+                  <Check size={14} color="#D7AF38" strokeWidth={1.5} />
                 </span>
                 <span className="text-lightgray leading-relaxed">{b}</span>
               </li>

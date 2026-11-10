@@ -87,9 +87,9 @@ export default function EventsEntertainment() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15 border border-gold/15">
           {ROLES.map((r, i) => (
             <Reveal key={r.t} delay={(i % 4) * 0.06}>
-              <div className="bg-[#150621] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="bg-[#1A0E26] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <span className="inline-flex w-12 h-12 border border-gold/40 items-center justify-center mb-6 group-hover:border-gold transition-colors">
-                  <r.icon size={22} color="#D4AF37" strokeWidth={1.3} />
+                  <r.icon size={22} color="#D7AF38" strokeWidth={1.3} />
                 </span>
                 <h3 className="font-serif text-xl mb-2">{r.t}</h3>
                 <p className="text-lightgray text-sm leading-relaxed">{r.d}</p>
@@ -153,7 +153,7 @@ export default function EventsEntertainment() {
                 ].map((d) => (
                   <div key={d.v} className="flex items-start gap-4">
                     <span className="w-9 h-9 shrink-0 border border-gold/40 flex items-center justify-center">
-                      <d.icon size={16} color="#D4AF37" strokeWidth={1.4} />
+                      <d.icon size={16} color="#D7AF38" strokeWidth={1.4} />
                     </span>
                     <p className="text-white/90">{d.v}</p>
                   </div>
@@ -177,7 +177,7 @@ export default function EventsEntertainment() {
           </p>
           <div className="grid sm:grid-cols-2 gap-px bg-gold/15 border border-gold/15">
             {TOPICS.map((t) => (
-              <div key={t} className="bg-[#150621] p-5 flex items-center gap-3">
+              <div key={t} className="bg-[#1A0E26] p-5 flex items-center gap-3">
                 <Diamond size={14} />
                 <span className="text-sm">{t}</span>
               </div>
@@ -209,7 +209,7 @@ export default function EventsEntertainment() {
           <div className="relative border border-gold/25 p-12 md:p-20 overflow-hidden text-center">
             <div className="absolute inset-0 bg-vividp/15 blur-[110px]" />
             <div className="relative">
-              <Sparkles size={30} color="#D4AF37" strokeWidth={1.2} className="mx-auto mb-6" />
+              <Sparkles size={30} color="#D7AF38" strokeWidth={1.2} className="mx-auto mb-6" />
               <h2 className="font-serif text-3xl md:text-5xl mb-6 max-w-2xl mx-auto">Bring the <span className="italic gold-shimmer">glamour</span> to your stage.</h2>
               <p className="text-lightgray max-w-lg mx-auto mb-10 leading-relaxed">Speaking engagements, hosting, event production, and appearances — let's create something unforgettable.</p>
               <div className="flex flex-wrap gap-4 justify-center">

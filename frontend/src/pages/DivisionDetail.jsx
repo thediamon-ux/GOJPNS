@@ -57,7 +57,7 @@ export default function DivisionDetail() {
         <div className="grid md:grid-cols-2 gap-px bg-gold/15">
           {d.features.map((f, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <div className="bg-[#150621] p-8 flex items-start gap-5 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="bg-[#1A0E26] p-8 flex items-start gap-5 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <span className="mt-1 shrink-0 w-9 h-9 border border-gold/40 flex items-center justify-center group-hover:bg-gold group-hover:text-void transition-colors">
                   <Check size={16} strokeWidth={1.5} />
                 </span>
@@ -74,7 +74,7 @@ export default function DivisionDetail() {
           <div className="grid sm:grid-cols-3 gap-px bg-gold/15 border border-gold/15">
             {d.franchiseStats.map((s) => (
               <Reveal key={s.l}>
-                <div className="bg-[#150621] p-10 text-center h-full">
+                <div className="bg-[#1A0E26] p-10 text-center h-full">
                   <div className="font-serif text-5xl md:text-6xl text-gold mb-3">{s.v}</div>
                   <p className="text-[11px] uppercase tracking-[0.25em] text-lightgray">{s.l}</p>
                 </div>
@@ -92,7 +92,7 @@ export default function DivisionDetail() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
             {d.franchiseSteps.map((step, i) => (
               <Reveal key={step.t} delay={i * 0.08}>
-                <div className="bg-[#150621] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
+                <div className="bg-[#1A0E26] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
                   <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">0{i + 1}</span>
                   <h3 className="font-serif text-2xl mt-6 mb-3">{step.t}</h3>
                   <p className="text-lightgray text-sm leading-relaxed">{step.d}</p>

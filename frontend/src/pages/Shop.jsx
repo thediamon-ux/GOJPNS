@@ -63,7 +63,7 @@ export default function Shop() {
       <Seo title="Shop Jewell's Herbal Magic Blend — JPNS Enterprises" description="Order Jewell's Herbal Magic Blend online: a handcrafted, caffeine-free herbal tea. Secure checkout with Apple Pay, card, or Cash App. Ships within the US." />
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute -top-24 right-0 w-[600px] h-[600px] rounded-full bg-vividp/40 blur-[170px] pointer-events-none" />
-        <div className="absolute top-1/3 -left-32 w-[460px] h-[460px] rounded-full bg-emerald-900/40 blur-[150px] pointer-events-none" />
+        <div className="absolute top-1/3 -left-32 w-[460px] h-[460px] rounded-full bg-[#35104F]/40 blur-[150px] pointer-events-none" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
           {/* IMAGE */}
           <Reveal>
@@ -100,7 +100,7 @@ export default function Shop() {
                 {(product?.options || []).map((o) => (
                   <button key={o.lookup_key} type="button" data-testid={`size-${o.lookup_key}`}
                     onClick={() => pickSize(o.lookup_key)}
-                    className={`p-4 text-left transition-colors duration-300 ${selected === o.lookup_key ? "bg-gold text-void" : "bg-[#0d1410] hover:bg-emerald-950/60"}`}>
+                    className={`p-4 text-left transition-colors duration-300 ${selected === o.lookup_key ? "bg-gold text-void" : "bg-[#1A0E26] hover:bg-[#35104F]/60"}`}>
                     <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${selected === o.lookup_key ? "text-void/70" : "text-emerald-300/80"}`}>{o.label}</p>
                     <p className="font-serif text-lg leading-tight">{o.size}</p>
                     <p className={`text-sm mt-1 ${selected === o.lookup_key ? "text-void" : "text-gold"}`}>${(o.amount / 100).toFixed(2)}</p>
@@ -115,12 +115,12 @@ export default function Shop() {
                 <span className="text-xs uppercase tracking-[0.2em] text-gold block mb-4">Purchase Type</span>
                 <div className="grid grid-cols-2 gap-px bg-gold/15 border border-gold/15">
                   <button type="button" data-testid="mode-once" onClick={() => setMode("once")}
-                    className={`p-4 text-left transition-colors duration-300 ${!useSub ? "bg-gold text-void" : "bg-[#0d1410] hover:bg-emerald-950/60"}`}>
+                    className={`p-4 text-left transition-colors duration-300 ${!useSub ? "bg-gold text-void" : "bg-[#1A0E26] hover:bg-[#35104F]/60"}`}>
                     <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${!useSub ? "text-void/70" : "text-emerald-300/80"}`}>One-Time</p>
                     <p className="font-serif text-lg">${(option.amount / 100).toFixed(2)}</p>
                   </button>
                   <button type="button" data-testid="mode-sub" onClick={() => setMode("sub")}
-                    className={`p-4 text-left transition-colors duration-300 ${useSub ? "bg-gold text-void" : "bg-[#0d1410] hover:bg-emerald-950/60"}`}>
+                    className={`p-4 text-left transition-colors duration-300 ${useSub ? "bg-gold text-void" : "bg-[#1A0E26] hover:bg-[#35104F]/60"}`}>
                     <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${useSub ? "text-void/70" : "text-emerald-300/80"}`}>Subscribe</p>
                     <p className="font-serif text-lg">${(option.sub.amount / 100).toFixed(2)}<span className="text-sm font-sans"> / {option.sub.interval}</span></p>
                   </button>
@@ -164,16 +164,16 @@ export default function Shop() {
             <div className="flex flex-wrap items-center gap-3 mb-5">
               {PAY_METHODS.map((m) => (
                 <span key={m.label} className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.15em] text-lightgray border border-gold/25 px-3 py-2">
-                  <m.icon size={14} color="#D4AF37" strokeWidth={1.5} /> {m.label}
+                  <m.icon size={14} color="#D7AF38" strokeWidth={1.5} /> {m.label}
                 </span>
               ))}
             </div>
             <div className="flex flex-wrap gap-6 text-xs text-lightgray">
-              <span className="inline-flex items-center gap-2"><Truck size={14} color="#D4AF37" strokeWidth={1.5} /> Ships within the US</span>
-              <span className="inline-flex items-center gap-2"><Leaf size={14} color="#D4AF37" strokeWidth={1.5} /> Caffeine free</span>
+              <span className="inline-flex items-center gap-2"><Truck size={14} color="#D7AF38" strokeWidth={1.5} /> Ships within the US</span>
+              <span className="inline-flex items-center gap-2"><Leaf size={14} color="#D7AF38" strokeWidth={1.5} /> Caffeine free</span>
             </div>
             <p className="mt-4 inline-flex items-center gap-2 text-xs text-lightgray/70">
-              <ShieldCheck size={14} color="#D4AF37" strokeWidth={1.5} /> Secure checkout by Stripe
+              <ShieldCheck size={14} color="#D7AF38" strokeWidth={1.5} /> Secure checkout by Stripe
             </p>
           </Reveal>
         </div>
@@ -182,7 +182,7 @@ export default function Shop() {
       <section className="pb-24 max-w-[1400px] mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="border border-gold/20 p-10 md:p-14 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-emerald-900/15 blur-[100px]" />
+            <div className="absolute inset-0 bg-[#35104F]/15 blur-[100px]" />
             <p className="relative font-serif text-2xl md:text-3xl max-w-2xl mx-auto leading-snug">
               Want the full story of the blend and all 16 botanicals?
             </p>

@@ -64,7 +64,7 @@ export default function SelfCare() {
       <Seo title="Jewell's Herbal Magic Blend — JPNS Self-Care" description="Jewell's Herbal Magic Blend: a handcrafted, caffeine-free herbal tea of 16 intentional botanicals, made to nourish, heal and restore. Body, mind and spirit." />
       {/* HERO */}
       <section ref={ref} className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute -top-20 right-0 w-[560px] h-[560px] rounded-full bg-emerald-900/40 blur-[160px] pointer-events-none" />
+        <div className="absolute -top-20 right-0 w-[560px] h-[560px] rounded-full bg-[#35104F]/40 blur-[160px] pointer-events-none" />
         <div className="absolute top-1/3 -left-32 w-[480px] h-[480px] rounded-full bg-vividp/35 blur-[150px] pointer-events-none" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
           <div>
@@ -124,7 +124,7 @@ export default function SelfCare() {
             { k: "Ritual", v: "Body · Mind · Spirit" },
             { k: "Crafted", v: "With Love & Purpose" },
           ].map((d) => (
-            <div key={d.k} className="bg-[#0d1410] p-8">
+            <div key={d.k} className="bg-[#1A0E26] p-8">
               <p className="text-[10px] uppercase tracking-[0.25em] text-emerald-300/80 mb-3">{d.k}</p>
               <p className="font-serif text-xl text-white">{d.v}</p>
             </div>
@@ -148,9 +148,9 @@ export default function SelfCare() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
           {BENEFITS.map((b, i) => (
             <Reveal key={b.t} delay={(i % 4) * 0.06}>
-              <div className="bg-[#0d1410] p-8 h-full group hover:bg-emerald-950/60 transition-colors duration-500">
+              <div className="bg-[#1A0E26] p-8 h-full group hover:bg-[#35104F]/60 transition-colors duration-500">
                 <span className="inline-flex w-12 h-12 border border-gold/40 items-center justify-center mb-6 group-hover:border-gold transition-colors">
-                  <b.icon size={22} color="#D4AF37" strokeWidth={1.3} />
+                  <b.icon size={22} color="#D7AF38" strokeWidth={1.3} />
                 </span>
                 <p className="font-serif text-lg leading-snug">{b.t}</p>
               </div>
@@ -175,7 +175,7 @@ export default function SelfCare() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gold/15 border border-gold/15">
           {INGREDIENTS.map((ing, i) => (
             <Reveal key={ing.n} delay={(i % 3) * 0.05}>
-              <div className="bg-[#0d1410] p-7 h-full group hover:bg-emerald-950/60 transition-colors duration-500">
+              <div className="bg-[#1A0E26] p-7 h-full group hover:bg-[#35104F]/60 transition-colors duration-500">
                 <div className="flex items-center gap-3 mb-3">
                   <Diamond size={14} />
                   <h3 className="font-serif text-xl group-hover:text-gold transition-colors duration-300">{ing.n}</h3>
@@ -198,13 +198,13 @@ export default function SelfCare() {
         <div className="grid md:grid-cols-3 gap-px bg-gold/15 border border-gold/15">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
-              <figure className="bg-[#0d1410] p-8 h-full flex flex-col group hover:bg-emerald-950/60 transition-colors duration-500">
-                <Quote size={24} color="#D4AF37" strokeWidth={1.2} className="mb-6" />
+              <figure className="bg-[#1A0E26] p-8 h-full flex flex-col group hover:bg-[#35104F]/60 transition-colors duration-500">
+                <Quote size={24} color="#D7AF38" strokeWidth={1.2} className="mb-6" />
                 <blockquote className="font-serif text-lg leading-relaxed text-white/95 flex-1">“{t.quote}”</blockquote>
                 <figcaption className="mt-8 pt-6 border-t border-gold/15">
                   <div className="flex gap-1 mb-3">
                     {Array.from({ length: 5 }).map((_, s) => (
-                      <Star key={s} size={14} color="#D4AF37" fill="#D4AF37" strokeWidth={1} />
+                      <Star key={s} size={14} color="#D7AF38" fill="#D7AF38" strokeWidth={1} />
                     ))}
                   </div>
                   <p className="text-sm text-white">{t.name}</p>
@@ -221,8 +221,8 @@ export default function SelfCare() {
         <div className="grid md:grid-cols-3 gap-px bg-gold/15 border-y border-gold/15">
           {CREED.map((c, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <div className="bg-[#0d1410] p-8 flex items-center gap-4 h-full">
-                <Sparkles size={20} color="#D4AF37" strokeWidth={1.3} className="shrink-0" />
+              <div className="bg-[#1A0E26] p-8 flex items-center gap-4 h-full">
+                <Sparkles size={20} color="#D7AF38" strokeWidth={1.3} className="shrink-0" />
                 <p className="text-sm uppercase tracking-[0.15em] text-emerald-100/90">{c}</p>
               </div>
             </Reveal>
@@ -234,10 +234,10 @@ export default function SelfCare() {
       <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10">
         <Reveal>
           <div className="relative border border-gold/25 p-12 md:p-20 overflow-hidden text-center">
-            <div className="absolute inset-0 bg-emerald-900/20 blur-[110px]" />
+            <div className="absolute inset-0 bg-[#35104F]/20 blur-[110px]" />
             <div className="absolute -top-16 right-10 w-[360px] h-[360px] rounded-full bg-vividp/25 blur-[130px]" />
             <div className="relative">
-              <Heart size={30} color="#D4AF37" strokeWidth={1.2} className="mx-auto mb-6" />
+              <Heart size={30} color="#D7AF38" strokeWidth={1.2} className="mx-auto mb-6" />
               <h2 className="font-serif text-3xl md:text-5xl mb-6 max-w-2xl mx-auto">You deserve to <span className="italic gold-shimmer">feel magic</span>.</h2>
               <p className="text-lightgray max-w-lg mx-auto mb-10 leading-relaxed">Handcrafted in small batches and ethically sourced. Order your tin today — or reach out for larger orders and wellness partnerships.</p>
               <div className="flex flex-wrap gap-4 justify-center">

@@ -47,7 +47,7 @@ export default function Contact() {
             ].map((c) => (
               <div key={c.label} className="flex items-start gap-5">
                 <span className="w-11 h-11 shrink-0 border border-gold/40 flex items-center justify-center">
-                  <c.icon size={18} color="#D4AF37" strokeWidth={1.3} />
+                  <c.icon size={18} color="#D7AF38" strokeWidth={1.3} />
                 </span>
                 <div>
                   <p className="text-xs uppercase tracking-[0.25em] text-gold mb-1">{c.label}</p>

@@ -37,7 +37,7 @@ export default function Impact() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-gold/15">
           {METRICS.map((m, i) => (
             <Reveal key={m.l} delay={i * 0.08} className="lg:col-span-2">
-              <div className="bg-[#150621] p-10 md:p-12 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="bg-[#1A0E26] p-10 md:p-12 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <Diamond size={18} className="mb-8 opacity-50 group-hover:opacity-100 transition-opacity" />
                 <div className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-4">
                   <Counter value={m.v} prefix={m.p} suffix={m.s} />
@@ -48,7 +48,7 @@ export default function Impact() {
           ))}
           <Reveal delay={0.4} className="sm:col-span-2 lg:col-span-4">
             <div className="bg-gold text-void p-10 md:p-12 h-full flex flex-col justify-center">
-              <Crown size={40} color="#0B0B0B" className="mb-6" />
+              <Crown size={40} color="#110819" className="mb-6" />
               <p className="font-serif text-3xl md:text-4xl leading-snug max-w-xl">Impact is the truest measure of a legacy.</p>
             </div>
           </Reveal>

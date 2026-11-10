@@ -29,7 +29,7 @@ export const Navbar = () => {
     <header
       data-testid="navbar"
       className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${
-        scrolled ? "backdrop-blur-xl bg-[#160a24]/80 border-b border-gold/20" : "bg-transparent"
+        scrolled ? "backdrop-blur-xl bg-[#1A0E26]/80 border-b border-gold/20" : "bg-transparent"
       }`}
     >
       <nav className="max-w-[1400px] mx-auto px-6 lg:px-10 h-24 flex items-center justify-between">
@@ -53,7 +53,7 @@ export const Navbar = () => {
           <Link
             to="/partner"
             data-testid="nav-partner"
-            className="text-[12px] uppercase tracking-[0.18em] text-void bg-gold px-7 py-3.5 rounded-md font-semibold hover:bg-[#E5C158] hover:shadow-[0_0_18px_rgba(212,175,55,0.35)] transition-all duration-300"
+            className="text-[12px] uppercase tracking-[0.18em] text-void bg-gold px-7 py-3.5 rounded-md font-semibold hover:bg-[#E5C158] hover:shadow-[0_0_18px_rgba(215,175,56,0.35)] transition-all duration-300"
           >
             Partner With Us
           </Link>

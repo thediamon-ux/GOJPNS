@@ -23,10 +23,10 @@ const HOME_CARDS = [
 ];
 
 const HeroBg = () => (
-  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#2B0B3D] via-[#6B1FAF] to-[#140321]">
+  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#35104F] via-[#6D2793] to-[#110819]">
     <div className="absolute -top-32 right-0 w-[720px] h-[720px] rounded-full bg-vividp/50 blur-[160px]" />
     <div className="absolute bottom-0 -left-32 w-[520px] h-[520px] rounded-full bg-deepp/70 blur-[150px]" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(212,175,55,0.12),transparent_55%)]" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(215,175,56,0.12),transparent_55%)]" />
     <div className="absolute -left-56 top-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full border-2 border-gold/25 pointer-events-none" />
     <div className="absolute -left-72 top-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-gold/15 pointer-events-none" />
   </div>
@@ -55,7 +55,7 @@ export default function Home() {
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.15, duration: 0.8 }}
               className="mt-10 flex flex-wrap gap-4">
-              <Link to="/divisions" data-testid="hero-explore-btn" className="btn-shine group inline-flex items-center justify-center gap-3 bg-gold text-void font-semibold text-xs uppercase tracking-[0.2em] px-8 py-4 rounded-md hover:bg-[#E5C158] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
+              <Link to="/divisions" data-testid="hero-explore-btn" className="btn-shine group inline-flex items-center justify-center gap-3 bg-gold text-void font-semibold text-xs uppercase tracking-[0.2em] px-8 py-4 rounded-md hover:bg-[#E5C158] hover:shadow-[0_0_20px_rgba(215,175,56,0.4)] transition-all duration-300">
                 Explore Divisions <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link to="/partner" data-testid="hero-partner-btn" className="inline-flex items-center justify-center gap-3 border border-gold text-gold font-semibold text-xs uppercase tracking-[0.2em] px-8 py-4 rounded-md hover:bg-gold/10 transition-all duration-300">
@@ -68,8 +68,8 @@ export default function Home() {
           className="relative h-[440px] sm:h-[520px] lg:absolute lg:inset-y-0 lg:right-0 lg:w-[52%] lg:h-auto">
           <img src="/jewell-sitting.jpg" alt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
             className="w-full h-full object-cover object-top" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2B0B3D] via-transparent to-transparent hidden lg:block" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#140321]/85 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#35104F] via-transparent to-transparent hidden lg:block" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#110819]/85 via-transparent to-transparent" />
           <div className="absolute bottom-10 right-6 lg:right-12 z-10 text-center">
             <div className="absolute -inset-6 bg-black/50 blur-2xl rounded-full pointer-events-none" />
             <Crown size={20} className="relative mx-auto mb-1" />
@@ -81,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* DIVISION CARDS */}
-      <section ref={dbaRef} className="py-14 lg:py-20 bg-gradient-to-b from-[#140321] via-[#0d0218] to-transparent" data-testid="divisions-preview">
+      <section ref={dbaRef} className="py-14 lg:py-20 bg-gradient-to-b from-[#110819] via-[#110819] to-transparent" data-testid="divisions-preview">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible">
             {HOME_CARDS.map((c, i) => {
@@ -90,13 +90,13 @@ export default function Home() {
               return (
                 <Reveal key={c.slug} delay={i * 0.06} className="min-w-[250px] sm:min-w-[280px] lg:min-w-0 snap-center">
                   <Link to={`/divisions/${c.slug}`} data-testid={`dba-card-${c.slug}`}
-                    className="group relative block overflow-hidden rounded-2xl border-2 border-gold/50 h-[400px] hover:border-gold hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:-translate-y-2 transition-all duration-500">
+                    className="group relative block overflow-hidden rounded-2xl border-2 border-gold/50 h-[400px] hover:border-gold hover:shadow-[0_0_25px_rgba(215,175,56,0.3)] hover:-translate-y-2 transition-all duration-500">
                     <img src={d.image} alt={c.title} loading="lazy"
                       className={`absolute inset-0 w-full h-full object-cover ${c.bright || "brightness-105"} group-hover:scale-105 group-hover:brightness-110 transition-all duration-700 ease-out ${c.focus || d.focus || "object-center"}`} />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#140321]/90 via-[#140321]/15 to-[#140321]/95 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#110819]/90 via-[#110819]/15 to-[#110819]/95 pointer-events-none" />
                     <div className="relative h-full flex flex-col justify-between">
                       <div className="pt-6 px-4 text-center">
-                        <Icon size={26} color="#D4AF37" strokeWidth={1.4} className="mx-auto mb-2 drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-300" />
+                        <Icon size={26} color="#D7AF38" strokeWidth={1.4} className="mx-auto mb-2 drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-300" />
                         <h3 className="font-serif text-xl text-white leading-tight drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)] group-hover:text-gold transition-colors duration-300">{c.title}</h3>
                         {c.product && <p className="font-serif italic text-gold text-sm mt-1 drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)]">{c.product}</p>}
                       </div>
@@ -123,7 +123,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-px bg-gold/15">
           {PILLARS.map((p, i) => (
             <Reveal key={p.n} delay={i * 0.12}>
-              <div className="bg-[#150621] p-10 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="bg-[#1A0E26] p-10 h-full group hover:bg-deepp/60 transition-colors duration-500">
                 <div className="flex items-center justify-between mb-10">
                   <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">{p.n}</span>
                   <Diamond size={18} className="opacity-40 group-hover:opacity-100 transition-opacity" />

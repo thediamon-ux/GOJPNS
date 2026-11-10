@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-export const Sparkles = ({ count = 46 }) => {
+export const Sparkles = ({ count = 22 }) => {
   const dots = useMemo(
     () =>
       Array.from({ length: count }).map((_, i) => ({
@@ -30,7 +30,7 @@ export const Sparkles = ({ count = 46 }) => {
             animationDuration: `${d.dur}s`,
             background: d.gold ? "#F1D77A" : "#ffffff",
             boxShadow: d.gold
-              ? "0 0 6px 1px rgba(212,175,55,0.85)"
+              ? "0 0 6px 1px rgba(215,175,56,0.85)"
               : "0 0 6px 1px rgba(224,214,255,0.75)",
           }}
         />
