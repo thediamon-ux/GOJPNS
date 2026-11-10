@@ -33,11 +33,11 @@ export default function Impact() {
       />
 
       {/* BIG COUNTERS */}
-      <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="impact-metrics">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-gold/15">
+      <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10 aura-c" data-testid="impact-metrics">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-px bg-gold/20 lux-grid">
           {METRICS.map((m, i) => (
             <Reveal key={m.l} delay={i * 0.08} className="lg:col-span-2">
-              <div className="bg-[#1A0E26] p-10 md:p-12 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="lux-card p-10 md:p-12 h-full group">
                 <Diamond size={18} className="mb-8 opacity-50 group-hover:opacity-100 transition-opacity" />
                 <div className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-4">
                   <Counter value={m.v} prefix={m.p} suffix={m.s} />
@@ -58,13 +58,13 @@ export default function Impact() {
       <EditorialMarquee />
 
       {/* INITIATIVES */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 aura-l aura-gold">
         <Reveal><Overline className="mb-6">Where It Goes</Overline></Reveal>
         <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16">Our <span className="italic gold-shimmer">initiatives</span>.</h2></Reveal>
         <div className="grid md:grid-cols-3 gap-8">
           {INITIATIVES.map((it, i) => (
             <Reveal key={it.t} delay={i * 0.1}>
-              <div className="border border-gold/20 p-10 h-full group hover:border-gold/50 transition-colors duration-500">
+              <div className="lux-row p-10 h-full group">
                 <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">0{i + 1}</span>
                 <h3 className="font-serif text-2xl mt-6 mb-4">{it.t}</h3>
                 <p className="text-lightgray text-sm leading-relaxed">{it.d}</p>
@@ -75,10 +75,9 @@ export default function Impact() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10 aura-c">
         <Reveal>
-          <div className="relative border border-gold/25 p-12 md:p-16 overflow-hidden text-center">
-            <div className="absolute inset-0 bg-vividp/20 blur-[100px]" />
+          <div className="relative lux-panel p-12 md:p-16 overflow-hidden text-center">
             <div className="relative">
               <h2 className="font-serif text-3xl md:text-5xl mb-8 max-w-3xl mx-auto">Join us in writing the next chapter of <span className="italic gold-shimmer">impact</span>.</h2>
               <Link to="/partner" className="group inline-flex items-center gap-3 bg-gold text-void px-8 py-4 text-xs uppercase tracking-[0.2em] hover:bg-white transition-colors">

@@ -23,13 +23,13 @@ export default function About() {
         subtitle="JPNS Enterprises LLC is a diversified holding company uniting luxury, experience, wellness, hospitality, and philanthropy under a single, purpose-driven vision."
       />
 
-      <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center aura-l">
         <Reveal>
-          <div className="relative overflow-hidden border border-gold/20">
+          <div className="lux-halo"><div className="relative overflow-hidden lux-edge">
             <img src="https://images.unsplash.com/photo-1688614598602-0a71fbfed6c5?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200"
               alt="JPNS Enterprises" className="w-full h-[520px] object-cover grayscale-[0.2]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-void/60 to-transparent" />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-deepp/60 via-transparent to-vividp/10" />
+          </div></div>
         </Reveal>
         <Reveal delay={0.15}>
           <Overline className="mb-6">Our Story</Overline>
@@ -45,11 +45,11 @@ export default function About() {
       <EditorialMarquee />
 
       {/* FOUNDER SPOTLIGHT */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center" data-testid="founder-spotlight">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center aura-r aura-gold aura-gold-r" data-testid="founder-spotlight">
         <Reveal className="lg:col-span-5">
-          <div className="relative">
+          <div className="relative lux-halo">
             <div className="absolute -inset-3 border border-gold/30 pointer-events-none" />
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden lux-edge">
               <img src="/jewel-proby-shine.jpg" alt="Jewell Proby Shine, Founder & CEO of JPNS Enterprises LLC"
                 className="w-full h-[560px] object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-void/50 via-transparent to-transparent" />
@@ -74,17 +74,17 @@ export default function About() {
       </section>
 
       {/* STRENGTH · VISION · LEGACY */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="about-creed">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 aura-c aura-gold" data-testid="about-creed">
         <Reveal><Overline className="mb-6">The Creed</Overline></Reveal>
         <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16 leading-[1.05]">What <span className="italic gold-shimmer">Strength. Vision. Legacy.</span> means to us.</h2></Reveal>
-        <div className="grid md:grid-cols-3 gap-px bg-gold/15">
+        <div className="grid md:grid-cols-3 gap-px bg-gold/20 lux-grid">
           {[
             { t: "Strength", d: "Leadership, resilience, and the confidence to build — an enterprise that stands firm through every season and sets the standard in every industry it enters." },
             { t: "Vision", d: "Innovation and entrepreneurship — seeing opportunity where others see limits, and turning bold ideas into exceptional experiences and growing businesses." },
             { t: "Legacy", d: "Generational impact — empowering women, uplifting children, and giving back to the communities that make our success possible." },
           ].map((v, i) => (
             <Reveal key={v.t} delay={i * 0.1}>
-              <div className="bg-[#1A0E26] p-10 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="lux-card p-10 h-full group">
                 <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">0{i + 1}</span>
                 <h3 className="font-serif text-3xl mt-6 mb-4">{v.t}</h3>
                 <p className="text-lightgray text-sm leading-relaxed">{v.d}</p>
@@ -95,29 +95,33 @@ export default function About() {
       </section>
 
       {/* MISSION / VISION */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-px bg-gold/15" data-testid="mission-vision">
+      <section className="py-24 aura-r" data-testid="mission-vision">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="grid md:grid-cols-2 gap-px bg-gold/20 lux-grid">
         {[
           { k: "Mission", t: "To build enduring brands that set new standards of excellence — while channeling our success into lasting change for women, children, and communities worldwide." },
           { k: "Vision", t: "A world where enterprise and empathy rise together; where every achievement leaves a legacy larger than itself." },
         ].map((b, i) => (
           <Reveal key={b.k} delay={i * 0.12}>
-            <div className="bg-[#1A0E26] p-10 md:p-14 h-full">
+            <div className="lux-card p-10 md:p-14 h-full">
               <Crown size={36} className="mb-8" />
               <p className="text-xs uppercase tracking-[0.3em] text-gold mb-6">{b.k}</p>
               <p className="font-serif text-2xl md:text-3xl leading-snug">{b.t}</p>
             </div>
           </Reveal>
         ))}
+        </div>
+        </div>
       </section>
 
       {/* VALUES */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 aura-l aura-gold">
         <Reveal><Overline className="mb-6">What We Stand For</Overline></Reveal>
         <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-16">Our core <span className="italic gold-shimmer">values</span>.</h2></Reveal>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/20 lux-grid">
           {VALUES.map((v, i) => (
             <Reveal key={v.t} delay={i * 0.08}>
-              <div className="bg-[#1A0E26] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="lux-card p-8 h-full group">
                 <span className="font-serif text-4xl text-gold/30 group-hover:text-gold/60 transition-colors">0{i + 1}</span>
                 <h3 className="font-serif text-2xl mt-6 mb-3">{v.t}</h3>
                 <p className="text-lightgray text-sm leading-relaxed">{v.d}</p>

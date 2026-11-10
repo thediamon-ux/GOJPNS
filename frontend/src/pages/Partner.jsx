@@ -45,7 +45,7 @@ export default function Partner() {
         subtitle="We collaborate with investors, brands, and visionaries who want to build something enduring — and give back while doing it."
       />
 
-      <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16">
+      <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16 aura-r">
         <Reveal className="lg:col-span-5">
           <Crown size={44} className="mb-8" />
           <h2 className="font-serif text-3xl md:text-4xl mb-8 leading-snug">Why partner with <span className="italic text-gold">JPNS?</span></h2>
@@ -62,7 +62,7 @@ export default function Partner() {
         </Reveal>
 
         <Reveal delay={0.15} className="lg:col-span-7">
-          <div className="border border-gold/20 p-8 md:p-12">
+          <div className="lux-panel p-8 md:p-12">
             <Overline className="mb-8">Partnership Inquiry</Overline>
             <form onSubmit={submit} data-testid="partner-form" className="space-y-8">
               <div className="grid sm:grid-cols-2 gap-8">

@@ -64,8 +64,12 @@ export default function SelfCare() {
       <Seo title="Jewell's Herbal Magic Blend — JPNS Self-Care" description="Jewell's Herbal Magic Blend: a handcrafted, caffeine-free herbal tea of 16 intentional botanicals, made to nourish, heal and restore. Body, mind and spirit." />
       {/* HERO */}
       <section ref={ref} className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute -top-20 right-0 w-[560px] h-[560px] rounded-full bg-[#35104F]/40 blur-[160px] pointer-events-none" />
-        <div className="absolute top-1/3 -left-32 w-[480px] h-[480px] rounded-full bg-vividp/35 blur-[150px] pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none [mask-image:linear-gradient(to_bottom,black_65%,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black_65%,transparent)]">
+          <div className="absolute inset-0 bg-gradient-to-br from-deepp/80 via-vividp/20 to-deepp/40" />
+          <div className="absolute top-28 left-0 w-[600px] h-[340px] bg-[radial-gradient(closest-side,rgba(215,175,56,0.14),transparent)]" />
+          <div className="absolute -top-20 right-0 w-[620px] h-[620px] rounded-full bg-vividp/45 blur-[160px]" />
+          <div className="absolute top-1/3 -left-32 w-[480px] h-[480px] rounded-full bg-vividp/35 blur-[150px]" />
+        </div>
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
           <div>
             <Reveal>
@@ -85,7 +89,7 @@ export default function SelfCare() {
             <Reveal delay={0.5}>
               <div className="flex flex-wrap items-center gap-3 mb-10">
                 {["Handcrafted Herbal Tea", "Caffeine Free", "All Natural"].map((tag) => (
-                  <span key={tag} className="text-[10px] uppercase tracking-[0.2em] text-emerald-200/90 border border-emerald-400/30 px-4 py-2">{tag}</span>
+                  <span key={tag} className="text-[10px] uppercase tracking-[0.2em] text-ivory/90 border border-gold/35 bg-gold/5 px-4 py-2">{tag}</span>
                 ))}
               </div>
             </Reveal>
@@ -106,26 +110,26 @@ export default function SelfCare() {
           </div>
 
           <Reveal delay={0.2}>
-            <motion.div style={{ y }} className="relative">
+            <motion.div style={{ y }} className="relative lux-halo">
               <div className="absolute -inset-3 border border-gold/30 pointer-events-none" />
               <img src={PRODUCT_IMG} alt="Jewell's Herbal Magic Blend handcrafted herbal tea label"
-                className="relative w-full object-cover shadow-2xl shadow-black/60" />
+                className="relative w-full object-cover lux-edge" />
             </motion.div>
           </Reveal>
         </div>
       </section>
 
       {/* PRODUCT DETAIL STRIP */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-10">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15 border border-gold/15">
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 aura-c">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/20 lux-grid border border-gold/15">
           {[
             { k: "Sizes", v: "1.25 · 2.5 · 10 oz" },
             { k: "Form", v: "Loose Leaf Tea" },
             { k: "Ritual", v: "Body · Mind · Spirit" },
             { k: "Crafted", v: "With Love & Purpose" },
           ].map((d) => (
-            <div key={d.k} className="bg-[#1A0E26] p-8">
-              <p className="text-[10px] uppercase tracking-[0.25em] text-emerald-300/80 mb-3">{d.k}</p>
+            <div key={d.k} className="lux-card p-8">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-gold/80 mb-3">{d.k}</p>
               <p className="font-serif text-xl text-white">{d.v}</p>
             </div>
           ))}
@@ -133,7 +137,7 @@ export default function SelfCare() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 aura-r aura-gold aura-gold-r">
         <Reveal className="lg:col-span-4"><Overline>The Ritual</Overline></Reveal>
         <Reveal delay={0.1} className="lg:col-span-8">
           <p className="font-serif text-2xl md:text-4xl leading-[1.25]">
@@ -143,12 +147,12 @@ export default function SelfCare() {
       </section>
 
       {/* BENEFITS */}
-      <section className="py-8 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="wellness-benefits">
+      <section className="py-8 max-w-[1400px] mx-auto px-6 lg:px-10 aura-l" data-testid="wellness-benefits">
         <Reveal><Overline className="mb-10">Benefits</Overline></Reveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/20 lux-grid">
           {BENEFITS.map((b, i) => (
             <Reveal key={b.t} delay={(i % 4) * 0.06}>
-              <div className="bg-[#1A0E26] p-8 h-full group hover:bg-[#35104F]/60 transition-colors duration-500">
+              <div className="lux-card p-8 h-full group">
                 <span className="inline-flex w-12 h-12 border border-gold/40 items-center justify-center mb-6 group-hover:border-gold transition-colors">
                   <b.icon size={22} color="#D7AF38" strokeWidth={1.3} />
                 </span>
@@ -160,22 +164,22 @@ export default function SelfCare() {
       </section>
 
       {/* INGREDIENTS */}
-      <section id="ingredients" className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="wellness-ingredients">
+      <section id="ingredients" className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 aura-r aura-gold" data-testid="wellness-ingredients">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <Reveal><Overline className="mb-6">The Blend · 16 Botanicals</Overline></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">Every ingredient, <span className="italic gold-shimmer">intentional</span>.</h2></Reveal>
           </div>
           <Reveal delay={0.2}>
-            <span className="inline-flex items-center gap-3 text-emerald-300/80 text-xs uppercase tracking-[0.2em]">
+            <span className="inline-flex items-center gap-3 text-gold/80 text-xs uppercase tracking-[0.2em]">
               <Leaf size={16} strokeWidth={1.3} /> Rooted in nature
             </span>
           </Reveal>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gold/15 border border-gold/15">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gold/20 lux-grid border border-gold/15">
           {INGREDIENTS.map((ing, i) => (
             <Reveal key={ing.n} delay={(i % 3) * 0.05}>
-              <div className="bg-[#1A0E26] p-7 h-full group hover:bg-[#35104F]/60 transition-colors duration-500">
+              <div className="lux-card p-7 h-full group">
                 <div className="flex items-center gap-3 mb-3">
                   <Diamond size={14} />
                   <h3 className="font-serif text-xl group-hover:text-gold transition-colors duration-300">{ing.n}</h3>
@@ -188,17 +192,17 @@ export default function SelfCare() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="wellness-testimonials">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 aura-l aura-gold" data-testid="wellness-testimonials">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <Reveal><Overline className="mb-6">Reviews</Overline></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">Loved by every <span className="italic gold-shimmer">sip</span>.</h2></Reveal>
           </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-px bg-gold/15 border border-gold/15">
+        <div className="grid md:grid-cols-3 gap-px bg-gold/20 lux-grid border border-gold/15">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
-              <figure className="bg-[#1A0E26] p-8 h-full flex flex-col group hover:bg-[#35104F]/60 transition-colors duration-500">
+              <figure className="lux-card p-8 h-full flex flex-col group">
                 <Quote size={24} color="#D7AF38" strokeWidth={1.2} className="mb-6" />
                 <blockquote className="font-serif text-lg leading-relaxed text-white/95 flex-1">“{t.quote}”</blockquote>
                 <figcaption className="mt-8 pt-6 border-t border-gold/15">
@@ -208,7 +212,7 @@ export default function SelfCare() {
                     ))}
                   </div>
                   <p className="text-sm text-white">{t.name}</p>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-emerald-300/70 mt-1">{t.tag}</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold/70 mt-1">{t.tag}</p>
                 </figcaption>
               </figure>
             </Reveal>
@@ -217,13 +221,13 @@ export default function SelfCare() {
       </section>
 
       {/* CREED BAND */}
-      <section className="py-8 max-w-[1400px] mx-auto px-6 lg:px-10">
-        <div className="grid md:grid-cols-3 gap-px bg-gold/15 border-y border-gold/15">
+      <section className="py-8 max-w-[1400px] mx-auto px-6 lg:px-10 aura-c">
+        <div className="grid md:grid-cols-3 gap-px bg-gold/20 lux-grid border-y border-gold/15">
           {CREED.map((c, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <div className="bg-[#1A0E26] p-8 flex items-center gap-4 h-full">
+              <div className="lux-card p-8 flex items-center gap-4 h-full">
                 <Sparkles size={20} color="#D7AF38" strokeWidth={1.3} className="shrink-0" />
-                <p className="text-sm uppercase tracking-[0.15em] text-emerald-100/90">{c}</p>
+                <p className="text-sm uppercase tracking-[0.15em] text-ivory/90">{c}</p>
               </div>
             </Reveal>
           ))}
@@ -231,10 +235,9 @@ export default function SelfCare() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 aura-c">
         <Reveal>
-          <div className="relative border border-gold/25 p-12 md:p-20 overflow-hidden text-center">
-            <div className="absolute inset-0 bg-[#35104F]/20 blur-[110px]" />
+          <div className="relative lux-panel p-12 md:p-20 overflow-hidden text-center">
             <div className="absolute -top-16 right-10 w-[360px] h-[360px] rounded-full bg-vividp/25 blur-[130px]" />
             <div className="relative">
               <Heart size={30} color="#D7AF38" strokeWidth={1.2} className="mx-auto mb-6" />

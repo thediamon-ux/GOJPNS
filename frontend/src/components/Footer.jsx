@@ -25,8 +25,10 @@ export const Footer = () => {
   };
 
   return (
-    <footer data-testid="footer" className="relative pt-32 pb-10 overflow-hidden border-t border-gold/15">
-      <div className="absolute -top-40 left-1/3 w-[680px] h-[680px] rounded-full bg-vividp/30 blur-[150px] pointer-events-none" />
+    <footer data-testid="footer" className="relative pt-32 pb-10 overflow-hidden bg-gradient-to-b from-transparent via-deepp/45 to-deepp/70">
+      <div className="absolute top-0 inset-x-0 lux-hairline" />
+      <div className="absolute -top-40 left-1/3 w-[680px] h-[680px] rounded-full bg-vividp/35 blur-[150px] pointer-events-none" />
+      <div className="absolute top-24 left-0 w-[560px] h-[320px] bg-[radial-gradient(closest-side,rgba(215,175,56,0.12),transparent)] pointer-events-none" />
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 mb-24">
           <div>

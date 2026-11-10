@@ -42,8 +42,12 @@ export default function EventsEntertainment() {
       <Seo title="Events & Entertainment — JPNS Enterprises LLC" description="Book Jewell Proby Shine: motivational speaking, event hosting, red-carpet appearances and executive production under JPNS Events & Entertainment." />
       {/* HERO */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute -top-24 right-0 w-[620px] h-[620px] rounded-full bg-vividp/45 blur-[170px] pointer-events-none" />
-        <div className="absolute top-1/3 -left-32 w-[480px] h-[480px] rounded-full bg-deepp/60 blur-[150px] pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none [mask-image:linear-gradient(to_bottom,black_65%,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black_65%,transparent)]">
+          <div className="absolute inset-0 bg-gradient-to-br from-deepp/80 via-vividp/20 to-deepp/40" />
+          <div className="absolute top-28 left-0 w-[600px] h-[340px] bg-[radial-gradient(closest-side,rgba(215,175,56,0.14),transparent)]" />
+          <div className="absolute -top-24 right-0 w-[620px] h-[620px] rounded-full bg-vividp/45 blur-[170px]" />
+          <div className="absolute top-1/3 -left-32 w-[480px] h-[480px] rounded-full bg-deepp/80 blur-[150px]" />
+        </div>
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
           <div>
             <Reveal>
@@ -73,21 +77,21 @@ export default function EventsEntertainment() {
           </div>
 
           <Reveal delay={0.2}>
-            <div className="relative">
+            <div className="relative lux-halo">
               <div className="absolute -inset-3 border border-gold/40 pointer-events-none" />
               <img src="/event-jpns-flyer.jpg" alt="Jewell Proby Shine — JPNS Enterprises"
-                className="relative w-full aspect-square object-cover shadow-2xl shadow-black/60" />
+                className="relative w-full aspect-square object-cover lux-edge" />
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* ROLES STRIP */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="events-roles">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15 border border-gold/15">
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-10 aura-c" data-testid="events-roles">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/20 lux-grid border border-gold/15">
           {ROLES.map((r, i) => (
             <Reveal key={r.t} delay={(i % 4) * 0.06}>
-              <div className="bg-[#1A0E26] p-8 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="lux-card p-8 h-full group">
                 <span className="inline-flex w-12 h-12 border border-gold/40 items-center justify-center mb-6 group-hover:border-gold transition-colors">
                   <r.icon size={22} color="#D7AF38" strokeWidth={1.3} />
                 </span>
@@ -100,16 +104,16 @@ export default function EventsEntertainment() {
       </section>
 
       {/* PRODUCTIONS */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="events-productions">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 aura-l aura-gold" data-testid="events-productions">
         <Reveal><Overline className="mb-6">Productions</Overline></Reveal>
         <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl mb-14 leading-[1.05]">Shows she helped <span className="italic gold-shimmer">bring to life</span>.</h2></Reveal>
         <div className="grid md:grid-cols-2 gap-8">
           {SHOWS.map((s, i) => (
             <Reveal key={s.name} delay={i * 0.12}>
-              <div className="group border border-gold/20 hover:border-gold/45 transition-colors duration-500 h-full flex flex-col">
-                <div className="relative overflow-hidden h-[420px] bg-deepp/40">
+              <div className="group lux-row h-full flex flex-col">
+                <div className="relative overflow-hidden h-[420px] lux-media">
                   {s.img ? (
-                    <img src={s.img} alt={`${s.name} poster`} className="w-full h-full object-contain object-center bg-black group-hover:scale-[1.03] transition-transform duration-700" />
+                    <img src={s.img} alt={`${s.name} poster`} className="w-full h-full object-contain object-center group-hover:scale-[1.03] transition-transform duration-700" />
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-5 bg-gradient-to-br from-deepp/70 to-void">
                       <Crown size={54} />
@@ -130,12 +134,12 @@ export default function EventsEntertainment() {
       </section>
 
       {/* FEATURED EVENT — GALA */}
-      <section id="featured-event" className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="events-featured">
-        <div className="relative border border-gold/25 overflow-hidden grid lg:grid-cols-2">
+      <section id="featured-event" className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10 aura-r" data-testid="events-featured">
+        <div className="relative lux-panel overflow-hidden grid lg:grid-cols-2">
           <div className="absolute -top-20 -right-16 w-[420px] h-[420px] rounded-full bg-vividp/30 blur-[130px] pointer-events-none" />
           <Reveal>
             <div className="relative p-4">
-              <img src="/event-keynote-flyer.jpg" alt="Keynote Speaker Jewell — Legacy in Motion Gala flyer" className="w-full aspect-square object-cover border border-gold/20" />
+              <img src="/event-keynote-flyer.jpg" alt="Keynote Speaker Jewell — Legacy in Motion Gala flyer" className="w-full aspect-square object-cover lux-edge" />
             </div>
           </Reveal>
           <Reveal delay={0.12}>
@@ -168,16 +172,16 @@ export default function EventsEntertainment() {
       </section>
 
       {/* SPEAKING + GALLERY */}
-      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center" data-testid="events-speaking">
+      <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center aura-l aura-gold" data-testid="events-speaking">
         <Reveal>
           <Overline className="mb-6">Speaking & Appearances</Overline>
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.05] mb-6">Book Jewell for your <span className="italic gold-shimmer">next moment</span>.</h2>
           <p className="text-lightgray leading-relaxed mb-8 max-w-lg">
             From keynotes and panels to hosting and red-carpet appearances, Jewell delivers presence, purpose, and glamour. Signature talks include:
           </p>
-          <div className="grid sm:grid-cols-2 gap-px bg-gold/15 border border-gold/15">
+          <div className="grid sm:grid-cols-2 gap-px bg-gold/20 lux-grid border border-gold/15">
             {TOPICS.map((t) => (
-              <div key={t} className="bg-[#1A0E26] p-5 flex items-center gap-3">
+              <div key={t} className="lux-card p-5 flex items-center gap-3">
                 <Diamond size={14} />
                 <span className="text-sm">{t}</span>
               </div>
@@ -186,15 +190,15 @@ export default function EventsEntertainment() {
         </Reveal>
         <Reveal delay={0.15}>
           <div className="grid grid-cols-2 gap-4">
-            <div className="relative overflow-hidden border border-gold/15 col-span-2 group">
+            <div className="relative overflow-hidden lux-edge col-span-2 group">
               <img src="/event-ig-redcarpet.jpg" alt="Industry Girl red carpet" className="w-full h-[320px] object-cover object-top group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-void/70 to-transparent" />
               <span className="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.25em] text-gold">Industry Girl · Red Carpet</span>
             </div>
-            <div className="relative overflow-hidden border border-gold/15 col-span-2 group bg-black">
+            <div className="relative overflow-hidden lux-edge col-span-2 group lux-media">
               <img src="/event-appearance.jpg" alt="Jewell appearance" className="w-full h-[620px] object-contain group-hover:scale-105 transition-transform duration-700" />
             </div>
-            <div className="relative overflow-hidden border border-gold/15 col-span-2 group bg-black">
+            <div className="relative overflow-hidden lux-edge col-span-2 group lux-media">
               <img src="/event-jewell-guys.jpg" alt="Jewell with artists backstage" className="w-full h-[620px] object-contain group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-void/40 to-transparent pointer-events-none" />
               <span className="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.25em] text-gold">Backstage · Appearance</span>
@@ -204,10 +208,9 @@ export default function EventsEntertainment() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10 aura-c">
         <Reveal>
-          <div className="relative border border-gold/25 p-12 md:p-20 overflow-hidden text-center">
-            <div className="absolute inset-0 bg-vividp/15 blur-[110px]" />
+          <div className="relative lux-panel p-12 md:p-20 overflow-hidden text-center">
             <div className="relative">
               <Sparkles size={30} color="#D7AF38" strokeWidth={1.2} className="mx-auto mb-6" />
               <h2 className="font-serif text-3xl md:text-5xl mb-6 max-w-2xl mx-auto">Bring the <span className="italic gold-shimmer">glamour</span> to your stage.</h2>

@@ -29,6 +29,7 @@ const HeroBg = () => (
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(215,175,56,0.12),transparent_55%)]" />
     <div className="absolute -left-56 top-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full border-2 border-gold/25 pointer-events-none" />
     <div className="absolute -left-72 top-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full border border-gold/15 pointer-events-none" />
+    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-[#2a0f3e] pointer-events-none" />
   </div>
 );
 
@@ -39,7 +40,7 @@ export default function Home() {
     <div>
       <Seo title="JPNS Enterprises LLC — Strength. Vision. Legacy." description="A diversified enterprise of luxury car rentals, events and entertainment, self-care wellness, restaurant chains, and philanthropy led by Jewell Proby Shine." />
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-gold/20" data-testid="hero">
+      <section className="relative overflow-hidden" data-testid="hero">
         <HeroBg />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full pt-32 pb-14 lg:pt-36 lg:pb-20">
           <div className="lg:max-w-[46%]">
@@ -78,10 +79,11 @@ export default function Home() {
             <p className="relative text-[11px] uppercase tracking-[0.35em] text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">Founder &amp; CEO</p>
           </div>
         </motion.div>
+        <div className="absolute bottom-0 inset-x-0 lux-hairline z-10" />
       </section>
 
       {/* DIVISION CARDS */}
-      <section ref={dbaRef} className="py-14 lg:py-20 bg-gradient-to-b from-[#110819] via-[#110819] to-transparent" data-testid="divisions-preview">
+      <section ref={dbaRef} className="relative py-14 lg:py-20 bg-gradient-to-b from-[#2a0f3e] via-deepp/40 to-transparent" data-testid="divisions-preview">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible">
             {HOME_CARDS.map((c, i) => {
@@ -90,10 +92,10 @@ export default function Home() {
               return (
                 <Reveal key={c.slug} delay={i * 0.06} className="min-w-[250px] sm:min-w-[280px] lg:min-w-0 snap-center">
                   <Link to={`/divisions/${c.slug}`} data-testid={`dba-card-${c.slug}`}
-                    className="group relative block overflow-hidden rounded-2xl border-2 border-gold/50 h-[400px] hover:border-gold hover:shadow-[0_0_25px_rgba(215,175,56,0.3)] hover:-translate-y-2 transition-all duration-500">
+                    className="group relative block overflow-hidden rounded-2xl border-2 border-gold/50 h-[400px] shadow-[0_0_24px_rgba(215,175,56,0.12),0_30px_60px_-20px_rgba(109,39,147,0.9)] hover:border-gold hover:shadow-[0_0_30px_rgba(215,175,56,0.35),0_30px_70px_-20px_rgba(109,39,147,1)] hover:-translate-y-2 transition-all duration-500">
                     <img src={d.image} alt={c.title} loading="lazy"
                       className={`absolute inset-0 w-full h-full object-cover ${c.bright || "brightness-105"} group-hover:scale-105 group-hover:brightness-110 transition-all duration-700 ease-out ${c.focus || d.focus || "object-center"}`} />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#110819]/90 via-[#110819]/15 to-[#110819]/95 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a28]/90 via-deepp/10 to-[#1a0a28]/95 pointer-events-none" />
                     <div className="relative h-full flex flex-col justify-between">
                       <div className="pt-6 px-4 text-center">
                         <Icon size={26} color="#D7AF38" strokeWidth={1.4} className="mx-auto mb-2 drop-shadow-[0_1px_8px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-300" />
@@ -113,17 +115,17 @@ export default function Home() {
       <EditorialMarquee />
 
       {/* PILLARS / MANIFESTO */}
-      <section className="py-28 max-w-[1400px] mx-auto px-6 lg:px-10" data-testid="pillars">
+      <section className="py-28 max-w-[1400px] mx-auto px-6 lg:px-10 aura-l aura-gold" data-testid="pillars">
         <Reveal><Overline className="mb-6">The Manifesto</Overline></Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] max-w-3xl mb-20">
             Three principles that <span className="italic gold-shimmer">define</span> everything we build.
           </h2>
         </Reveal>
-        <div className="grid md:grid-cols-3 gap-px bg-gold/15">
+        <div className="grid md:grid-cols-3 gap-px bg-gold/20 lux-grid">
           {PILLARS.map((p, i) => (
             <Reveal key={p.n} delay={i * 0.12}>
-              <div className="bg-[#1A0E26] p-10 h-full group hover:bg-deepp/60 transition-colors duration-500">
+              <div className="lux-card p-10 h-full group">
                 <div className="flex items-center justify-between mb-10">
                   <span className="font-serif text-5xl text-gold/30 group-hover:text-gold/60 transition-colors">{p.n}</span>
                   <Diamond size={18} className="opacity-40 group-hover:opacity-100 transition-opacity" />
@@ -137,8 +139,7 @@ export default function Home() {
       </section>
 
       {/* ONE ENTERPRISE */}
-      <section className="py-28 relative overflow-hidden" data-testid="one-enterprise">
-        <div className="absolute top-1/2 -left-40 w-[500px] h-[500px] rounded-full bg-deepp/50 blur-[150px] -translate-y-1/2" />
+      <section className="py-28 relative aura-r" data-testid="one-enterprise">
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <Reveal>
             <Crown size={44} className="mb-8" />
@@ -156,10 +157,11 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-28" data-testid="home-cta">
+      <section className="py-28 aura-c" data-testid="home-cta">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="relative border border-gold/25 p-12 md:p-20 overflow-hidden">
+          <div className="relative lux-panel p-12 md:p-20 overflow-hidden">
             <div className="absolute -top-20 -right-10 w-[460px] h-[460px] rounded-full bg-vividp/35 blur-[130px]" />
+            <div className="absolute -bottom-24 -left-10 w-[420px] h-[260px] rounded-full bg-gold/10 blur-[100px]" />
             <div className="relative">
               <Reveal><h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] max-w-3xl mb-8">Build a legacy <span className="italic gold-shimmer">with us</span>.</h2></Reveal>
               <Reveal delay={0.1}><p className="text-lightgray max-w-xl mb-10 leading-relaxed">Whether you're an investor, partner, or visionary talent — there's a place for you inside the enterprise.</p></Reveal>

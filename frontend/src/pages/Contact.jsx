@@ -37,7 +37,7 @@ export default function Contact() {
         subtitle="Whether it's an inquiry, a booking, or simply a hello — our team would be delighted to hear from you."
       />
 
-      <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16">
+      <section className="py-16 max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16 aura-r">
         {/* INFO */}
         <Reveal className="lg:col-span-5">
           <div className="space-y-10">
@@ -72,7 +72,7 @@ export default function Contact() {
 
         {/* FORM */}
         <Reveal delay={0.15} className="lg:col-span-7">
-          <form onSubmit={submit} data-testid="contact-form" className="space-y-8">
+          <form onSubmit={submit} data-testid="contact-form" className="space-y-8 lux-panel p-8 md:p-12">
             <div className="grid sm:grid-cols-2 gap-8">
               <input data-testid="contact-name" required placeholder="Full name" className="lux-input" value={form.name} onChange={set("name")} />
               <input data-testid="contact-email" required type="email" placeholder="Email address" className="lux-input" value={form.email} onChange={set("email")} />

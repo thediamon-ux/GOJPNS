@@ -61,21 +61,28 @@ export default function Shop() {
   return (
     <div data-testid="shop-page">
       <Seo title="Shop Jewell's Herbal Magic Blend — JPNS Enterprises" description="Order Jewell's Herbal Magic Blend online: a handcrafted, caffeine-free herbal tea. Secure checkout with Apple Pay, card, or Cash App. Ships within the US." />
-      <section className="relative pt-40 pb-20 overflow-hidden">
-        <div className="absolute -top-24 right-0 w-[600px] h-[600px] rounded-full bg-vividp/40 blur-[170px] pointer-events-none" />
-        <div className="absolute top-1/3 -left-32 w-[460px] h-[460px] rounded-full bg-[#35104F]/40 blur-[150px] pointer-events-none" />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
+      <section className="relative pt-36 lg:pt-40 pb-24">
+        {/* royal-purple atmosphere, masked to fade into the page */}
+        <div className="absolute inset-0 pointer-events-none [mask-image:linear-gradient(to_bottom,black_70%,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent)]">
+          <div className="absolute inset-0 bg-gradient-to-br from-deepp/80 via-vividp/20 to-deepp/50" />
+          <div className="absolute -top-24 right-0 w-[640px] h-[640px] rounded-full bg-vividp/45 blur-[170px]" />
+          <div className="absolute top-1/4 -left-32 w-[560px] h-[560px] rounded-full bg-vividp/35 blur-[150px]" />
+          <div className="absolute top-24 right-[8%] w-[520px] h-[300px] bg-[radial-gradient(closest-side,rgba(215,175,56,0.14),transparent)]" />
+        </div>
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-14 items-start">
           {/* IMAGE */}
-          <Reveal>
-            <div className="relative">
+          <Reveal className="lg:sticky lg:top-32">
+            <div className="relative lux-halo">
               <div className="absolute -inset-3 border border-gold/40 pointer-events-none" />
+              <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[70%] h-24 rounded-full bg-gold/15 blur-[60px] pointer-events-none" />
               <img src="/tea-jar.jpg" alt="Jewell's Herbal Magic Blend glass jar and freshly brewed cup"
-                className="relative w-full object-cover shadow-2xl shadow-black/60" />
+                className="relative w-full object-cover lux-edge" />
             </div>
           </Reveal>
 
           {/* DETAILS */}
           <Reveal delay={0.12}>
+            <div className="lux-panel p-6 sm:p-8 lg:p-10" data-testid="purchase-panel">
             <Overline className="mb-6">Shop the Tea</Overline>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[0.98] mb-4" data-testid="shop-heading">
               Jewell's <span className="italic gold-shimmer">Herbal Magic</span> Blend
@@ -96,12 +103,12 @@ export default function Shop() {
             {/* SIZE SELECTOR */}
             <div className="mb-6">
               <span className="text-xs uppercase tracking-[0.2em] text-gold block mb-4">Choose Your Size</span>
-              <div className="grid grid-cols-3 gap-px bg-gold/15 border border-gold/15" data-testid="size-selector">
+              <div className="grid grid-cols-3 gap-px bg-gold/25 border border-gold/30" data-testid="size-selector">
                 {(product?.options || []).map((o) => (
                   <button key={o.lookup_key} type="button" data-testid={`size-${o.lookup_key}`}
                     onClick={() => pickSize(o.lookup_key)}
-                    className={`p-4 text-left transition-colors duration-300 ${selected === o.lookup_key ? "bg-gold text-void" : "bg-[#1A0E26] hover:bg-[#35104F]/60"}`}>
-                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${selected === o.lookup_key ? "text-void/70" : "text-emerald-300/80"}`}>{o.label}</p>
+                    className={`p-4 text-left transition-colors duration-300 ${selected === o.lookup_key ? "bg-gold text-void" : "bg-[#230f33] hover:bg-deepp"}`}>
+                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${selected === o.lookup_key ? "text-void/70" : "text-gold/80"}`}>{o.label}</p>
                     <p className="font-serif text-lg leading-tight">{o.size}</p>
                     <p className={`text-sm mt-1 ${selected === o.lookup_key ? "text-void" : "text-gold"}`}>${(o.amount / 100).toFixed(2)}</p>
                   </button>
@@ -113,15 +120,15 @@ export default function Shop() {
             {option?.sub && (
               <div className="mb-8" data-testid="purchase-type">
                 <span className="text-xs uppercase tracking-[0.2em] text-gold block mb-4">Purchase Type</span>
-                <div className="grid grid-cols-2 gap-px bg-gold/15 border border-gold/15">
+                <div className="grid grid-cols-2 gap-px bg-gold/25 border border-gold/30">
                   <button type="button" data-testid="mode-once" onClick={() => setMode("once")}
-                    className={`p-4 text-left transition-colors duration-300 ${!useSub ? "bg-gold text-void" : "bg-[#1A0E26] hover:bg-[#35104F]/60"}`}>
-                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${!useSub ? "text-void/70" : "text-emerald-300/80"}`}>One-Time</p>
+                    className={`p-4 text-left transition-colors duration-300 ${!useSub ? "bg-gold text-void" : "bg-[#230f33] hover:bg-deepp"}`}>
+                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${!useSub ? "text-void/70" : "text-gold/80"}`}>One-Time</p>
                     <p className="font-serif text-lg">${(option.amount / 100).toFixed(2)}</p>
                   </button>
                   <button type="button" data-testid="mode-sub" onClick={() => setMode("sub")}
-                    className={`p-4 text-left transition-colors duration-300 ${useSub ? "bg-gold text-void" : "bg-[#1A0E26] hover:bg-[#35104F]/60"}`}>
-                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${useSub ? "text-void/70" : "text-emerald-300/80"}`}>Subscribe</p>
+                    className={`p-4 text-left transition-colors duration-300 ${useSub ? "bg-gold text-void" : "bg-[#230f33] hover:bg-deepp"}`}>
+                    <p className={`text-[10px] uppercase tracking-[0.15em] mb-1 ${useSub ? "text-void/70" : "text-gold/80"}`}>Subscribe</p>
                     <p className="font-serif text-lg">${(option.sub.amount / 100).toFixed(2)}<span className="text-sm font-sans"> / {option.sub.interval}</span></p>
                   </button>
                 </div>
@@ -175,14 +182,14 @@ export default function Shop() {
             <p className="mt-4 inline-flex items-center gap-2 text-xs text-lightgray/70">
               <ShieldCheck size={14} color="#D7AF38" strokeWidth={1.5} /> Secure checkout by Stripe
             </p>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      <section className="pb-24 max-w-[1400px] mx-auto px-6 lg:px-10">
+      <section className="pb-24 max-w-[1400px] mx-auto px-6 lg:px-10 aura-c">
         <Reveal>
-          <div className="border border-gold/20 p-10 md:p-14 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-[#35104F]/15 blur-[100px]" />
+          <div className="lux-panel p-10 md:p-14 text-center relative overflow-hidden">
             <p className="relative font-serif text-2xl md:text-3xl max-w-2xl mx-auto leading-snug">
               Want the full story of the blend and all 16 botanicals?
             </p>
